@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Discover official manufacturer URLs
-        run: python tools/discover.py --max-sitemaps 25 --max-urls 1200
+        run: python tools/discovery.py --max-sitemaps 25 --max-urls 1200
       - name: Gather manufacturer page evidence
         run: python tools/enrich_candidates.py --limit 90 --delay 1.0
       - name: Validate catalog and relationships
