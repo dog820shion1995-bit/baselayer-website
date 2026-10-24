@@ -1,6 +1,8 @@
-BASELAYER Ver.15 IMMERSIVE
+BASELAYER Ver.16 RESEARCH EDITION
 
-index.htmlを開いて確認してください。
-新規: v15.css / 動くネットワーク可視化、機器の詳細描画、重複セクションの整理。
-製品検索は外部検索への案内であり、製品仕様や互換性を自動判定しません。
-GitHub Pages: フォルダ内の全ファイルをリポジトリ直下にアップロード。
+Open index.html locally, or upload all files to GitHub Pages.
+
+New: search workspace, locally saved recent queries, sample model data, compare up to four items, editable notes and CSV export.
+No API calls or official successor verification. Example entries are for workflow demonstration; verify all product facts at manufacturer sites.
+Storage: browser localStorage only. No accounts, analytics, affiliate ID or server.
+Existing network diagram features inherited from v15.
