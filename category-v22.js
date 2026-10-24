@@ -64,9 +64,32 @@ function external(label,url,desc){const a=el("a",undefined,"research-link");a.hr
 function renderHistory(){const root=$("#researchHistory");root.replaceChildren();if(!data.history.length){root.append(el("span","検索すると履歴が表示されます。","hint"));return}data.history.forEach(q=>{const b=el("button",q);b.type="button";b.onclick=()=>run(q);root.append(b)})}
 function addCompare(m){if(data.compare.some(x=>norm(x.model)===norm(m.model))){$("#compareStatus").textContent="比較表に登録済みです。";return}if(data.compare.length>=4){$("#compareStatus").textContent="比較は4件までです。";return}data.compare.push({...m,memo:m.memo||""});save();renderCompare();$("#compareStatus").textContent=m.model+" を比較に追加しました。"}
 function getModel(x){return models.find(m=>norm(m.model)===norm(x.model))||x}
-function renderCompare(){const root=$("#compareRows");root.replaceChildren();$("#v19CompareCount").textContent=data.compare.length+" / 4件";const detail=$("#v22CompareSpecs");detail.replaceChildren();if(!data.compare.length){const tr=el("tr"),td=el("td","製品を検索して「比較に追加」を押してください。");td.colSpan=6;tr.append(td);root.append(tr);return}
+function renderCompare(){const root=$("#compareRows");root.replaceChildren();$("#v19CompareCount").textContent=data.compare.length+" / 4件";const detail=$("#v22CompareSpecs");detail.replaceChildren();if(!data.compare.length){const tr=el("tr"),td=el("td","製品を検索して「比較に追加」を押してください。");td.colSpan=7;tr.append(td);root.append(tr);return}
 const categoryIds=[...new Set(data.compare.map(x=>getModel(x).cat).filter(Boolean))];if(categoryIds.length>1)detail.append(el("p","異なるカテゴリの製品が含まれています。仕様の優劣はカテゴリ内で確認してください。","v22-warning"));
-data.compare.forEach((x,i)=>{const m=getModel(x),c=cat(m.cat),tr=el("tr"),name=el("td");name.append(el("strong",x.model));if(m.source)name.append(external("公式資料",m.source,"出典を確認"));tr.append(name,el("td",x.brand||m.brand||"未確認"),el("td",c?.name||"未判定"));const spec=el("td");const entries=Object.entries(m.specs||{});spec.textContent=entries.length?entries.slice(0,3).map(([k,v])=>k+"："+v).join(" / "):"仕様未登録";tr.append(spec);const note=el("td"),input=el("input");input.value=x.memo||"";input.maxLength=180;input.setAttribute("aria-label",x.model+"のメモ");input.oninput=()=>{data.compare[i].memo=input.value;save()};note.append(input);tr.append(note);const action=el("td"),b=el("button","削除");b.type="button";b.onclick=()=>{data.compare.splice(i,1);save();renderCompare()};action.append(b);tr.append(action);root.append(tr)});
+data.compare.forEach((x,i)=>{
+ const m=getModel(x),c=cat(m.cat),tr=el("tr"),name=el("td");
+ name.className="v241-model";name.append(el("strong",x.model));
+ tr.append(name,el("td",x.brand||m.brand||"未確認"),el("td",c?.name||"未判定"));
+ const spec=el("td");spec.className="v241-spec";
+ const entries=Object.entries(m.specs||{});spec.textContent=entries.length?entries.slice(0,3).map(([k,v])=>k+"："+v).join(" / "):"仕様未登録";
+ tr.append(spec);
+ const source=el("td");source.className="v241-source";
+ if(m.source){const link=el("a","公式資料 ↗","v241-source-link");link.href=m.source;link.target="_blank";link.rel="noopener noreferrer";source.append(link)}
+ else source.append(el("span","未登録","v241-muted"));tr.append(source);
+ const note=el("td");note.className="v241-note";
+ const preview=el("span",x.memo?.trim()||"メモなし","v241-preview");preview.title=x.memo||"";
+ const edit=el("button","編集","v241-edit");edit.type="button";edit.setAttribute("aria-label",x.model+"のメモを編集");
+ const editor=el("div",undefined,"v241-editor");editor.hidden=true;
+ const input=el("textarea");input.value=x.memo||"";input.maxLength=180;input.rows=3;input.setAttribute("aria-label",x.model+"のメモ");
+ const done=el("button","完了","v241-done");done.type="button";
+ function closeEditor(){data.compare[i].memo=input.value;save();preview.textContent=input.value.trim()||"メモなし";preview.title=input.value;editor.hidden=true;preview.hidden=false;edit.hidden=false;}
+ edit.onclick=()=>{editor.hidden=false;preview.hidden=true;edit.hidden=true;input.focus()};
+ done.onclick=closeEditor;input.addEventListener("input",()=>{data.compare[i].memo=input.value;save()});
+ editor.append(input,done);note.append(preview,edit,editor);tr.append(note);
+ const action=el("td");action.className="v241-action";
+ const remove=el("button","削除","v241-remove");remove.type="button";remove.setAttribute("aria-label",x.model+"を比較から削除");
+ remove.onclick=()=>{data.compare.splice(i,1);save();renderCompare()};action.append(remove);tr.append(action);root.append(tr);
+});
 categoryIds.forEach(id=>{const c=cat(id);if(!c)return;const block=el("section",undefined,"v22-spec-group");block.append(el("h3",c.name+"の比較項目"));const table=el("table",undefined,"v22-detail-table"),thead=el("tr");thead.append(el("th","比較項目"));const matches=data.compare.filter(x=>getModel(x).cat===id);matches.forEach(x=>thead.append(el("th",x.model)));table.append(thead);c.specs.forEach(field=>{const tr=el("tr");tr.append(el("th",field));matches.forEach(x=>{const m=getModel(x),v=m.specs?.[field],td=el("td",v||"未確認");if(!v)td.className="v22-unknown";tr.append(td)});table.append(tr)});block.append(table);detail.append(block)})}
 function infer(q){const s=q.toLowerCase();const rules=[[/lanケーブル|ethernet cable|cat\s*[568](?:a|e)?\b|rj-?45/,"lan"],[/hdmiケーブル|usb.?cケーブル|displayportケーブル|変換アダプタ/,"cable"],[/光ケーブル|sfp\+?|光ファイバ/,"fiber"],[/プリンター|複合機|printer|laserjet|pixma|colorio/,"printer"],[/モニター|ディスプレイ|monitor|ultrasharp|thinkvision/,"monitor"],[/アクセスポイント|無線ap|access point/,"ap"],[/スイッチングハブ|ネットワークスイッチ|switching hub/,"switch"],[/ファイアウォール|firewall/,"firewall"],[/ルーター|router/,"router"],[/ups|無停電電源/,"power"],[/nas|サーバー|server/,"server"],[/キーボード|マウス|webカメラ/,"peripheral"]];return rules.find(([r])=>r.test(s))?.[1]||null}
 function run(raw){const q=String(raw).normalize("NFKC").trim().replace(/\s+/g," ").slice(0,100);if(!q)return;$("#searchInput").value=q;data.history=[q,...data.history.filter(x=>norm(x)!==norm(q))].slice(0,8);save();renderHistory();const root=$("#searchResults");root.replaceChildren();const chosen=categorySelect.value;const matches=models.filter(m=>(chosen==="all"||m.cat===chosen)&&matchesModel(m,q));
