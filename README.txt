@@ -1,8 +1,5 @@
-BASELAYER Ver.16 RESEARCH EDITION
-
-Open index.html locally, or upload all files to GitHub Pages.
-
-New: search workspace, locally saved recent queries, sample model data, compare up to four items, editable notes and CSV export.
-No API calls or official successor verification. Example entries are for workflow demonstration; verify all product facts at manufacturer sites.
-Storage: browser localStorage only. No accounts, analytics, affiliate ID or server.
-Existing network diagram features inherited from v15.
+BASELAYER Ver.17 COMPARE
+index.html から閲覧できます。検索機能は search.html です。
+RTX830 / RTX810 のみメーカー公開資料に基づく一部仕様を収録。他機種は未確認と表示します。
+機器イラストは模式図で実物写真ではありません。仕様はファームウェア・測定条件等で異なるため公式資料を確認してください。
+既存の比較候補と検索履歴はVer.16と同じブラウザ保存領域を利用します。
