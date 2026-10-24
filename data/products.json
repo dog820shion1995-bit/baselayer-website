@@ -1,0 +1,278 @@
+[
+  {
+    "model": "RTX830",
+    "brand": "ヤマハ",
+    "cat": "router",
+    "category": "VPNルーター",
+    "memo": "販売状況・VPN条件は公式資料で確認",
+    "specs": {
+      "LANポート": "4 × 1GbE",
+      "WANポート": "1 × 1GbE",
+      "ルーティング性能": "最大2.0 Gbit/s",
+      "VPN方式": "IPsec / L2TP/IPsec",
+      "VPN性能": "IPsec 最大1.0Gbit/s",
+      "IPv6": "IPoE / PPPoE / DHCPv6-PD"
+    },
+    "source": "https://network.yamaha.com/products/routers/rtx830/spec",
+    "checked": "2026-10-25",
+    "verified": "メーカー公式仕様確認済み"
+  },
+  {
+    "model": "RTX810",
+    "brand": "ヤマハ",
+    "cat": "router",
+    "category": "VPNルーター",
+    "memo": "旧機種。仕様の出典確認待ち（旧版の未検証値は除外）"
+  },
+  {
+    "model": "RTX1220",
+    "brand": "ヤマハ",
+    "cat": "router",
+    "category": "VPNルーター",
+    "verified": "メーカー公式仕様確認済み",
+    "checked": "2026-10-25",
+    "memo": "性能値はメーカー測定条件に基づきます。販売・保守状況は別途確認",
+    "specs": {
+      "LANポート": "LAN1：8 × 1GbE（L2スイッチ）",
+      "WANポート": "LAN2/LAN3：各1 × 1GbE（任意LANをWAN利用可）",
+      "ルーティング性能": "最大2.0Gbit/s（RFC2544、NAT・フィルターなし）",
+      "VPN方式": "IPsec / L2TP/IPsec / L2TPv3",
+      "VPN性能": "IPsec最大1.5Gbit/s（AES+SHA1条件）",
+      "IPv6": "IPv6 IPoE / PPPoEほか"
+    },
+    "price": "メーカー希望小売価格：187,000円（税込・確認時点）",
+    "source": "https://network.yamaha.com/products/routers/rtx1220/spec"
+  },
+  {
+    "model": "U2720Q",
+    "brand": "Dell",
+    "cat": "monitor",
+    "category": "27型4Kモニター",
+    "memo": "仕様未登録。公式資料を確認"
+  },
+  {
+    "model": "U2723QE",
+    "brand": "Dell",
+    "cat": "monitor",
+    "category": "27型4K USB-Cハブモニター",
+    "memo": "Dell公式ページでは販売終了。後継機種は未確認",
+    "verified": "メーカー公式仕様確認済み",
+    "checked": "2026-10-25",
+    "sales": "メーカー公式ページで販売終了と表示（2026-10-25確認）",
+    "specs": {
+      "画面サイズ": "27インチ",
+      "解像度": "3840 × 2160（4K UHD）",
+      "パネル方式": "IPS Black",
+      "リフレッシュレート": "60Hz",
+      "映像入力": "HDMI / DisplayPort 1.4 / USB-C（DP Alt Mode）",
+      "USB-C給電": "最大90W"
+    },
+    "source": "https://www.dell.com/ja-jp/shop/u2723qe/apd/210-bdzo/"
+  },
+  {
+    "model": "KB-T8SL-003BL",
+    "brand": "Sanwa Supply",
+    "cat": "lan",
+    "category": "カテゴリ8 LANケーブル",
+    "memo": "メーカー公表価格と実売価格は異なります",
+    "verified": "メーカー公式仕様確認済み",
+    "checked": "2026-10-25",
+    "specs": {
+      "カテゴリ規格": "Cat8（40GBASE-T）",
+      "長さ": "0.3m",
+      "シールド": "二重シールド",
+      "コネクタ": "RJ-45 シールドコネクタ",
+      "導体": "AWG30 単線"
+    },
+    "price": "メーカー掲載価格：1,870円（税込・2026-10-25確認）",
+    "source": "https://www.sanwa.co.jp/product/network/list/KB-T8SL.html"
+  },
+  {
+    "model": "MX MASTER 3S",
+    "brand": "Logicool",
+    "cat": "peripheral",
+    "category": "ワイヤレスマウス",
+    "memo": "仕様未登録"
+  },
+  {
+    "model": "Catalyst 9200",
+    "brand": "Cisco",
+    "cat": "switch",
+    "category": "ネットワークスイッチ",
+    "memo": "仕様未登録"
+  },
+  {
+    "model": "Aruba Instant On AP22",
+    "brand": "HPE Aruba Networking",
+    "cat": "ap",
+    "category": "無線アクセスポイント",
+    "memo": "仕様未登録"
+  },
+  {
+    "model": "RTX840",
+    "brand": "ヤマハ",
+    "cat": "router",
+    "category": "VPNルーター",
+    "memo": "仕様・販売状況はメーカー公式情報で要確認"
+  },
+  {
+    "model": "RTX1210",
+    "brand": "ヤマハ",
+    "cat": "router",
+    "category": "VPNルーター",
+    "memo": "仕様・販売状況はメーカー公式情報で要確認"
+  },
+  {
+    "model": "NVR510",
+    "brand": "ヤマハ",
+    "cat": "router",
+    "category": "VoIPルーター",
+    "memo": "仕様・販売状況はメーカー公式情報で要確認"
+  },
+  {
+    "model": "SWX2210-8G",
+    "brand": "ヤマハ",
+    "cat": "switch",
+    "category": "スマートL2スイッチ",
+    "verified": "メーカー公式仕様確認済み",
+    "checked": "2026-10-25",
+    "memo": "PoE給電非対応。販売・保守状況は別途確認",
+    "specs": {
+      "ポート数": "8ポート",
+      "ポート速度": "10/100/1000BASE-T",
+      "PoE": "非対応",
+      "スイッチング容量": "16Gbit/s",
+      "VLAN": "ポートベース / IEEE 802.1Q（最大256 VLAN）",
+      "管理方式": "Web GUI / TELNET / SNMP / L2MS"
+    },
+    "price": "メーカー希望小売価格：55,000円（税込・確認時点）",
+    "source": "https://network.yamaha.com/products/switches/swx2210-8g/spec"
+  },
+  {
+    "model": "WLX222",
+    "brand": "ヤマハ",
+    "cat": "ap",
+    "category": "無線LANアクセスポイント",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "U2724D",
+    "brand": "Dell",
+    "cat": "monitor",
+    "category": "27型QHDモニター",
+    "verified": "メーカー公式仕様確認済み",
+    "checked": "2026-10-25",
+    "memo": "USB-C給電・保証・販売状況は要確認",
+    "specs": {
+      "画面サイズ": "27インチ",
+      "解像度": "2560 × 1440（QHD）",
+      "パネル方式": "IPS Black",
+      "リフレッシュレート": "最大120Hz"
+    },
+    "source": "https://www.dell.com/ja-jp/shop/dell-27-%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC-u2724d/apd/210-bkmp/"
+  },
+  {
+    "model": "P2422H",
+    "brand": "Dell",
+    "cat": "monitor",
+    "category": "PCモニター",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "P2723DE",
+    "brand": "Dell",
+    "cat": "monitor",
+    "category": "PCモニター",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "LSW6-GT-8NS",
+    "brand": "BUFFALO",
+    "cat": "switch",
+    "category": "LANスイッチ",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "WAPM-1266R",
+    "brand": "BUFFALO",
+    "cat": "ap",
+    "category": "無線LANアクセスポイント",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "LD-GPAT/BU20",
+    "brand": "ELECOM",
+    "cat": "lan",
+    "category": "LANケーブル",
+    "memo": "規格・長さ等はメーカー公式資料で確認"
+  },
+  {
+    "model": "LD-GPAT/BU10",
+    "brand": "ELECOM",
+    "cat": "lan",
+    "category": "LANケーブル",
+    "memo": "規格・長さ等はメーカー公式資料で確認"
+  },
+  {
+    "model": "PX-M6011F",
+    "brand": "EPSON",
+    "cat": "printer",
+    "category": "A3ノビ対応ビジネスインクジェット複合機",
+    "verified": "メーカー公式仕様確認済み",
+    "checked": "2026-10-25",
+    "memo": "印刷速度はメーカー公表のISO測定条件。販売価格は2026年7月1日時点",
+    "specs": {
+      "印刷方式": "PrecisionCore インクジェット（4色独立インク）",
+      "カラー/モノクロ": "カラー対応",
+      "印刷速度": "A4カラー約12ipm / モノクロ約25ipm",
+      "両面印刷": "自動両面印刷対応",
+      "用紙サイズ": "A3ノビまで（背面MPトレイ）",
+      "接続方式": "USB / 有線LAN（10/100）/ Wi-Fi 5",
+      "ランニングコスト": "カラー約10.4円 / モノクロ約3.2円（税込・公表条件）"
+    },
+    "price": "メーカー直販掲載価格：44,550円（税込・2026年7月1日時点）／オープン価格",
+    "source": "https://www.epson.jp/products/bizprinter/pxm6011f_m6010f/spec.htm"
+  },
+  {
+    "model": "MFC-L3770CDW",
+    "brand": "Brother",
+    "cat": "printer",
+    "category": "レーザー複合機",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "PR-L4C150",
+    "brand": "NEC",
+    "cat": "printer",
+    "category": "レーザープリンター",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "ThinkVision T24i-30",
+    "brand": "Lenovo",
+    "cat": "monitor",
+    "category": "PCモニター",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "MX KEYS S",
+    "brand": "Logicool",
+    "cat": "peripheral",
+    "category": "ワイヤレスキーボード",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "DS220+",
+    "brand": "Synology",
+    "cat": "server",
+    "category": "NAS",
+    "memo": "仕様は未登録"
+  },
+  {
+    "model": "AP22",
+    "brand": "HPE Aruba Networking",
+    "cat": "ap",
+    "category": "無線アクセスポイント",
+    "memo": "仕様は未登録"
+  }
+]
