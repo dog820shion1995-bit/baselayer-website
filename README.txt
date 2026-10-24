@@ -1,7 +1,7 @@
-BASELAYER Ver.6 — 型番検索の改善
+BASELAYER Ver.7 / Premium Enterprise
 
-変更点：未登録型番でも公式情報・後継・同等品・Amazonの調査リンクを表示。
-費用：追加API契約不要。外部検索へのリンクのみ。
-重要：自動で後継・互換性を判定しません。Amazonリンクは通常検索リンクです。
+GitHub Pagesで動く静的サイトです。index.html、style.css、script.js、privacy.htmlをリポジトリ直下へアップロードしてください。
 
-GitHub Pagesのリポジトリ直下に、index.html / style.css / script.js / privacy.html / README.txt の5ファイルをアップロードして上書きしてください。
+更新内容：プレミアムなトップページ、利用目的の導線、利用者別案内、レスポンシブ表示。Ver.6の型番検索・外部調査リンク・ネットワーク構成図機能を保持。
+
+注意：後継・代替機種の自動判定やリアルタイム価格取得は未実装。製品の確認はメーカー公式資料で行ってください。
