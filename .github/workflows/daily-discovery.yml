@@ -1,0 +1,35 @@
+name: BASELAYER daily manufacturer discovery
+on:
+  schedule:
+    - cron: '17 18 * * *' # 03:17 JST (UTC+9), subject to GitHub scheduling delays
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover official manufacturer URLs
+        run: python tools/discover.py --max-sitemaps 25 --max-urls 1200
+      - name: Gather manufacturer page evidence
+        run: python tools/enrich_candidates.py --limit 90 --delay 1.0
+      - name: Validate catalog and relationships
+        run: |
+          python tools/build_catalog.py
+          python tools/validate_relationships.py
+      - name: Open review PR for new evidence
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'data: update manufacturer discovery and evidence queue'
+          title: 'Daily manufacturer evidence review'
+          body: 'Unverified source-page metadata only. Verify exact model specifications, lifecycle and successor claims before publishing. No automatic catalog promotion.'
+          branch: 'automation/daily-discovery'
+          add-paths: |
+            data/discovered_candidates.json
+            data/evidence_queue.json
