@@ -50,9 +50,9 @@ window.BL_PRICES = {
   },
   "iodata-usb":{
     id:"iodata-usb",kind:"hardware",model:"I-O DATA HDD-UT4KB（USB 4TB）",
-    currency:"JPY",price:32890,tax:"税込",status:"reference",source:"https://www.iodata.jp/product/hdd/hdd/hdd-utb/index.htm",
+    currency:"JPY",price:32890,tax:"税込",status:"reference",source:"https://www.iodata.jp/product/hdd/hdd/hdd-utb/",
     basis:"メーカー製品ページ記載の税込価格（2026年7月価格改定）。",
-    disclaimer:"PC／テレビ用途の商品。NASへの増設適合や企業用途の長期運用を保証しない。"
+    disclaimer:"公式ページで在庫限り・後継HDD-UT4KCを案内。新品調達は後継モデルの仕様・価格も確認。NASへの適合は保証しない。"
   }
  }
 };
