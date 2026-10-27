@@ -589,5 +589,37 @@
     "source": "https://www.elecom.co.jp/products/LD-GPATBU100.html",
     "checked": "2026-10-27",
     "verified": "2026-10-27にメーカー公式仕様・製品ページと照合"
+  },
+  {
+    "model": "DS918+",
+    "brand": "Synology",
+    "cat": "server",
+    "category": "4ベイNAS（旧世代モデル）",
+    "memo": "メーカーの2019年版データシートに基づく過去モデル。現行販売・サポート・DSM対応状況は未確認のため購入推奨対象ではありません。",
+    "specs": {
+      "CPU": "Intel Celeron J3455（4コア、1.5GHz／最大2.3GHz）",
+      "メモリー": "4GB DDR3L SO-DIMM（最大8GB）",
+      "ドライブベイ": "3.5／2.5インチ SATA ×4（ドライブ別売）",
+      "SSDキャッシュ用スロット": "M.2 NVMe 2280 ×2（ドライブ別売）",
+      "LAN": "1GbE RJ-45 ×2",
+      "外部ポート": "USB 3.0 ×2、eSATA ×1",
+      "本体寸法": "166 × 199 × 223 mm（高さ×幅×奥行）"
+    },
+    "source": "https://global.download.synology.com/download/Document/Hardware/DataSheet/DiskStation/18-year/DS918%2B/enu/Synology_DS918_Plus_Data_Sheet_enu.pdf",
+    "checked": "2026-10-28",
+    "verified": "Synology公式2019年版データシート（p.3 Hardware Technical Specifications）と照合。現行販売・サポートは未検証。",
+    "image": {
+      "usage": "permitted",
+      "brand": "Synology",
+      "model": "DS918+",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Synology_DS918%2B.png?width=720",
+      "source": "https://commons.wikimedia.org/wiki/File:Synology_DS918%2B.png",
+      "rightsEvidence": "https://commons.wikimedia.org/wiki/File:Synology_DS918%2B.png",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "creator": "mculi",
+      "modifications": "表示サイズのみ変更（写真内容の改変なし）",
+      "checked": "2026-10-28"
+    }
   }
 ]
