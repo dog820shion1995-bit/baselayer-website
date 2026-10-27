@@ -11,6 +11,8 @@ try{
  assert.match(await desktop.locator('h1').innerText(),/今の保存方法/);
  assert.equal(await desktop.locator('#productGrid').count(),0,'catalog on homepage forbidden');
  assert.equal(await desktop.locator('.problem-row').count(),3);
+  await desktop.waitForFunction(() => document.querySelector('.hero-photo img')?.complete, null, {timeout:15000});
+  assert((await desktop.locator('.hero-photo img').evaluate(img => img.naturalWidth)) > 0, 'hero photo is not loaded');
  await desktop.screenshot({path:'journey-home-desktop.png',fullPage:true});
  await desktop.locator('.problem-row').first().click();
  await desktop.waitForURL(/start.html\?goal=share/);
