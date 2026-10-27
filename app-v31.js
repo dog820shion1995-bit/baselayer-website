@@ -37,7 +37,7 @@
     const label=esc(labelCat(p.cat));
     const fallback=`<span class="product-media-fallback" role="img" aria-label="${label}のカテゴリイラスト（製品の実物写真ではありません）"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${shape}</svg></span>`;
     const im=p.image;
-    const allowed=im && im.usage==='permitted' && typeof im.license==='string' && im.license.trim() && typeof im.checked==='string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(im.checked) && safeSource(im.url) && safeSource(im.source) && safeSource(im.rightsEvidence);
+    const allowed=im && im.usage==='permitted' && typeof im.license==='string' && im.license.trim() && typeof im.checked==='string' && /^\d{4}-\d{2}-\d{2}$/.test(im.checked) && safeSource(im.url) && safeSource(im.source) && safeSource(im.rightsEvidence);
     const photo=allowed ? `<img class="product-media-photo" src="${escapeAttr(safeSource(im.url))}" alt="${esc(p.brand)} ${esc(p.model)}の製品写真" loading="lazy" decoding="async" width="72" height="72" data-product-photo>` : '';
     return `<span class="product-media" data-category="${escapeAttr(p.cat)}">${fallback}${photo}</span>`;
   };
