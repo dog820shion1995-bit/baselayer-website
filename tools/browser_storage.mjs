@@ -14,7 +14,7 @@ try{
  await desktop.screenshot({path:'journey-home-desktop.png',fullPage:true});
  await desktop.locator('.problem-row').first().click();
  await desktop.waitForURL(/start.html\?goal=share/);
- assert.match(await desktop.locator('#wizardTitle').innerText(),/困っていますか/);
+ assert.match(await desktop.locator('#wizardTitle').innerText(),/何を解決したいですか/);
  await desktop.locator('[data-action="next"]').click();
  assert.match(await desktop.locator('#wizardTitle').innerText(),/どのくらい/);
  await desktop.locator('#field_people').selectOption('medium');
