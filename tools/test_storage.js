@@ -16,7 +16,7 @@ assert.equal(Object.values(media).filter(x=>x.kind==='product').length,4,'four m
 assert.equal(Object.values(media).filter(x=>x.kind==='context').length,3,'three licensed context photos');
 assert(read('visual-media.js').includes('document.addEventListener("error"'),'missing remote-image fallback');
 for(const item of products){const m=media[item.id];assert(m,'missing visual status for '+item.id);assert(m.source&&new URL(m.source).protocol==='https:');if(m.src){assert(new URL(m.src).protocol==='https:');assert(m.credit&&m.label,'missing media attribution');assert(m.rights&&new URL(m.rights).protocol==='https:','missing explicit image-use terms');}else{assert(m.kind==='official-link','no image must link to official source');}}
-assert(read('storage-policy.html').includes('https://www.iodata.jp/copyright.htm/'),'I-O DATA rights disclosure missing');
+assert(read('storage-policy.html').includes('https://www.iodata.jp/copyright.htm'),'I-O DATA rights disclosure missing');
 assert(read('storage-policy.html').includes('https://www.buffalo.jp/other/about.html'),'BUFFALO rights disclosure missing');
 assert(read('index.html').includes('remoteSceneTitle'),'outside salesperson visual absent');
 assert(read('learn.html').includes('remote-example')&&read('learn.html').includes('backup-example'),'learning diagrams absent');
