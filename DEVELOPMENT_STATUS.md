@@ -54,3 +54,32 @@ Target: `main` (review only; do not merge or publish)
 - Three exact-model real-photo pilot cards: Dell UltraSharp U2713HM (Dāvis Mosāns, CC BY 2.0), Synology DS 101 Rev 3.0 (Thiemo Schuff, CC BY-SA 3.0 DE), Synology DS918+ (mculi, CC BY-SA 4.0). Wikimedia Commons file pages and attribution/license links appear on each card.
 - Pilot uses Wikimedia Commons image redirects; external image delivery and browser rendering have not yet been tested. Each card has a broken-image fallback.
 - This is a separate photo pilot, **not three new verified catalog products**. No main merge or publication. Next: browser smoke test, image delivery check, then integrate suitable licensed photos with catalog records and product-media metadata only after matching exact models.
+
+## 2026-10-28 08:55–09:00 JST — v32 review continuation
+
+### Repository/PR preflight
+- Existing draft PR: https://github.com/dog820shion1995-bit/baselayer-website/pull/4 (open; reuse this PR, do not open another).
+- Prior branch head: `84e9cd0f4fad0d6d046fa5cd545a77ac06e25f53`.
+- **Critical drift:** `main` has moved to a storage/backup decision-journey implementation. Before this run, v32 was 7 ahead / 37 behind; after the review changes it is 13 ahead / 37 behind, and GitHub reports **mergeable: false**. The v32 code targets legacy `app-v31.js`, not the current public architecture. **Do not merge PR #4 or copy its UI to main without an explicit integration and regression pass.** No public files were changed in this run.
+- Previous workflow run #8 for the old head passed. New CI run for this head has not yet been confirmed; the unmergeable PR may prevent pull_request checks.
+
+### Verified, saved work on review branch
+- New product: **1**, Synology **DS918+** (historical 4-bay NAS; *not* represented as currently sold or recommended).
+- New product's **7** source-backed specification fields: Intel Celeron J3455, 4GB DDR3L (max 8GB), 4 SATA bays, 2 M.2 NVMe 2280 slots, 2 × 1GbE, 2 USB 3.0 + 1 eSATA, 166 × 199 × 223mm. Source: [Synology official datasheet, hardware specifications p.3](https://global.download.synology.com/download/Document/Hardware/DataSheet/DiskStation/18-year/DS918%2B/enu/Synology_DS918_Plus_Data_Sheet_enu.pdf), checked **2026-10-28 JST**. These are historical published specs, not a claim of present-day support.
+- **1** new permitted exact-model real-photo metadata record: DS918+ photographed by **mculi**, [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Synology_DS918%2B.png), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), rights checked **2026-10-28 JST**. This is one licensed image **metadata record**, not proof that remote image delivery works in every browser.
+- Hardened `app-v31.js`: media only displays with exact brand/model identity, known CC license, creator, rights evidence, source, license URL, review date; otherwise category SVG fallback. Added visible creator/license credit and image-error fallback. Responsive attribution styles added to `site-v31.css`.
+- Added `tools/validate_v32_media.py` and wired it into `.github/workflows/catalog-quality.yml` for exact-model, CC license, URL, and duplicate checks. `data/products.json` and generated `product-data.js` synchronized.
+
+### Commits (review branch only)
+- `de0b27d89a387b4ddb35ca893fc59d26eb2bb42e` — source-backed DS918+ record + licensed image metadata.
+- `1cd03b5a43f3d97eeb47d2eb678b754ccaecb79a` — generated catalog synchronized.
+- `2ed00e171d7443a97f1e59f4d3290a0483b52839` — exact-model media gate and attribution.
+- `2dde1e8fa2dc4240fe8641e68e142a6bd1a73065` — attribution CSS.
+- `f59f3b3e8b13625949c7247917029045f4e37629` — offline media validation.
+- `eb156333003ef7f564af7a03bc82ddb65ce5cc34` — CI integration.
+
+### Validation and unresolved work
+- PASS: JSON parse, **42** total review-branch products, **29** records with source/date/specs, **0** duplicate normalized brand/model pairs, generated JS data matches JSON, `app-v31.js` parses as JavaScript, CSS brace balance, 1 exact-model permitted image metadata record.
+- NOT YET VERIFIED: newly added Python CI check actually runs and passes, Commons image redirect delivery, desktop/mobile browser smoke test, and public deployment.
+- **Blocking:** PR #4 cannot be safely merged with the new `main` architecture. Future run should reconcile the review branch against the latest `main` without losing the existing draft PR, adapt the photo/attribution design to current storage journey components, and run current-site regression tests. Do not force-merge or silently revert the new homepage.
+- This run: new products **1**, existing product specs supplemented **0**, new comparison relationships **0**, permitted photo metadata records **1**. All changes are review-only.
