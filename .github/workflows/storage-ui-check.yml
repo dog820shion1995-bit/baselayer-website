@@ -8,6 +8,7 @@ on:
       - storage-site.css
       - storage-policy.html
       - tools/test_storage.js
+      - tools/browser_storage.mjs
       - .github/workflows/storage-ui-check.yml
   workflow_dispatch:
 permissions:
@@ -26,5 +27,30 @@ jobs:
           node --check storage-data.js
           node --check storage-site.js
           node --check tools/test_storage.js
-      - name: Validate page selectors and source-backed records
+          node --check tools/browser_storage.mjs
+      - name: Validate catalog and page
         run: node tools/test_storage.js
+  browser-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test runtime
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Verify real desktop and mobile browser interactions
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/storage-http.log 2>&1 &
+          node tools/browser_storage.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baselayer-storage-screenshots
+          path: |
+            storage-home-desktop.png
+            storage-home-mobile.png
+          if-no-files-found: ignore
