@@ -101,3 +101,23 @@
 .detail-disclosure summary{cursor:pointer;padding:15px 3px;font-size:14px;font-weight:820;color:#176f62}
 .detail-disclosure summary:hover{color:#075b52}.detail-disclosure[open] summary{border-bottom:1px solid #e1ede7;margin-bottom:12px}
 .detail-disclosure .learning-table{margin:10px 0}.detail-disclosure p{font-size:12px}
+
+
+/* Data-location explainer: clear words and paths, no invented hardware artwork. */
+#lan-example{scroll-margin-top:96px}
+.location-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0 16px}
+.location-card{min-width:0;padding:22px;border:1px solid #dce9e3;border-radius:15px;background:#f8fbf9;display:flex;flex-direction:column}
+.location-label{font-size:12px;font-weight:850;color:#136f63}
+.location-path{display:flex;align-items:center;justify-content:center;gap:10px;margin:17px 0;min-width:0}
+.location-node{flex:1;min-width:0;text-align:center;background:white;border:1px solid #d2e5dc;border-radius:11px;padding:17px 8px}
+.location-node b{display:block;font-size:14px;line-height:1.5}
+.location-node small{display:block;font-size:11px;color:#5c7871;line-height:1.6}
+.location-node-data{background:#e7f5ed;border-color:#a9d9c4}
+.location-link{font-size:22px;font-weight:850;color:#187d6c;flex:none}
+.location-card p{font-size:12px;line-height:1.85;margin:0 0 16px}
+.location-answer{border-top:1px solid #dce9e3;padding-top:12px;margin-top:auto;font-size:12px;color:#456e64}
+.location-answer strong{color:#104e44}
+.location-note{padding:17px 20px;border-left:4px solid #1c927b;background:#f2f9f5;border-radius:8px}
+.location-note strong{font-size:14px}.location-note p{font-size:12px;line-height:1.85;margin:6px 0 0}
+.location-sources{font-size:11px;color:#647d75}.location-sources a{text-decoration:underline;text-underline-offset:3px;color:#126c60}
+@media(max-width:640px){.location-grid{grid-template-columns:1fr;gap:12px}.location-card{padding:16px}.location-path{gap:8px}.location-node{padding:14px 7px}.location-node b{font-size:13px}.location-note{padding:15px}}
