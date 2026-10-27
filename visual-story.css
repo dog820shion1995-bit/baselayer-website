@@ -95,3 +95,9 @@
 @media(min-width:950px){.product-cover-grid{grid-template-columns:minmax(0,1fr) 340px}.product-media-panel img{max-height:300px}}
 @media(max-width:1000px){.report-wide .report-product-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.report-wide .wizard-panel{padding:18px}.report-wide .report-product-list{grid-template-columns:1fr}}
+
+
+.detail-disclosure{border:1px solid #dce9e3;border-radius:11px;background:#fbfdfb;padding:4px 15px;margin:10px 0}
+.detail-disclosure summary{cursor:pointer;padding:15px 3px;font-size:14px;font-weight:820;color:#176f62}
+.detail-disclosure summary:hover{color:#075b52}.detail-disclosure[open] summary{border-bottom:1px solid #e1ede7;margin-bottom:12px}
+.detail-disclosure .learning-table{margin:10px 0}.detail-disclosure p{font-size:12px}
