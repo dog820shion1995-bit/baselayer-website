@@ -7,6 +7,28 @@
 <div class="card"><h3>バックアップとは？</h3><p>元データとは別のコピーや履歴を保存し、故障や誤削除のあとに復元できるようにする仕組みです。</p><div class="real-diagram"><div class="diag-box"><b>元データ</b><small>日常利用</small></div><span class="diag-arrow">→</span><div class="diag-box"><b>別のコピー</b><small>復元に使う</small></div></div></div></div>
 <p class="callout">重要：クラウドストレージもNASも、設定・契約内容によってはバックアップ機能を備えます。ただし、共有・同期そのものやNASのRAID構成を、独立したバックアップと同一視しないでください。</p></section>
 
+<section class="learning-section" id="remote-example">
+<span class="pill">図解 / 社外アクセス</span>
+<h2>外出先のスマホから、会社の資料を使うには？</h2>
+<div class="scene-wrap"><div class="scene-visual">
+<figure class="scene-photo"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=960&amp;q=78" loading="lazy" alt="営業担当がPCとスマートフォンを利用する仕事のイメージ"><figcaption>外出先での業務利用イメージ。写真は特定の製品の導入例ではありません。</figcaption></figure>
+<div class="scene-flow" role="img" aria-label="営業担当のスマートフォンから認証を通じてクラウドまたは会社のNASのファイルに接続するイメージ">
+<div class="flow-target"><span class="flow-screen phone" aria-hidden="true"></span><div><strong>① 外出先の営業担当</strong><span>訪問先でスマホから提案資料を開く</span></div></div>
+<div class="flow-connector"><b>↓</b> インターネット・認証・アクセス制限</div>
+<div class="flow-target"><span class="flow-screen server" aria-hidden="true"></span><div><strong>② クラウド or 社内NAS</strong><span>アクセスが認められた人にだけ資料を表示</span></div></div>
+</div></div>
+<div class="flow-warning">ここは製品で大きく違います。クラウドは提供元の共有設定が必要。NASはメーカーが提供する安全な接続手段やVPN等の構成検討が必要で、無条件に外から使えるわけではありません。</div></div>
+</section>
+<section class="learning-section" id="backup-example">
+<span class="pill">図解 / バックアップ</span><h2>ファイル共有だけでは、消えたデータは守れない。</h2>
+<div class="scene-wrap"><div class="scene-flow" role="img" aria-label="仕事のデータと日常の共有先から別の復元用コピーを作り、トラブル時はコピーから元に戻す流れ">
+<div class="flow-target"><span class="flow-screen" aria-hidden="true"></span><div><strong>① 日常作業のPC</strong><span>提案書や顧客情報を作る</span></div></div>
+<div class="flow-connector"><b>↓</b> 共有・同期だけでは復元できないことがある</div>
+<div class="flow-target"><span class="flow-screen server" aria-hidden="true"></span><div><strong>② 普段の共有先</strong><span>クラウドや社内NASのファイル</span></div></div>
+<div class="flow-connector"><b>↓</b> 独立したバックアップを別に作成</div>
+<div class="flow-target"><span class="flow-screen server" aria-hidden="true"></span><div><strong>③ 別の場所の復元用コピー</strong><span>故障・削除時に復元できるか定期テスト</span></div></div>
+</div><div class="flow-warning">RAIDは一部のHDD故障に備える仕組みです。誤削除・災害・攻撃からの復元も考えるなら、独立したコピーと復元方法を検討してください。</div></div>
+</section>
 <section class="learning-section" id="types"><span class="pill">STEP 02 / 3つの保存方法</span><h2>どこに保存するかで、得意なことが変わります。</h2>
 <div class="grid2"><div class="card"><span class="eyebrow">CLOUD STORAGE</span><h3>クラウドストレージ</h3><p>インターネット上の事業者が管理する環境にデータを保管。離れた拠点からのアクセス・共同利用がしやすい一方、月額費用や権限・サービス提供条件の確認が必要です。</p><strong>向いている例</strong><p>複数拠点・テレワーク・外部パートナーとのファイル共有</p><small class="muted">購入前：保存容量、ユーザー数、権限管理、利用規約、データ所在</small></div>
 <div class="card"><span class="eyebrow">NETWORK ATTACHED STORAGE</span><h3>NAS</h3><p>自社や自宅のネットワークに置く共有用の保存機器。機器・HDDの購入、ネットワーク設定、障害対応、バックアップ運用が必要です。</p><strong>向いている例</strong><p>大きなファイルを社内で共同利用し、管理担当者がいる環境</p><small class="muted">購入前：HDD同梱・別売、RAIDによる実効容量、対応ドライブ、保守</small></div>
