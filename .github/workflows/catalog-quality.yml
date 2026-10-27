@@ -9,6 +9,7 @@ on:
       - 'app-v31.js'
       - 'search.html'
       - 'tools/build_catalog.py'
+      - 'tools/validate_v32_media.py'
       - 'tools/validate_relationships.py'
       - 'tools/catalog_quality.py'
       - 'tools/build_relationships.py'
@@ -41,6 +42,7 @@ jobs:
       - name: Validate product source records
         run: |
           python tools/build_catalog.py
+          python tools/validate_v32_media.py
           python tools/validate_relationships.py
           python tools/build_relationships.py
           python tools/catalog_quality.py
