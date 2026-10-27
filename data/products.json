@@ -589,5 +589,1392 @@
     "source": "https://www.elecom.co.jp/products/LD-GPATBU100.html",
     "checked": "2026-10-27",
     "verified": "2026-10-27にメーカー公式仕様・製品ページと照合"
+  },
+  {
+    "model": "AT-SBx908 GEN3",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "100G/400G対応コア・モジュラースイッチ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-SBx908 GEN2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "コア・モジュラースイッチ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-SBx8112",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "コア・モジュラースイッチ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "10（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-SBx8106",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "コア・モジュラースイッチ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "5（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x560-28YSQ",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x550-18XTQ",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x550-18XSPQm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530DP-52GHXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530DP-28GHXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530-18GHXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530-10GHXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530-52GPXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530-28GPXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530-52GTXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530-28GTXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530-28GSX",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3ディストリビューション",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x540L-28XHm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x540L-52XTm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x540L-28XTm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x540L-28XS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "28（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530L-52GPX",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530L-52GTX",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530L-28GPX",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x530L-28GTX",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー3インテリジェントエッジ",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x250-52XHm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x250-28XHm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x250-52XTm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x250-28XTm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x250-18XTm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x250-28XS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "28（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x250-18XS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "18（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x240-52GHXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x240-26GHXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x240-10GHXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x240-52GTXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x240-26GTXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x240-10GTXm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-52GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-28GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-18GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-10GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-52GT",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-28GT",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-18GT",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230-10GT",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230L-26GT",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-x230L-17GT",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS980M/52PS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS980M/52",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-SE250-28XHm",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2plus・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-mGS950/10HS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-mGS950/18HS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-mGS950/28HS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/18PS V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/28PS V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/52PS V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/10PS V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/10 V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/18 V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/28 V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/52 V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "48（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS950/16",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "14（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "GS908S-TP V2",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "レイヤー2スマート",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-XS910/8",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS920/24",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS920/16",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS920/8",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS920/8PS",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/26XST",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/18XST",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/10XST",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/24",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/16",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/8",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/8E",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/5",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "5（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-GS910/5E",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "固定設定・ループガード",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "5（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-FS710/24",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "スタンダード・100Mbps",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "24（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-FS710/16",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "スタンダード・100Mbps",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-FS710/8",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "スタンダード・100Mbps",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-FS710/5",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "スタンダード・100Mbps",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "5（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE340-20GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー3・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE340-12GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー3・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE340-12GT",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー3",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE340L-18GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー3・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE220-10GHX",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー2・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE220-6GHX",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー2・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "4（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE210L-18GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー2・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "16（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IE210L-10GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用レイヤー2・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "8（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+  },
+  {
+    "model": "AT-IS130-6GP",
+    "brand": "アライドテレシス",
+    "cat": "switch",
+    "category": "産業用スタンダード・PoE",
+    "memo": "メーカー公式スイッチ一覧掲載。詳細な仕様・販売条件は個別データシートで確認してください。",
+    "specs": {
+      "標準ポート数": "5（公式一覧表）",
+      "PoE": "対応（公式一覧表）"
+    },
+    "source": "https://www.allied-telesis.co.jp/products/switch/",
+    "checked": "2026-10-27",
+    "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
+    "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
+    "photoStatus": "未登録（転載許諾・画像URL未確認）"
   }
 ]
