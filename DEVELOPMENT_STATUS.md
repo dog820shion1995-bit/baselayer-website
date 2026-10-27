@@ -48,3 +48,9 @@ Target: `main` (review only; do not merge or publish)
 - GitHub Actions `BASELAYER catalog data validation`: queued at check time; **not yet reported as passing**.
 - New v32 products: **0**; specifications supplemented: **0**; new relationships: **0**; permitted real photos: **0**.
 - main unchanged. PR remains draft and unmerged.
+
+## Licensed real-photo pilot — 2026-10-27
+- Commit `343fd0adbb920e71bc28583bf771b14af3c14cec` adds `image-pilot-v32.html` on the review branch only.
+- Three exact-model real-photo pilot cards: Dell UltraSharp U2713HM (Dāvis Mosāns, CC BY 2.0), Synology DS 101 Rev 3.0 (Thiemo Schuff, CC BY-SA 3.0 DE), Synology DS918+ (mculi, CC BY-SA 4.0). Wikimedia Commons file pages and attribution/license links appear on each card.
+- Pilot uses Wikimedia Commons image redirects; external image delivery and browser rendering have not yet been tested. Each card has a broken-image fallback.
+- This is a separate photo pilot, **not three new verified catalog products**. No main merge or publication. Next: browser smoke test, image delivery check, then integrate suitable licensed photos with catalog records and product-media metadata only after matching exact models.
