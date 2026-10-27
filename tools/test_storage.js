@@ -30,7 +30,7 @@ for(const cat of ['cloud','nas','hdd']) assert(items.some(x=>x.kind===cat),'miss
 const domIds=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
 for(const hit of js.matchAll(/\$\('#([A-Za-z0-9_-]+)'\)/g)) assert(domIds.has(hit[1]),'missing selector #'+hit[1]);
 for(const file of ['storage-data.js','storage-site.js','storage-site.css','storage-policy.html']) assert(html.includes(file)||file==='storage-policy.html',file+' unlinked');
-for(const section of ['categories','advisor','catalog','updates','guide','purchase','policy']) assert(domIds.has(section),'missing section '+section);
+for(const section of ['problems','categories','catalog','advisor','guide','purchase','policy']) assert(domIds.has(section),'missing section '+section);
 assert(!html.includes('amazon-20'),'unexpected hardcoded Amazon tracking ID');
 assert(!html.includes('product-data.js') && !html.includes('app-v31.js'),'old BASELAYER catalog/app must never be loaded on new homepage');
 assert(policy.includes('アフィリエイト') && policy.includes('個人情報'),'policy must explain affiliate and privacy');
