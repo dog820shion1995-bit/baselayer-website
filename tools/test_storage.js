@@ -4,13 +4,20 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs'),vm=require('node:vm');
 const read=p=>fs.readFileSync(p,'utf8');
 const pages=['index.html','start.html','learn.html','compare.html','product.html','price-guide.html','storage-policy.html'];
-const scripts=['journey-app.js','catalog-guide.js','product-detail.js','price-guide.js','product-editorial.js','official-prices.js','storage-data.js'];
-for(const p of [...pages,...scripts,'journey.css'])assert(fs.existsSync(p),'file missing '+p);
-for(const p of pages){const html=read(p);assert(html.includes('lang="ja"'),p+' Japanese language');assert(html.includes('name="viewport"'),p+' viewport');assert(html.includes('journey.css'),p+' responsive stylesheet');}
+const scripts=['journey-app.js','catalog-guide.js','product-detail.js','price-guide.js','product-editorial.js','official-prices.js','storage-data.js','visual-media.js','site-navigation.js'];
+for(const p of [...pages,...scripts,'journey.css','visual-story.css'])assert(fs.existsSync(p),'file missing '+p);
+for(const p of pages){const html=read(p);assert(html.includes('lang="ja"'),p+' Japanese language');assert(html.includes('name="viewport"'),p+' viewport');assert(html.includes('journey.css'),p+' responsive stylesheet');assert(html.includes('visual-story.css'),p+' visual stylesheet');assert(html.includes('site-navigation.js'),p+' accessible mobile navigation');}
 for(const p of scripts)new vm.Script(read(p),{filename:p});
 const ctx={window:{}};
-for(const p of ['storage-data.js','official-prices.js','product-editorial.js'])vm.runInNewContext(read(p),ctx,{filename:p});
-const products=ctx.window.BL_STORAGE_ITEMS,prices=ctx.window.BL_PRICES,editorial=ctx.window.BL_EDITORIAL;
+for(const p of ['storage-data.js','official-prices.js','product-editorial.js','visual-media.js'])vm.runInNewContext(read(p),ctx,{filename:p});
+const products=ctx.window.BL_STORAGE_ITEMS,prices=ctx.window.BL_PRICES,editorial=ctx.window.BL_EDITORIAL,media=ctx.window.BL_MEDIA;
+assert.equal(Object.keys(media).length,8,'visual metadata for all products');
+for(const item of products){const m=media[item.id];assert(m,'missing visual status for '+item.id);assert(m.source&&new URL(m.source).protocol==='https:');if(m.src){assert(new URL(m.src).protocol==='https:');assert(m.credit&&m.label,'missing media attribution');}else{assert(m.kind==='official-link','no image must link to official source');}}
+assert(read('index.html').includes('remoteSceneTitle'),'outside salesperson visual absent');
+assert(read('learn.html').includes('remote-example')&&read('learn.html').includes('backup-example'),'learning diagrams absent');
+assert(read('journey-app.js').includes('visual-choice'),'wizard photo choices absent');
+assert(read('product-detail.js').includes('mediaPanel()'),'product image view absent');
+assert(read('catalog-guide.js').includes('mediaThumb'),'comparison photos absent');
 assert.equal(products.length,8,'initial 8 product records');
 assert.equal(Object.keys(prices.entries).length,8,'price coverage 8');
 assert.equal(Object.keys(editorial).length,8,'why-selection content coverage 8');
