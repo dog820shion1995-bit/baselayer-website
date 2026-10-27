@@ -69,6 +69,14 @@ try {
  await page.waitForFunction(() => {const i=document.querySelector('.product-media-panel img');return i&&i.complete;},null,{timeout:20000});
  assert(await page.locator('.product-media-panel img').evaluate(i=>i.naturalWidth>0),'BUFFALO photo failed to load');
  await page.screenshot({path:'visual-product-desktop.png',fullPage:true});
+ // Manufacturer photos may be unavailable; a real browser must show a useful fallback.
+ const broken=await browser.newPage({viewport:{width:390,height:844}});
+ await broken.route('**/webpim/product/image/**',route=>route.abort());
+ await goto(broken,'product.html?id=buffalo-nas');
+ await broken.locator('.product-media-panel .product-media-missing').waitFor({timeout:10000});
+ assert.match(await broken.locator('.product-media-panel .product-media-missing').innerText(),/写真を表示できませんでした/);
+ assert.equal(await broken.locator('.product-media-panel .product-media-missing a[href^="https://www.buffalo.jp/"]').count(),1);
+ await broken.close();
  await goto(page,'product.html?id=iodata-usb');
  assert.match(await page.locator('#detailBody').innerText(),/在庫限り/);
  await goto(page,'product.html?id=unknown-part');

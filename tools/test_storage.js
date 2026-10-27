@@ -12,7 +12,12 @@ const ctx={window:{}};
 for(const p of ['storage-data.js','official-prices.js','product-editorial.js','visual-media.js'])vm.runInNewContext(read(p),ctx,{filename:p});
 const products=ctx.window.BL_STORAGE_ITEMS,prices=ctx.window.BL_PRICES,editorial=ctx.window.BL_EDITORIAL,media=ctx.window.BL_MEDIA;
 assert.equal(Object.keys(media).length,8,'visual metadata for all products');
-for(const item of products){const m=media[item.id];assert(m,'missing visual status for '+item.id);assert(m.source&&new URL(m.source).protocol==='https:');if(m.src){assert(new URL(m.src).protocol==='https:');assert(m.credit&&m.label,'missing media attribution');}else{assert(m.kind==='official-link','no image must link to official source');}}
+assert.equal(Object.values(media).filter(x=>x.kind==='product').length,4,'four manufacturer photos');
+assert.equal(Object.values(media).filter(x=>x.kind==='context').length,3,'three licensed context photos');
+assert(read('visual-media.js').includes('document.addEventListener("error"'),'missing remote-image fallback');
+for(const item of products){const m=media[item.id];assert(m,'missing visual status for '+item.id);assert(m.source&&new URL(m.source).protocol==='https:');if(m.src){assert(new URL(m.src).protocol==='https:');assert(m.credit&&m.label,'missing media attribution');assert(m.rights&&new URL(m.rights).protocol==='https:','missing explicit image-use terms');}else{assert(m.kind==='official-link','no image must link to official source');}}
+assert(read('storage-policy.html').includes('https://www.iodata.jp/copyright.htm'),'I-O DATA rights disclosure missing');
+assert(read('storage-policy.html').includes('https://www.buffalo.jp/other/about.html'),'BUFFALO rights disclosure missing');
 assert(read('index.html').includes('remoteSceneTitle'),'outside salesperson visual absent');
 assert(read('learn.html').includes('remote-example')&&read('learn.html').includes('backup-example'),'learning diagrams absent');
 assert(read('journey-app.js').includes('visual-choice'),'wizard photo choices absent');
