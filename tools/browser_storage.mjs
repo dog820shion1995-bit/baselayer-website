@@ -3,7 +3,7 @@ import {chromium} from 'playwright';
 const origin='http://127.0.0.1:8765/';
 const browser=await chromium.launch({headless:true});
 const errors=[];
-const goto=async(page,path)=>{const r=await page.goto(origin+path,{waitUntil:'domcontentloaded'});assert(r?.ok(),'HTTP error on '+path);};
+const goto=async(page,path)=>{const target=new URL(path,origin);const r=await page.goto(target.href,{waitUntil:'domcontentloaded'});assert(r ? r.ok() : page.url()===target.href,'HTTP error on '+path);};
 try {
  const page=await browser.newPage({viewport:{width:1440,height:950}});
  page.on('pageerror',e=>errors.push('desktop: '+e.message));
