@@ -37,14 +37,15 @@
     const label=esc(labelCat(p.cat));
     const fallback=`<span class="product-media-fallback" role="img" aria-label="${label}のカテゴリイラスト（製品の実物写真ではありません）"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${shape}</svg></span>`;
     const im=p.image;
-    const allowed=im && im.usage==='permitted' && typeof im.license==='string' && im.license.trim() && typeof im.checked==='string' && /^\d{4}-\d{2}-\d{2}$/.test(im.checked) && safeSource(im.url) && safeSource(im.source) && safeSource(im.rightsEvidence);
+    const allowed=im && im.usage==='permitted' && im.brand===p.brand && im.model===p.model && typeof im.creator==='string' && im.creator.trim() && typeof im.license==='string' && /^(?:CC0|CC BY(?:-SA)? [234]\.0)$/.test(im.license) && typeof im.checked==='string' && /^\d{4}-\d{2}-\d{2}$/.test(im.checked) && safeSource(im.url) && safeSource(im.source) && safeSource(im.rightsEvidence) && safeSource(im.licenseUrl);
     const photo=allowed ? `<img class="product-media-photo" src="${escapeAttr(safeSource(im.url))}" alt="${esc(p.brand)} ${esc(p.model)}の製品写真" loading="lazy" decoding="async" width="72" height="72" data-product-photo>` : '';
-    return `<span class="product-media" data-category="${escapeAttr(p.cat)}">${fallback}${photo}</span>`;
+    const credit=allowed ? `<span class="product-media-credit"><a href="${escapeAttr(safeSource(im.source))}" target="_blank" rel="noopener noreferrer" title="写真の出典：${esc(im.creator)}">写真: ${esc(im.creator)}</a> · <a href="${escapeAttr(safeSource(im.licenseUrl))}" target="_blank" rel="noopener noreferrer">${esc(im.license)}</a></span>` : '';
+    return `<span class="product-media" data-category="${escapeAttr(p.cat)}">${fallback}${photo}${credit}</span>`;
   };
   // A broken or blocked external image must never leave a broken-image icon.
   document.addEventListener('error', event => {
     const img=event.target;
-    if(img instanceof HTMLImageElement && img.hasAttribute('data-product-photo'))img.remove();
+    if(img instanceof HTMLImageElement && img.hasAttribute('data-product-photo')){img.parentElement?.querySelector('.product-media-credit')?.remove();img.remove();}
   }, true);
   const statusBadge = p => `<span class="state-badge${validSpecs(p)?'':' pending'}">${validSpecs(p) ? '出典付き仕様あり' : '仕様登録待ち'}</span>`;
   const formatPreview = p => {const values = Object.entries(p.specs||{}).slice(0,2).map(([key,val])=>`${key}：${val}`);return values.length ? values.join(' ／ ') : '仕様の詳細はまだ登録されていません。';};
