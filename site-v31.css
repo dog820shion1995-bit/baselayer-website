@@ -43,3 +43,9 @@
 .change-row .product-media svg{width:26px;height:26px}
 @media(max-width:760px){.product-media{width:60px;height:60px;flex-basis:60px}.product-media-fallback svg{width:33px;height:33px}.selected-card>.product-media{width:44px;height:44px;flex-basis:44px}.selected-card>.product-media svg{width:25px;height:25px}}
 @media(max-width:380px){.product-row-main>.product-media{margin-right:11px}}
+
+/* v32 review: visible, keyboard-accessible photo attribution without hiding the fallback. */
+.product-media-credit{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:2px 3px;background:rgba(255,255,255,.96);font-size:8px;line-height:1.25;color:#23475b;text-align:center;overflow-wrap:anywhere}
+.product-media-credit a{color:#165f78;text-decoration:underline;text-underline-offset:1px}
+.product-media-credit a:focus-visible{outline:2px solid #147a99;outline-offset:1px}
+@media(max-width:760px){.product-media-credit{font-size:7px}}
