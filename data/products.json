@@ -1873,9 +1873,9 @@
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
     "photoStatus": "未登録（転載許諾・画像URL未確認）",
     "photoEvidence": {
-      "status": "not_found_in_current_official_switch_photo_library",
+      "status": "official_jpeg_listing_matched",
       "source": "https://www.allied-telesis.co.jp/products/library/switch/",
-      "note": "現行公式写真一覧で同一型番を確認できず。別資料・旧製品一覧の確認が必要。"
+      "note": "公式写真ライブラリの同一型番JPEG掲載行を確認。画像の転載許諾・画像ファイル取得は未確認。"
     }
   },
   {
@@ -1893,9 +1893,9 @@
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
     "photoStatus": "未登録（転載許諾・画像URL未確認）",
     "photoEvidence": {
-      "status": "not_found_in_current_official_switch_photo_library",
+      "status": "official_jpeg_listing_matched",
       "source": "https://www.allied-telesis.co.jp/products/library/switch/",
-      "note": "現行公式写真一覧で同一型番を確認できず。別資料・旧製品一覧の確認が必要。"
+      "note": "公式写真ライブラリの同一型番JPEG掲載行を確認。画像の転載許諾・画像ファイル取得は未確認。"
     }
   },
   {
