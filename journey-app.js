@@ -49,6 +49,7 @@ return '<div class="wizard-counter">STEP 03 / 04　復元と管理</div><h2 id="
 opts("backup","別の場所に、復元できるバックアップはありますか？",[["unknown","分からない・未確認"],["none","ない"],["yes","ある（復元テスト済み）"]])+
 opts("rto","データが使えない場合、いつまでに業務を再開したいですか？",[["unknown","まだ分からない"],["hour","1時間以内"],["day","当日中"],["days","2〜3日以内"],["week","数日以上かかってもよい"]],"目標復旧時間（RTO）の参考質問です。速いほど別の設計・費用が必要になる場合があります。")+
 opts("rpo","直近のデータをどれくらい失っても許容できますか？",[["unknown","まだ分からない"],["hour","過去1時間以内のデータまで必要"],["day","前日のデータが残ればよい"],["week","数日前のデータでもよい"]],"目標復旧時点（RPO）の参考質問です。自動バックアップの頻度を決める判断材料です。")+
+'<p class="smallnote"><a href="learn.html#recovery-terms" target="_blank" rel="noopener noreferrer" style="color:#086d65;text-decoration:underline">RPOとRTOの違いを図で確認（別タブで開きます） ↗</a></p>'+
 opts("critical","止まった場合の業務への影響",[["normal","支障はあるが、一時的に別の作業ができる"],["high","多くの社員の作業が止まる"],["severe","営業や顧客対応が止まる"]])+
 opts("admin","機器の設置・設定・障害対応を担当できる人",[["no","いない／難しい"],["yes","いる"],["unknown","未確認"]])+
 '<details class="expert-fields" '+(state.mode==="advanced"?"open":"")+'><summary>さらに詳しい条件を入力（任意・担当者向け）</summary>'+

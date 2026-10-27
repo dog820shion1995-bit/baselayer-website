@@ -92,6 +92,9 @@ try {
  assert.equal(await page.locator('#remote-example .remote-route-card').count(),2,'cloud and NAS routes must be distinct');
  assert.match(await page.locator('#remote-example').innerText(),/会社のNASに保存/);
  assert.match(await page.locator('#remote-example').innerText(),/無条件にインターネット公開しない/);
+ assert.equal(await page.locator('#recovery-terms .card').count(),2,'RPO/RTO beginner examples missing');
+ assert.match(await page.locator('#recovery-terms').innerText(),/許容するデータ損失/);
+ assert.match(await page.locator('#recovery-terms').innerText(),/許容する停止時間/);
  assert.equal(await page.locator('#backup-example .scene-flow').count(),1,'backup data flow missing');
  assert.equal(await page.locator('#lan-example .location-card').count(),2,'LAN and cloud storage location diagrams missing');
  assert.match(await page.locator('#lan-example').innerText(),/主な保存先/);

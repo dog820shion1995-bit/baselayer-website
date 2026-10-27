@@ -7,6 +7,22 @@
 <div class="card"><h3>バックアップとは？</h3><p>元データとは別のコピーや履歴を保存し、故障や誤削除のあとに復元できるようにする仕組みです。</p><div class="real-diagram"><div class="diag-box"><b>元データ</b><small>日常利用</small></div><span class="diag-arrow">→</span><div class="diag-box"><b>別のコピー</b><small>復元に使う</small></div></div></div></div>
 <p class="callout">重要：クラウドストレージもNASも、設定・契約内容によってはバックアップ機能を備えます。ただし、共有・同期そのものやNASのRAID構成を、独立したバックアップと同一視しないでください。</p></section>
 
+<section class="learning-section" id="recovery-terms" aria-labelledby="recoveryTermsTitle">
+<span class="pill">図解 / 復元の目標</span><h2 id="recoveryTermsTitle">「いつまでに戻す？」と「どこまで戻す？」は別の質問。</h2>
+<p>バックアップを選ぶ前に、故障や誤削除が起きたときの許容範囲を決めます。難しい用語は、次の2つだけ覚えれば大丈夫です。</p>
+<div class="grid2">
+<article class="card"><h3>RPO：どこまで前のデータに戻ってよい？</h3>
+<div class="real-diagram"><div class="diag-box"><b>最後のコピー</b><small>例：午前9時</small></div><span class="diag-arrow" aria-hidden="true">→</span><div class="diag-box"><b>トラブル</b><small>例：午前10時</small></div></div>
+<p>この例で9時時点まで戻せるなら、最大1時間分の更新が失われる可能性があります。RPOは<strong>許容するデータ損失の時間幅</strong>です。</p></article>
+<article class="card"><h3>RTO：いつまでに仕事を再開したい？</h3>
+<div class="real-diagram"><div class="diag-box"><b>トラブル</b><small>例：午前10時</small></div><span class="diag-arrow" aria-hidden="true">→</span><div class="diag-box"><b>業務再開</b><small>目標：午前11時</small></div></div>
+<p>この例では、1時間以内の業務再開を目指します。RTOは<strong>許容する停止時間</strong>で、バックアップの保存頻度とは別に考えます。</p></article>
+</div>
+<p class="callout">これは<strong>目標の例</strong>であり、特定のNASやクラウドで1時間以内の復旧を保証するものではありません。実際に復元できるか、定期的にテストしましょう。</p>
+<p class="location-sources">用語の根拠：<a href="https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-of-on-premises-applications-to-aws/recovery-objectives.html" target="_blank" rel="noopener noreferrer">AWS公式：復旧時間とデータ損失の目標（RTO / RPO）</a></p>
+<div class="action-row"><a class="btn btn-dark" href="start.html">自分の復旧条件を診断する →</a></div>
+</section>
+
 <section class="learning-section" id="remote-example">
 <span class="pill">図解 / 社外アクセス</span>
 <h2>外出先のスマホから、会社の資料を使うには？</h2>
