@@ -121,3 +121,12 @@
 .location-note strong{font-size:14px}.location-note p{font-size:12px;line-height:1.85;margin:6px 0 0}
 .location-sources{font-size:11px;color:#647d75}.location-sources a{text-decoration:underline;text-underline-offset:3px;color:#126c60}
 @media(max-width:640px){.location-grid{grid-template-columns:1fr;gap:12px}.location-card{padding:16px}.location-path{gap:8px}.location-node{padding:14px 7px}.location-node b{font-size:13px}.location-note{padding:15px}}
+
+/* Remote access: two clearly different destinations, without implying direct NAS exposure. */
+.remote-route-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.remote-route-card{min-width:0;display:flex;flex-direction:column;gap:5px;border:1px solid #cfe5dc;background:#fff;border-radius:12px;padding:14px}
+.remote-route-card strong{font-size:13px;line-height:1.5;color:#20483e}
+.remote-route-card>span:not(.remote-route-tag){font-size:11px;line-height:1.6;color:#536e65}
+.remote-route-card small{margin-top:auto;border-top:1px solid #e5efe9;padding-top:8px;font-size:10px;line-height:1.5;color:#177465}
+.remote-route-tag{font-size:10px;font-weight:800;color:#167c6c}
+@media(max-width:480px){.remote-route-grid{grid-template-columns:1fr}.remote-route-card{padding:12px}}
