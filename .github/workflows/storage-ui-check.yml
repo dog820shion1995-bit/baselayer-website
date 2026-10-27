@@ -1,0 +1,30 @@
+name: BASELAYER Storage UI & Catalog
+on:
+  pull_request:
+    paths:
+      - index.html
+      - storage-data.js
+      - storage-site.js
+      - storage-site.css
+      - storage-policy.html
+      - tools/test_storage.js
+      - .github/workflows/storage-ui-check.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check frontend syntax
+        run: |
+          node --check storage-data.js
+          node --check storage-site.js
+          node --check tools/test_storage.js
+      - name: Validate page selectors and source-backed records
+        run: node tools/test_storage.js
