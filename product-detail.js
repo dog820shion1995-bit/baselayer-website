@@ -39,4 +39,17 @@ $("detailBody").innerHTML='<div class="product-cover-grid"><div class="detail-he
 '<section class="detail-page-section"><h2>どこから確認・購入する？</h2><p class="smallnote">メーカー製品ページと通常の型番検索を案内します。現時点ではアフィリエイトID未設定です。購入はリンク先で行われます。</p><div class="action-row">'+ext(item.official,"メーカー・提供元の公式情報", "btn btn-dark")+(item.kind==="cloud"?"":ext(amazon,"Amazonで型番検索","btn btn-outline")+ext(rakuten,"楽天で型番検索","btn btn-outline"))+'</div></section>'+
 '<section class="detail-page-section"><h2>選定根拠・出典</h2><p class="smallnote">出典確認日：'+safe(item.reviewed)+'。製品情報や価格は予告なく変更されます。</p><div class="action-row">'+ed.source.map((u,i)=>ext(u,"メーカー出典 "+(i+1))).join(" ")+(pricing?.source?ext(pricing.source,"価格の公式出典"):"")+'</div></section>'+
 '<section class="detail-page-section"><div class="callout"><h3>この製品が自分の環境に必要か確かめる</h3><p>当サイトでは、まず既存の機器・契約を活用できないか確認し、そのうえで保存先やバックアップの構成を整理します。</p><a class="btn btn-dark" href="start.html">環境診断・導入判断レポートへ →</a></div></section>';
+
+/* Keep the strongest evidence above the fold; long specifications stay one click away. */
+for(const section of Array.from(document.querySelectorAll(".detail-page-section"))){
+ const heading=section.querySelector("h2");
+ if(!heading||!["主な仕様・条件","注意したい制限と運用コスト","選定根拠・出典"].includes(heading.textContent.trim()))continue;
+ const details=document.createElement("details");details.className="detail-disclosure";
+ const summary=document.createElement("summary");
+ summary.textContent=heading.textContent.trim()+"を詳しく確認する";
+ details.append(summary);
+ while(section.firstChild)details.append(section.firstChild);
+ const oldHeading=details.querySelector("h2");if(oldHeading)oldHeading.remove();
+ section.append(details);
+}
 })();
