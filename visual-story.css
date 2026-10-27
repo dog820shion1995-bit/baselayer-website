@@ -68,3 +68,11 @@
 @media(max-width:900px){.scene-visual{grid-template-columns:1fr;gap:12px}.scene-photo img{height:230px}.product-cover-grid{grid-template-columns:1fr 210px}.story-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.scene-wrap{padding:17px}.scene-title{font-size:21px}.scene-photo img{height:195px}.scene-flow{gap:8px}.story-gallery{grid-template-columns:1fr}.story-card{display:grid;grid-template-columns:120px 1fr}.story-card img{height:100%;min-height:128px}.story-card>div{padding:15px}.story-card strong{font-size:13px}.visual-choice{grid-template-columns:1fr;gap:9px}.visual-choice .option-card{display:grid;grid-template-columns:108px 1fr;align-items:stretch}.visual-choice img{height:100%;min-height:97px}.visual-choice .option-card>span{padding:12px}.visual-question-grid{grid-template-columns:1fr}.visual-question img{height:150px}.product-cover-grid{grid-template-columns:1fr}.product-cover-grid .detail-hero,.product-cover-grid .product-media-panel,.product-cover-grid .detail-pricing{grid-column:auto;grid-row:auto}.product-media-panel img{max-height:200px}.visual-inline{grid-template-columns:105px 1fr;gap:10px}.visual-inline img{height:110px}}
 @media(prefers-reduced-motion:reduce){.story-card{transition:none!important}}
+
+
+.mobile-menu-button{display:none;border:1px solid #b5d5ca;background:white;color:#13695e;border-radius:9px;padding:10px 12px;font-size:11px;font-weight:800;white-space:nowrap}
+.mobile-site-links{border-top:1px solid #e2ece7;background:white;padding:8px 18px 16px;box-shadow:0 12px 25px #07392f18}
+.mobile-site-links[hidden]{display:none}.mobile-site-links a{display:block;padding:13px 9px;font-size:13px;font-weight:740;border-bottom:1px solid #edf1ee;color:#24534a}
+.mobile-site-links a[aria-current="page"]{color:#078571;border-left:3px solid #28a58b;padding-left:12px}
+@media(max-width:920px){.mobile-menu-button{display:inline-flex;margin-left:0}.head-action{margin-left:auto}}
+@media(max-width:640px){.head-action{display:none}.mobile-menu-button{margin-left:auto}.head-inner{gap:12px}}
