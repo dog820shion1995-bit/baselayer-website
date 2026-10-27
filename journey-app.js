@@ -121,7 +121,7 @@ byId("wizardContent").addEventListener("change",event=>{updateField(event.target
 byId("wizardContent").addEventListener("input",event=>{if(event.target.dataset.cost){state[event.target.dataset.cost]=event.target.value;totals();}});
 byId("wizardContent").addEventListener("click",async event=>{
 const next=event.target.closest("[data-action]");
-if(next){const cmd=next.dataset.action;if(cmd==="next")state.step=Math.min(4,state.step+1);if(cmd==="back")state.step=Math.max(1,state.step-1);if(cmd==="reset"){state.step=1;history.replaceState(null,"",location.pathname);}render();window.scrollTo({top:0,behavior:"instant"});return;}
+if(next){const cmd=next.dataset.action;if(cmd==="next")state.step=Math.min(4,state.step+1);if(cmd==="back")state.step=Math.max(1,state.step-1);if(cmd==="reset"){Object.assign(state,{step:1,goal:"share",people:"small",capacity:"small",remote:"yes",already:"none",admin:"no",backup:"unknown",deviceCost:"",setupCost:"",monthlyCost:""});history.replaceState(null,"",location.pathname);}render();window.scrollTo({top:0,behavior:"auto"});return;}
 if(event.target.closest("#printPlan")){window.print();return;}
 const copy=event.target.closest("#copyPlan");
 if(copy){try{if(!navigator.clipboard?.writeText)throw new Error("Clipboard unavailable");await navigator.clipboard.writeText(summaryText());byId("copyFeedback").textContent="診断結果をコピーしました。";}catch{byId("copyFeedback").textContent="コピーできませんでした。印刷・PDF保存をご利用ください。";}}
