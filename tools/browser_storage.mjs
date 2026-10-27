@@ -89,6 +89,9 @@ try {
  await goto(page,'learn.html');
  assert.match(await page.locator('#purpose').innerText(),/バックアップ/);
  assert.equal(await page.locator('#remote-example .scene-flow').count(),1,'external-access flow missing on learning page');
+ assert.equal(await page.locator('#remote-example .remote-route-card').count(),2,'cloud and NAS routes must be distinct');
+ assert.match(await page.locator('#remote-example').innerText(),/会社のNASに保存/);
+ assert.match(await page.locator('#remote-example').innerText(),/無条件にインターネット公開しない/);
  assert.equal(await page.locator('#backup-example .scene-flow').count(),1,'backup data flow missing');
  assert.equal(await page.locator('#lan-example .location-card').count(),2,'LAN and cloud storage location diagrams missing');
  assert.match(await page.locator('#lan-example').innerText(),/主な保存先/);
@@ -103,6 +106,9 @@ try {
   assert(dim.scroll<=dim.viewport+3,path+' horizontal overflow '+JSON.stringify(dim));
  }
  
+ await goto(mobile,'learn.html#remote-example');
+ assert.equal(await mobile.locator('#remote-example .remote-route-card').count(),2);
+ assert(await mobile.locator('#remote-example .remote-route-grid').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length===1),'mobile remote paths not stacked');
  await goto(mobile,'learn.html#lan-example');
  assert.equal(await mobile.locator('#lan-example .location-card').count(),2);
  assert(await mobile.locator('#lan-example').evaluate(el=>getComputedStyle(el.querySelector('.location-grid')).gridTemplateColumns.split(' ').length===1),'mobile data-location cards not stacked');
