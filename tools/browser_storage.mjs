@@ -33,7 +33,7 @@ try {
  const body=await page.locator('#wizardContent').innerText();
  assert.match(body,/新規契約は不要/);
  assert.match(body,/バックアップ/);
- assert.match(body,/選ぶ理由/);
+ assert.match(body,/比較候補にする理由/);
  assert.match(body,/専門家/);
  await page.locator('[data-view="technical"]').click();
  assert.equal(await page.locator('.report-technical').isVisible(),true);
