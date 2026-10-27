@@ -19,6 +19,38 @@
 </div></div>
 <div class="flow-warning">ここは製品で大きく違います。クラウドは提供元の共有設定が必要。NASはメーカーが提供する安全な接続手段やVPN等の構成検討が必要で、無条件に外から使えるわけではありません。</div></div>
 </section>
+
+<section class="learning-section" id="lan-example" aria-labelledby="locationTitle">
+<span class="pill">図解 / データの保存場所</span>
+<h2 id="locationTitle">そのファイル、実際はどこにある？</h2>
+<p>パソコンにファイル名が見えていても、データの主な保存先が社内か、インターネット上かで管理方法は変わります。</p>
+<div class="location-grid">
+<article class="location-card">
+<span class="location-label">会社の中で共有する場合</span>
+<div class="location-path" role="img" aria-label="社内LANでつながる社員のPCと会社に設置したNAS。主な保存先は社内NAS">
+<div class="location-node"><b>社員のPC</b><small>資料を開く</small></div>
+<span class="location-link" aria-hidden="true">⇄</span>
+<div class="location-node location-node-data"><b>社内NAS</b><small>資料を保存</small></div>
+</div>
+<p><strong>LAN（ラン）</strong>は、同じ会社や建物内などのネットワーク。社内のPCからNASの共有フォルダーを利用するには、接続とアクセス権限の設定が必要です。</p>
+<div class="location-answer">主な保存先：<strong>会社に置いたNAS</strong></div>
+</article>
+<article class="location-card">
+<span class="location-label">クラウドで共有する場合</span>
+<div class="location-path" role="img" aria-label="社員のPCからインターネットを経由してクラウドストレージにアクセス。主な保存先はサービス提供元が管理する環境">
+<div class="location-node"><b>社員のPC</b><small>資料を開く</small></div>
+<span class="location-link" aria-hidden="true">⇄</span>
+<div class="location-node location-node-data"><b>クラウド</b><small>資料を保存</small></div>
+</div>
+<p>インターネットを通じて事業者が管理する保存先を利用します。契約や設定によって保存する国・地域、共有範囲、端末への同期方法が異なります。</p>
+<div class="location-answer">主な保存先：<strong>サービス提供元の環境</strong></div>
+</article>
+</div>
+<div class="location-note"><strong>PCに見える＝PCだけに保存、ではありません。</strong><p>クラウドのファイルはPCに同期・一時保存される場合もあれば、ファイル名だけを表示する場合もあります。社内NASやクラウドに保存していても、誤削除に備えた別のバックアップは確認しましょう。</p></div>
+<p class="location-sources">参考：<a href="https://help.buffalo.jp/LinkStation%E3%81%8CNAS%20Navigator2%20%E3%81%AB%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82NAS%E3%82%92%E6%A4%9C%E7%B4%A2%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82-68c397141f7ca63736e66686" target="_blank" rel="noopener noreferrer">BUFFALO：LAN内のNAS接続</a>・<a href="https://support.microsoft.com/ja-jp/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows" target="_blank" rel="noopener noreferrer">Microsoft：クラウドとPC上のファイル</a></p>
+<div class="action-row"><a class="btn btn-dark" href="start.html">自分の保存方法を診断する →</a></div>
+</section>
+
 <section class="learning-section" id="backup-example">
 <span class="pill">図解 / バックアップ</span><h2>ファイル共有だけでは、消えたデータは守れない。</h2>
 <div class="scene-wrap"><div class="scene-flow" role="img" aria-label="仕事のデータと日常の共有先から別の復元用コピーを作り、トラブル時はコピーから元に戻す流れ">
