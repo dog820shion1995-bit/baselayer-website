@@ -9,6 +9,11 @@ let kind=new URLSearchParams(location.search).get("kind")||"all";
 if(!["all","cloud","nas","hdd"].includes(kind))kind="all";
 let query="",selected=[];
 const ext=(url,label)=>{try{let u=new URL(url);if(u.protocol!=="https:")return "";return '<a href="'+escape(u.href)+'" target="_blank" rel="noopener noreferrer">'+escape(label)+' ↗</a>';}catch{return "";}};
+const media=window.BL_MEDIA||{};
+function mediaThumb(p){
+ const a=media[p.id];if(!a?.src)return '<div class="product-media-missing"><span>実機写真はメーカー公式ページで確認できます</span></div>';
+ try{const u=new URL(a.src);if(u.protocol!=="https:")return "";return '<div class="catalog-item-image"><img src="'+escape(u.href)+'" alt="'+escape(a.label)+'" loading="lazy" decoding="async"></div><p class="product-photo-caption">'+escape(a.credit)+'</p>';}catch{return "";}
+}
 function draw(){
 document.querySelectorAll("button[data-kind]").forEach(b=>{const on=b.dataset.kind===kind;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});
 const filtered=items.filter(p=>(kind==="all"||p.kind===kind)&&[p.name,p.brand,p.model,p.subtitle].join(" ").normalize("NFKC").toLowerCase().includes(query.normalize("NFKC").toLowerCase()));
@@ -17,7 +22,7 @@ $("catalogItems").innerHTML=filtered.length?filtered.map(p=>{
 const checked=selected.includes(p.id);
 const amazon="https://www.amazon.co.jp/s?k="+encodeURIComponent(p.brand+" "+p.model);
 const rakuten="https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(p.brand+" "+p.model)+"/";
-return '<article class="catalog-item"><span class="pill">'+escape(group[p.kind])+'</span><h3>'+escape(p.name)+'</h3><p>'+escape(p.subtitle)+'</p><p>'+escape(p.feature)+'</p><p class="smallnote"><strong>比較候補にする理由：</strong>'+escape(editorial[p.id]?.pitch||"利用目的に応じて比較")+'</p><a href="product.html?id='+encodeURIComponent(p.id)+'">選定理由・他製品との違い・価格を詳しく見る →</a><details><summary style="cursor:pointer;font-weight:800;font-size:12px">仕様・注意点を確認する</summary><table class="learning-table"><tbody>'+Object.entries(p.specs||{}).map(([k,v])=>'<tr><th>'+escape(k)+'</th><td>'+escape(v)+'</td></tr>').join("")+'</tbody></table><p class="warning">'+escape(p.limits)+'</p><p class="smallnote">確認日：'+escape(p.reviewed)+' / '+ext(p.source,"メーカー公式情報")+'</p></details><div class="action-row">'+ext(p.official,"公式情報・申込先")+ (p.kind==="cloud"?"":ext(amazon,"Amazonで型番検索")+ext(rakuten,"楽天で型番検索"))+'</div><label><input type="checkbox" data-compare="'+escape(p.id)+'" '+(checked?"checked":"")+' aria-label="'+escape(p.name)+'を比較する"> 比較に'+(checked?"追加済み":"追加")+'</label><small>公式リンク・検索リンク。正式なアフィリエイトID未設定。価格・在庫は販売先で要確認。</small></article>';
+return '<article class="catalog-item">'+mediaThumb(p)+'<span class="pill">'+escape(group[p.kind])+'</span><h3>'+escape(p.name)+'</h3><p>'+escape(p.subtitle)+'</p><p>'+escape(p.feature)+'</p><p class="smallnote"><strong>比較候補にする理由：</strong>'+escape(editorial[p.id]?.pitch||"利用目的に応じて比較")+'</p><a href="product.html?id='+encodeURIComponent(p.id)+'">選定理由・他製品との違い・価格を詳しく見る →</a><details><summary style="cursor:pointer;font-weight:800;font-size:12px">仕様・注意点を確認する</summary><table class="learning-table"><tbody>'+Object.entries(p.specs||{}).map(([k,v])=>'<tr><th>'+escape(k)+'</th><td>'+escape(v)+'</td></tr>').join("")+'</tbody></table><p class="warning">'+escape(p.limits)+'</p><p class="smallnote">確認日：'+escape(p.reviewed)+' / '+ext(p.source,"メーカー公式情報")+'</p></details><div class="action-row">'+ext(p.official,"公式情報・申込先")+ (p.kind==="cloud"?"":ext(amazon,"Amazonで型番検索")+ext(rakuten,"楽天で型番検索"))+'</div><label><input type="checkbox" data-compare="'+escape(p.id)+'" '+(checked?"checked":"")+' aria-label="'+escape(p.name)+'を比較する"> 比較に'+(checked?"追加済み":"追加")+'</label><small>公式リンク・検索リンク。正式なアフィリエイトID未設定。価格・在庫は販売先で要確認。</small></article>';
 }).join(""):'<p class="card">該当する商品が見つかりませんでした（未登録）。キーワードやカテゴリを変えてください。</p>';
 drawComparison();
 }

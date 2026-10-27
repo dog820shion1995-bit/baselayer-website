@@ -11,7 +11,12 @@ const editorial=window.BL_EDITORIAL||{};
 const kinds={cloud:"クラウドストレージ",nas:"NAS",hdd:"外付けHDD・SSD"};
 const goals={share:"ファイル共有を改善",office:"保存場所・容量の改善",backup:"バックアップと復元の対策"};
 const opts=(key,label,entries,help)=>'<div class="field-row"><label for="f_'+key+'">'+escape(label)+'</label><select id="f_'+key+'" data-value="'+key+'">'+entries.map(([v,t])=>'<option value="'+escape(v)+'" '+(state[key]===v?"selected":"")+'>'+escape(t)+'</option>').join("")+'</select>'+(help?'<small>'+escape(help)+'</small>':"")+'</div>';
-const option=(key,v,title,sub)=>'<label class="option-card"><input type="radio" name="'+key+'" value="'+v+'" '+(state[key]===v?"checked":"")+'><span><strong>'+escape(title)+'</strong><small>'+escape(sub)+'</small></span></label>';
+const choiceVisual={
+ share:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=75",
+ office:"https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=500&q=75",
+ backup:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=75"
+};
+const option=(key,v,title,sub)=>'<label class="option-card"><img src="'+choiceVisual[v]+'" alt="" loading="lazy"><span><input type="radio" name="'+key+'" value="'+v+'" '+(state[key]===v?"checked":"")+'><strong>'+escape(title)+'</strong><small>'+escape(sub)+'</small></span></label>';
 const link=(url,title,cls="")=>{try{const u=new URL(url,location.href);if(u.protocol!=="https:")return "";return '<a class="'+escape(cls)+'" href="'+escape(u.href)+'" target="_blank" rel="noopener noreferrer">'+escape(title)+' ↗</a>';}catch{return "";}};
 const init={step:1,goal:"share",mode:"simple",people:"small",capacity:"small",remote:"yes",already:"none",admin:"no",backup:"unknown",rto:"unknown",rpo:"unknown",critical:"normal",sensitive:"unknown",growth:"normal",budget:"unknown",deviceCount:"unknown",hasNas:"unknown",selectedId:"",extraInitial:"",extraMonthly:"",view:"owner"};
 const state={...init};
@@ -21,7 +26,7 @@ const meaning={people:{one:"1人",small:"2〜5人",medium:"6〜20人",large:"21�
 const show=(key)=>meaning[key]?.[state[key]]||state[key];
 const nav=(prev,nextTitle)=>'<div class="wiz-actions">'+(prev?'<button type="button" class="btn btn-ghost" data-action="back">← 前に戻る</button>':'<a class="btn btn-ghost" href="index.html">← ホームへ</a>')+'<button type="button" class="btn btn-dark" data-action="next">'+escape(nextTitle)+' →</button></div>';
 function stepOne(){
- return '<div class="wizard-counter">STEP 01 / 04　解決したい問題</div><h2 id="wizardTitle">何に困っていますか？</h2><p>最初は製品の名前ではなく、今の課題を選びます。</p><div class="option-grid">'+
+ return '<div class="wizard-counter">STEP 01 / 04　解決したい問題</div><h2 id="wizardTitle">何に困っていますか？</h2><p>最初は製品の名前ではなく、今の課題を選びます。</p><div class="option-grid visual-choice">'+
  option("goal","share","複数人で共有したい","社内・社外からファイルを利用したい")+
  option("goal","office","保存容量・置き場所を整えたい","保存先の散在や容量不足を解決したい")+
  option("goal","backup","データを安全に戻せるようにしたい","故障・誤削除・攻撃から復旧したい")+'</div>'+
@@ -32,6 +37,7 @@ function stepTwo(){
 return '<div class="wizard-counter">STEP 02 / 04　利用環境</div><h2 id="wizardTitle">どのくらいの環境で使いますか？</h2><p>おおよその人数・容量が分かれば診断を進められます。</p>'+
 opts("people","利用人数",[["one","1人"],["small","2〜5人"],["medium","6〜20人"],["large","21人以上"]])+
 opts("capacity","いま保存したい容量",[["tiny","100GB未満"],["small","100GB〜1TB"],["medium","1〜4TB"],["large","4TB超"]],"NASの総容量とRAID構成による実効容量は異なります。")+
+'<div class="visual-question"><div class="visual-question-grid"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=75" alt="スマホやPCで外から資料を確認する仕事のイメージ" loading="lazy"><div><strong>社外からも資料を見たい？</strong><p>外出中の営業担当がスマホで見積書を開くような使い方です。</p><div class="flow-mini"><span>外出先</span>→<span>認証</span>→<span>会社の保存先</span></div></div></div></div>'+
 opts("remote","外出先や別の拠点からアクセスしますか？",[["yes","必要"],["no","基本的に不要"],["unknown","まだ分からない"]])+
 opts("already","すでに利用している共有サービス",[["none","特になし／分からない"],["m365","Microsoft 365・OneDrive・SharePointなど"],["google","Google Workspace・Google Driveなど"],["other","その他のクラウドやファイル共有サービス"]])+
 opts("hasNas","現在NASやファイルサーバーを使っていますか？",[["unknown","分からない"],["yes","利用している"],["no","利用していない"]])+
@@ -39,6 +45,7 @@ nav(true,"データ保護と運用を確認する");
 }
 function stepThree(){
 return '<div class="wizard-counter">STEP 03 / 04　復元と管理</div><h2 id="wizardTitle">データが使えない場合、どのくらい困りますか？</h2><p>難しい単語は不要です。分からない質問は「未確認」のままでも進めます。</p>'+
+'<div class="visual-question"><div class="visual-question-grid"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=75" alt="故障時に備えたい業務PCのイメージ" loading="lazy"><div><strong>PCが壊れても元に戻せる？</strong><p>共有先があることと、復元用の別コピーがあることは違います。</p><div class="flow-mini"><span>仕事のデータ</span>→<span>別のコピー</span>→<span>復元</span></div></div></div></div>'+
 opts("backup","別の場所に、復元できるバックアップはありますか？",[["unknown","分からない・未確認"],["none","ない"],["yes","ある（復元テスト済み）"]])+
 opts("rto","データが使えない場合、いつまでに業務を再開したいですか？",[["unknown","まだ分からない"],["hour","1時間以内"],["day","当日中"],["days","2〜3日以内"],["week","数日以上かかってもよい"]],"目標復旧時間（RTO）の参考質問です。速いほど別の設計・費用が必要になる場合があります。")+
 opts("rpo","直近のデータをどれくらい失っても許容できますか？",[["unknown","まだ分からない"],["hour","過去1時間以内のデータまで必要"],["day","前日のデータが残ればよい"],["week","数日前のデータでもよい"]],"目標復旧時点（RPO）の参考質問です。自動バックアップの頻度を決める判断材料です。")+
@@ -180,7 +187,7 @@ function result(){
  '<div class="callout"><b>1. 選定の前に大切なこと</b><p>'+escape(d.reason)+'</p>'+((d.isExisting)?"<p><strong>既存サービスで対応できる場合、新規契約は不要です。</strong></p>":"")+'</div>'+
  '<h3>2. 確認が必要な条件とリスク</h3>'+bullet([...d.must,...d.notes])+
  '<div class="warning"><b>未確認事項（確定前に確認してください）</b>'+bullet(d.unknown.length?d.unknown:["実際の運用、メーカー仕様、バックアップ復元可否"])+(d.requireSpecialist?"<strong>障害復旧・機密データの要件が厳しいため、設計者・提供会社の確認を強く推奨します。</strong>":"")+'</div>'+
- '<h3>3. この条件で比較する理由付き製品候補</h3><p class="smallnote">条件を満たすと確定した製品ではありません。追加購入不要の可能性も残したうえで比較します。</p><div class="report-product-list">'+canBuy.map(p=>{const fit=personalFit(p);return '<div><strong>'+escape(p.brand+" "+p.model)+'</strong><span>'+escape(priceText(priceCatalog[p.id]))+'</span><p class="smallnote" style="grid-column:1/-1;margin:0"><b>比較候補にする理由：</b>'+escape(fit.choose)+'</p><p class="smallnote" style="grid-column:1/-1;margin:0"><b>他製品との違い：</b>'+escape(editorial[p.id]?.versus?.[0]?.text||"同じ用途の選択肢と比べます")+'</p>'+(fit.warnings.length?'<p class="warning" style="grid-column:1/-1;margin:0">'+escape(fit.warnings.join(" "))+'</p>':'')+'<p class="smallnote" style="grid-column:1/-1;margin:0"><b>購入前の確認：</b>'+escape(editorial[p.id]?.checks?.[0]||p.limits)+'</p><div style="grid-column:1/-1"><a class="text-link" href="product.html?id='+encodeURIComponent(p.id)+'">詳しい選定理由・比較・注意点を見る →</a></div></div>'}).join("")+'</div>'+
+ '<h3>3. この条件で比較する理由付き製品候補</h3><p class="smallnote">条件を満たすと確定した製品ではありません。追加購入不要の可能性も残したうえで比較します。</p><div class="report-product-list">'+canBuy.map(p=>{const fit=personalFit(p),img=window.BL_MEDIA?.[p.id];const cover=img?.src?'<div class="catalog-item-image" style="grid-column:1/-1;max-width:360px"><img src="'+escape(img.src)+'" loading="lazy" alt="'+escape(img.label)+'"></div><p class="product-photo-caption" style="grid-column:1/-1">'+escape(img.credit)+'</p>':'';return '<div>'+cover+'<strong>'+escape(p.brand+" "+p.model)+'</strong><span>'+escape(priceText(priceCatalog[p.id]))+'</span><p class="smallnote" style="grid-column:1/-1;margin:0"><b>比較候補にする理由：</b>'+escape(fit.choose)+'</p><p class="smallnote" style="grid-column:1/-1;margin:0"><b>他製品との違い：</b>'+escape(editorial[p.id]?.versus?.[0]?.text||"同じ用途の選択肢と比べます")+'</p>'+(fit.warnings.length?'<p class="warning" style="grid-column:1/-1;margin:0">'+escape(fit.warnings.join(" "))+'</p>':'')+'<p class="smallnote" style="grid-column:1/-1;margin:0"><b>購入前の確認：</b>'+escape(editorial[p.id]?.checks?.[0]||p.limits)+'</p><div style="grid-column:1/-1"><a class="text-link" href="product.html?id='+encodeURIComponent(p.id)+'">詳しい選定理由・比較・注意点を見る →</a></div></div>'}).join("")+'</div>'+
  '<div class="report-tabs" role="group" aria-label="レポートの表示対象"><button type="button" data-view="owner" aria-pressed="true">社長・決裁者向け</button><button type="button" data-view="technical" aria-pressed="false">社内SE向け</button><button type="button" data-view="sales" aria-pressed="false">OA営業向け</button></div>'+founder+
  pricePanel()+
  '<div class="report-handoff"><h3>5. 導入の準備から購入まで</h3><ol><li>未確認事項と復旧条件を確認</li><li>既存契約の機能・容量を再確認</li><li>メーカー公式仕様と価格を確認</li><li>必要な機器・設定・保守・バックアップを見積依頼</li><li>正規販売先で契約・購入</li><li>導入後、権限・バックアップと復元をテスト</li></ol><p class="smallnote">BASELAYERは利用者から代金を徴収せず、購入・SaaSの申込みや請求は各販売会社で行われます。</p></div>'+
@@ -189,6 +196,7 @@ function result(){
 }
 function render(){
  state.step=Math.min(4,Math.max(1,state.step));
+ document.querySelector(".wizard-shell")?.classList.toggle("report-wide",state.step===4);
  $("wizardContent").innerHTML=[null,stepOne,stepTwo,stepThree,result][state.step]();
  $("progressList").querySelectorAll("li").forEach((li,i)=>{li.classList.toggle("current",i===state.step-1);li.classList.toggle("done",i<state.step-1);});
  if(state.step===4){updateAmounts();changeView(state.view);}
