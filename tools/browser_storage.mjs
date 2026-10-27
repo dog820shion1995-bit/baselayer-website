@@ -35,6 +35,9 @@ try {
   await page.locator('button[data-topic="cloud"]').click();
   assert.match(await page.locator('#guideContent').innerText(),/クラウドストレージとは/);
   await page.locator('[data-close="guideDialog"]').click();
+  await page.locator('#clearCompare').click();
+  await page.evaluate(()=>scrollTo(0,0));
+  assert.equal(await page.locator('.header').isVisible(),true,'desktop header');
   await page.screenshot({path:'storage-home-desktop.png',fullPage:true});
   const mobile = await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});
   mobile.on('pageerror',err=>errors.push('mobile: '+err.message));
@@ -48,6 +51,9 @@ try {
   await mobile.locator('#memberCount').selectOption('5');
   await mobile.locator('#advisorForm button[type="submit"]').click();
   assert.match(await mobile.locator('#advisorResult').innerText(),/クラウドストレージ/);
+  await mobile.evaluate(()=>scrollTo(0,0));
+  assert.equal(await mobile.locator('.header').isVisible(),true,'mobile header');
+  assert.equal(await mobile.evaluate(()=>document.documentElement.scrollWidth <= window.innerWidth + 1),true,'mobile has horizontal overflow');
   await mobile.screenshot({path:'storage-home-mobile.png',fullPage:true});
   await mobile.goto(origin+'storage-policy.html',{waitUntil:'domcontentloaded'});
   assert.match(await mobile.locator('h1').innerText(),/掲載・広告/);
