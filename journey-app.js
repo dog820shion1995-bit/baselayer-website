@@ -7,6 +7,7 @@ const escape=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">"
 const fmt=n=>new Intl.NumberFormat("ja-JP").format(Math.round(n))+"円";
 const catalog=Array.isArray(window.BL_STORAGE_ITEMS)?window.BL_STORAGE_ITEMS:[];
 const priceCatalog=window.BL_PRICES?.entries||{};
+const editorial=window.BL_EDITORIAL||{};
 const kinds={cloud:"クラウドストレージ",nas:"NAS",hdd:"外付けHDD・SSD"};
 const goals={share:"ファイル共有を改善",office:"保存場所・容量の改善",backup:"バックアップと復元の対策"};
 const opts=(key,label,entries,help)=>'<div class="field-row"><label for="f_'+key+'">'+escape(label)+'</label><select id="f_'+key+'" data-value="'+key+'">'+entries.map(([v,t])=>'<option value="'+escape(v)+'" '+(state[key]===v?"selected":"")+'>'+escape(t)+'</option>').join("")+'</select>'+(help?'<small>'+escape(help)+'</small>':"")+'</div>';
@@ -122,20 +123,23 @@ function pricePanel(){
  '<div id="officialPrice">'+(current?'<p><strong>'+escape(priceText(current))+'</strong></p><p class="smallnote">'+escape(current.basis)+'<br>'+escape(current.disclaimer)+'</p>'+link(current.source,"価格の公式出典を確認"):'<p class="smallnote">製品を選ぶと価格の根拠と条件を表示します。</p>')+'</div>'+
  '<div class="estimate-grid"><label>別途必要な機器・導入費（税込）<input id="extraInitial" data-money="extraInitial" type="number" min="0" max="999999999" step="1" inputmode="numeric" value="'+escape(state.extraInitial)+'" placeholder="未確認の場合は空欄"></label>'+
  '<label>保守・バックアップ等の月額（税込）<input id="extraMonthly" data-money="extraMonthly" type="number" min="0" max="999999999" step="1" inputmode="numeric" value="'+escape(state.extraMonthly)+'" placeholder="未確認の場合は空欄"></label></div>'+
- '<div class="estimate-output"><div><span>初期・契約時の参考額</span><strong id="sumInitial">—</strong></div><div><span>初年度参考額</span><strong id="sumYear">—</strong></div><div><span>3年間参考額</span><strong id="sumThree">—</strong></div></div>'+
+ '<div class="estimate-output"><div><span>初回購入・契約時の確認済み参考額</span><strong id="sumInitial">—</strong></div><div><span>初年度の確認済み参考額</span><strong id="sumYear">—</strong></div><div><span>3年間の確認済み参考額</span><strong id="sumThree">—</strong></div></div>'+
  '<p class="smallnote" id="costNote" role="status"></p><div class="warning">メーカー希望小売価格は販売価格ではありません。クラウドの年払いとドル建て料金は厳密に区別します。未確認の費用を0円とみなさず、参考額に含まれない項目を明記します。</div></div>';
 }
 const toNum=x=>/^\d{1,9}$/.test(String(x))?Number(x):null;
 function estimate(){
  const p=priceCatalog[state.selectedId],otherUp=toNum(state.extraInitial),otherMonth=toNum(state.extraMonthly);
  const known=p&&p.status==="reference"&&p.currency==="JPY";
- const baseUp=known?(p.kind==="hardware"?p.price:p.initial):null;
+ const firstContract=known&&p.kind==="service"?p.monthly*p.commitmentMonths:0;
+ const baseUp=known?(p.kind==="hardware"?p.price:p.initial+firstContract):null;
  const baseMonth=known&&p.kind==="service"?p.monthly:known?0:null;
  const canCalc=baseUp!==null&&baseMonth!==null;
- const up=(baseUp||0)+(otherUp||0), monthly=(baseMonth||0)+(otherMonth||0);
+ const up=(baseUp||0)+(otherUp||0), otherRecurring=otherMonth||0;
+ const year=up+otherRecurring*12;
+ const three=up+otherRecurring*36+(p?.kind==="service"?baseMonth*24:0);
  const initialLabel=canCalc?fmt(up):"価格未確認";
- const yearLabel=canCalc?fmt(up+monthly*12):"価格未確認";
- const threeLabel=canCalc?fmt(up+monthly*36):"価格未確認";
+ const yearLabel=canCalc?fmt(year):"価格未確認";
+ const threeLabel=canCalc?fmt(three):"価格未確認";
  return {initialLabel,yearLabel,threeLabel,partial:otherUp===null||otherMonth===null,known,foreign:!!p&&p.currency==="USD"};
 }
 function updateAmounts(){
@@ -144,7 +148,7 @@ function updateAmounts(){
  if(f.foreign)notes.push("米ドルの料金は、為替・税・請求条件が未確定のため円換算しません。");
  if(!f.known)notes.push("選択中の製品に検証済みの円建て参考価格がないため、総額は算出しません。");
  if(f.partial&&f.known)notes.push("「参考額」は現在価格が確認できた項目の合計であり、未入力の導入費・保守・バックアップ費は含まれません。正式な総費用ではありません。");
- if(f.known)notes.push("3年の試算は現在の参考単価が変わらない仮定。更新・交換、割引・値上げ、税・送料、人的コスト等は含まれていません。");
+ if(f.known)notes.push("3年の試算は現在の参考単価が変わらない仮定。更新・交換、割引・値上げ、税・送料、人的コスト等は含まれていません。契約が12か月前払いのサービスは初回購入時に初年度の利用料を含めます。");
  const p=priceCatalog[state.selectedId];if(p?.kind==="service")notes.push("サービスの12か月前払いは月額換算を12倍して年費用に含めます。初期費用は初年度のみ計上。");
  $("costNote").textContent=notes.join(" ");
 }
@@ -163,7 +167,7 @@ function result(){
  '<div class="callout"><b>1. 選定の前に大切なこと</b><p>'+escape(d.reason)+'</p>'+((d.isExisting)?"<p><strong>既存サービスで対応できる場合、新規契約は不要です。</strong></p>":"")+'</div>'+
  '<h3>2. 確認が必要な条件とリスク</h3>'+bullet([...d.must,...d.notes])+
  '<div class="warning"><b>未確認事項（確定前に確認してください）</b>'+bullet(d.unknown.length?d.unknown:["実際の運用、メーカー仕様、バックアップ復元可否"])+(d.requireSpecialist?"<strong>障害復旧・機密データの要件が厳しいため、設計者・提供会社の確認を強く推奨します。</strong>":"")+'</div>'+
- '<h3>3. 同じカテゴリで比較する候補</h3><p class="smallnote">条件を満たすと確定した製品ではありません。追加購入不要の可能性も残したうえで比較します。</p><div class="report-product-list">'+canBuy.map(p=>'<div><strong>'+escape(p.brand+" "+p.model)+'</strong><span>'+escape(priceText(priceCatalog[p.id]))+'</span>'+link(p.official,"提供元公式情報")+'</div>').join("")+'</div>'+
+ '<h3>3. この条件で比較する理由付き製品候補</h3><p class="smallnote">条件を満たすと確定した製品ではありません。追加購入不要の可能性も残したうえで比較します。</p><div class="report-product-list">'+canBuy.map(p=>'<div><strong>'+escape(p.brand+" "+p.model)+'</strong><span>'+escape(priceText(priceCatalog[p.id]))+'</span><p class="smallnote" style="grid-column:1/-1;margin:0"><b>選ぶ理由：</b>'+escape(editorial[p.id]?.pitch||"利用目的に応じて仕様を比較")+'</p><p class="smallnote" style="grid-column:1/-1;margin:0"><b>要確認：</b>'+escape(editorial[p.id]?.checks?.[0]||p.limits)+'</p><div style="grid-column:1/-1">'+link("https://dog820shion1995-bit.github.io/baselayer-website/product.html?id="+encodeURIComponent(p.id),"選定理由・他製品との違いを詳しく見る")+'</div></div>').join("")+'</div>'+
  '<div class="report-tabs" role="group" aria-label="レポートの表示対象"><button type="button" data-view="owner" aria-pressed="true">社長・決裁者向け</button><button type="button" data-view="technical" aria-pressed="false">社内SE向け</button><button type="button" data-view="sales" aria-pressed="false">OA営業向け</button></div>'+founder+
  pricePanel()+
  '<div class="report-handoff"><h3>5. 導入の準備から購入まで</h3><ol><li>未確認事項と復旧条件を確認</li><li>既存契約の機能・容量を再確認</li><li>メーカー公式仕様と価格を確認</li><li>必要な機器・設定・保守・バックアップを見積依頼</li><li>正規販売先で契約・購入</li><li>導入後、権限・バックアップと復元をテスト</li></ol><p class="smallnote">BASELAYERは利用者から代金を徴収せず、購入・SaaSの申込みや請求は各販売会社で行われます。</p></div>'+
