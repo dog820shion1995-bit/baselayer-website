@@ -4,12 +4,9 @@
 const catalog=Array.isArray(window.BASELAYER_PRODUCTS)?window.BASELAYER_PRODUCTS:[];
 const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const allowedLicense=s=>/^(CC0|CC BY(?:-SA)?(?:\s|$)|Public domain)/i.test(String(s||'').replace(/<[^>]*>/g,'').trim());
-const yamahaOfficialModels=new Set(['RTX1300','RTX830','RTX810','RTX1220','RTX1210','RTX840','RTX3510','RTX3500','NVR510','NVR700W']);
-const yamahaPhoto=p=>p.brand==='ヤマハ'&&yamahaOfficialModels.has(p.model)?{url:'https://www.rtpro.yamaha.co.jp/RT/pict/'+p.model.toLowerCase()+'.jpg',source:'https://network.yamaha.com/support/download/tool',license:'ヤマハ公式：外観写真の用途を問わないダウンロード案内'}:null;
 const cache=new Map();
 async function findPhoto(p){
  const key=p.brand+'::'+p.model;if(cache.has(key))return cache.get(key);
- const official=yamahaPhoto(p);if(official){cache.set(key,Promise.resolve(official));return official;}
  const work=(async()=>{
   const model=norm(p.model);if(model.length<5)return null;
   const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:'file: "'+p.model+'"',gsrnamespace:'6',gsrlimit:'15',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'640',format:'json',origin:'*'});
@@ -21,6 +18,7 @@ async function findPhoto(p){
     const info=page.imageinfo?.[0];const meta=info?.extmetadata||{};const title=norm(page.title);
     const lic=meta.LicenseShortName?.value||'';
     if(!title.includes(model)||!allowedLicense(lic)||!info?.thumburl||!info?.descriptionurl)continue;
+    const words=(page.title||'').toLowerCase();if(/(logo|manual|datasheet|diagram|schematic|screenshot|box art)/i.test(words))continue;
     if(!/^https:\/\//.test(info.thumburl)||!/^https:\/\//.test(info.descriptionurl))continue;
     return {url:info.thumburl,source:info.descriptionurl,license:lic};
    }
@@ -39,10 +37,10 @@ function attach(root){
   const photo=await findPhoto(p);if(!photo||!el.isConnected)return;
   const img=document.createElement('img');img.src=photo.url;img.alt=p.brand+' '+p.model+'の画像（Wikimedia Commons）';img.loading='lazy';img.decoding='async';img.className='catalog-photo';img.onerror=()=>{img.remove();el.classList.remove('has-photo')};
   const link=document.createElement('a');link.className='catalog-photo-credit';link.href=photo.source;link.target='_blank';link.rel='noopener noreferrer';link.textContent='写真出典・ライセンス';link.title=photo.license;
-  el.append(img,link);el.classList.add('has-photo');
+  el.append(img,link);img.onload=()=>{if(el.isConnected){el.classList.add('has-photo');el.dataset.photoVerified='1';}};
  }
  for(const el of elements){if(observer)observer.observe(el);else load(el)}
 }
-const mo=new MutationObserver(()=>{if(document.body)attach(document.body)});
+const mo=new MutationObserver(mutations=>{for(const mutation of mutations){for(const node of mutation.addedNodes){if(node.nodeType===1){if(node.matches?.('[data-model-photo]'))attach(node.parentElement||document.body);else if(node.querySelector?.('[data-model-photo]'))attach(node)}}}});
 document.addEventListener('DOMContentLoaded',()=>{attach(document.body);mo.observe(document.body,{childList:true,subtree:true})});
 })();
