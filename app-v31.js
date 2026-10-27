@@ -36,9 +36,7 @@
     const shape=mediaPaths[p.cat] || '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8"/>';
     const label=esc(labelCat(p.cat));
     const fallback=`<span class="product-media-fallback" role="img" aria-label="${label}のカテゴリイラスト（製品の実物写真ではありません）"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${shape}</svg></span>`;
-    const officialYamahaModels=new Set(['RTX1300','RTX830','RTX810','RTX1220','RTX1210','RTX840','RTX3510','RTX3500','NVR510','NVR700W']);
-    const officialYamaha=p.brand==='ヤマハ'&&officialYamahaModels.has(p.model)?{usage:'permitted',license:'Yamaha official product photo (usage permitted by publisher)',checked:'2026-10-27',url:'https://www.rtpro.yamaha.co.jp/RT/pict/'+p.model.toLowerCase()+'.jpg',source:'https://www.rtpro.yamaha.co.jp/RT/pict/index.html',rightsEvidence:'https://network.yamaha.com/support/download/tool'}:null;
-    const im=p.image||officialYamaha;
+    const im=p.image;
     const allowed=im && im.usage==='permitted' && typeof im.license==='string' && im.license.trim() && typeof im.checked==='string' && /^\d{4}-\d{2}-\d{2}$/.test(im.checked) && safeSource(im.url) && safeSource(im.source) && safeSource(im.rightsEvidence);
     const photo=allowed ? `<img class="product-media-photo" src="${escapeAttr(safeSource(im.url))}" alt="${esc(p.brand)} ${esc(p.model)}の製品写真" loading="lazy" decoding="async" width="72" height="72" data-product-photo>` : '';
     return `<span class="product-media" data-category="${escapeAttr(p.cat)}">${fallback}${photo}</span>`;
