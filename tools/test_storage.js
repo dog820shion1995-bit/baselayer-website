@@ -19,6 +19,8 @@ for(const item of products){const m=media[item.id];assert(m,'missing visual stat
 assert(read('storage-policy.html').includes('https://www.iodata.jp/copyright.htm'),'I-O DATA rights disclosure missing');
 assert(read('storage-policy.html').includes('https://www.buffalo.jp/other/about.html'),'BUFFALO rights disclosure missing');
 assert(read('index.html').includes('remoteSceneTitle'),'outside salesperson visual absent');
+assert(read('learn.html').includes('id="recovery-terms"')&&read('learn.html').includes('docs.aws.amazon.com/whitepapers/latest/disaster-recovery-of-on-premises-applications-to-aws/recovery-objectives.html'),'RPO/RTO learning diagram or official evidence missing');
+assert(read('journey-app.js').includes('learn.html#recovery-terms'),'wizard recovery glossary link missing');
 assert(read('learn.html').includes('remote-example')&&read('learn.html').includes('backup-example'),'learning diagrams absent');
 assert(read('learn.html').includes('remote-route-grid')&&read('learn.html').includes('経路 B')&&read('learn.html').includes('buffalo.jp/support/faq/detail/15880.html'),'remote access routes or official safety source missing');
 assert(read('learn.html').includes('id="lan-example"')&&read('learn.html').includes('location-node-data'),'LAN/data-location explainer missing');
