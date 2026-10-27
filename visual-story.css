@@ -76,3 +76,22 @@
 .mobile-site-links a[aria-current="page"]{color:#078571;border-left:3px solid #28a58b;padding-left:12px}
 @media(max-width:920px){.mobile-menu-button{display:inline-flex;margin-left:0}.head-action{margin-left:auto}}
 @media(max-width:640px){.head-action{display:none}.mobile-menu-button{margin-left:auto}.head-inner{gap:12px}}
+
+
+/* Report-wide: use the available viewport for decisions, not a tall empty sidebar. */
+.wizard-shell.report-wide{display:block}
+.report-wide .side-progress{display:none}
+.report-wide .wizard-panel{width:100%;max-width:none;padding:34px}
+.report-wide .report-product-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:stretch}
+.report-wide .report-product-list>div{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:16px}
+.report-wide .report-product-list .catalog-item-image{max-width:none!important;width:100%;height:166px;margin:0}
+.report-wide .report-product-list .catalog-item-image img{max-height:152px}
+.report-wide .report-product-list .product-photo-caption{margin:0}
+.report-wide .report-product-list>div>strong{font-size:15px;line-height:1.5}
+.report-wide .report-product-list>div>span{text-align:left;font-size:12px;line-height:1.6}
+.report-wide .report-product-list .smallnote{font-size:11px;line-height:1.8}
+.report-wide .report-product-list .warning{font-size:11px}
+.report-wide .report-product-list .text-link{display:block;margin-top:auto;padding-top:10px}
+@media(min-width:950px){.product-cover-grid{grid-template-columns:minmax(0,1fr) 340px}.product-media-panel img{max-height:300px}}
+@media(max-width:1000px){.report-wide .report-product-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.report-wide .wizard-panel{padding:18px}.report-wide .report-product-list{grid-template-columns:1fr}}
