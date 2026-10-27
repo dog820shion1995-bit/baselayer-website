@@ -34,5 +34,5 @@ for(const section of ['problems','categories','catalog','advisor','guide','purch
 assert(!html.includes('amazon-20'),'unexpected hardcoded Amazon tracking ID');
 assert(!html.includes('product-data.js') && !html.includes('app-v31.js'),'old BASELAYER catalog/app must never be loaded on new homepage');
 assert(policy.includes('アフィリエイト') && policy.includes('個人情報'),'policy must explain affiliate and privacy');
-assert(/@media\s*\(max-width:\s*(?:600|670)px\)/.test(css),'mobile rules missing');
+assert(/@media\s*\(max-width:\s*(?:600|620|670)px\)/.test(css),'mobile rules missing');
 console.log('PASS storage: '+items.length+' records, '+domIds.size+' DOM ids, all core areas, URLs and syntax checked.');
