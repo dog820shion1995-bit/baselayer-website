@@ -12,12 +12,16 @@
 <h2>外出先のスマホから、会社の資料を使うには？</h2>
 <div class="scene-wrap"><div class="scene-visual">
 <figure class="scene-photo"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=960&amp;q=78" loading="lazy" alt="営業担当がPCとスマートフォンを利用する仕事のイメージ"><figcaption>外出先での業務利用イメージ。写真は特定の製品の導入例ではありません。</figcaption></figure>
-<div class="scene-flow" role="img" aria-label="営業担当のスマートフォンから認証を通じてクラウドまたは会社のNASのファイルに接続するイメージ">
-<div class="flow-target"><span class="flow-screen phone" aria-hidden="true"></span><div><strong>① 外出先の営業担当</strong><span>訪問先でスマホから提案資料を開く</span></div></div>
-<div class="flow-connector"><b>↓</b> インターネット・認証・アクセス制限</div>
-<div class="flow-target"><span class="flow-screen server" aria-hidden="true"></span><div><strong>② クラウド or 社内NAS</strong><span>アクセスが認められた人にだけ資料を表示</span></div></div>
+<div class="scene-flow" aria-label="外出先のスマホからクラウドまたは社内NASに接続する2つの経路">
+<div class="flow-target"><span class="flow-screen phone" aria-hidden="true"></span><div><strong>① 外出先のスマホ</strong><span>会社の資料を開きたい</span></div></div>
+<div class="flow-connector"><b>↓</b> インターネット経由・本人確認</div>
+<div class="remote-route-grid">
+<div class="remote-route-card"><span class="remote-route-tag">経路 A</span><strong>クラウドに保存</strong><span>サービス側の共有・権限設定を確認</span><small>保存先：事業者の管理環境</small></div>
+<div class="remote-route-card"><span class="remote-route-tag">経路 B</span><strong>会社のNASに保存</strong><span>対応する安全な接続方法を構成</span><small>保存先：会社のNAS</small></div>
+</div>
 </div></div>
-<div class="flow-warning">ここは製品で大きく違います。クラウドは提供元の共有設定が必要。NASはメーカーが提供する安全な接続手段やVPN等の構成検討が必要で、無条件に外から使えるわけではありません。</div></div>
+<div class="flow-warning"><strong>どちらも設定が必要です。</strong> クラウドは利用者の権限や認証を確認。社内NASは機種ごとに対応する接続方法が異なります。NASを無条件にインターネット公開しないでください。</div>
+<p class="location-sources">NASの設定・アクセス制限について：<a href="https://www.buffalo.jp/support/faq/detail/15880.html" target="_blank" rel="noopener noreferrer">BUFFALO公式：社外からのアクセス方法と公開範囲の注意</a></p></div>
 </section>
 
 <section class="learning-section" id="lan-example" aria-labelledby="locationTitle">
