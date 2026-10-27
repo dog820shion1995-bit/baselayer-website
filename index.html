@@ -1,76 +1,136 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="BASELAYER｜法人向けIT機器を、用途・カテゴリー・型番から探して仕様を比較。公式出典付きの製品データで選定を支援。"><title>BASELAYER — IT機器選定を、もっとわかりやすく。</title><style>
-:root{--ink:#17283d;--muted:#64748b;--blue:#146c9d;--navy:#0e2540;--line:#e4ebf1;--bg:#f6f9fc;--teal:#08a6a6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:Inter,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink)}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}.shell{width:min(1200px,calc(100% - 44px));margin:auto}.header{height:78px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.header-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}.logo{font-weight:900;font-size:22px;letter-spacing:.075em}.logo span{color:#0b98a6}.nav{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:700;color:#53667c}.nav a:hover{color:var(--blue)}.nav-cta,.primary{background:#087da2;color:#fff;padding:13px 20px;border-radius:9px;font-weight:800;font-size:13px;border:0}.hero{background:linear-gradient(117deg,#0e2741 0%,#123f5c 57%,#086d7c 100%);color:white;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;right:-120px;top:-250px;width:720px;height:720px;border-radius:50%;border:1px solid #ffffff1f;box-shadow:0 0 0 85px #ffffff06,0 0 0 180px #ffffff05}.hero-in{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding:80px 0 88px}.eyebrow{font-size:11px;letter-spacing:.19em;font-weight:900;color:#43d7d5}.hero h1{font-size:clamp(35px,4.5vw,59px);letter-spacing:-.045em;line-height:1.37;margin:18px 0}.hero h1 em{font-style:normal;color:#61e1df}.hero p{color:#c2d6e2;line-height:1.95;font-size:15px;max-width:610px}.searchbox{display:flex;align-items:center;gap:8px;padding:7px;background:#fff;border-radius:12px;margin-top:28px;max-width:690px;box-shadow:0 12px 40px #051c2b40}.searchbox input{border:0;outline:0;min-width:0;flex:1;padding:14px 15px;color:var(--ink);font-size:15px}.searchbox button{border:0;border-radius:8px;padding:15px 22px;background:#087da2;color:white;font-weight:800;white-space:nowrap}.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.hero-chips a{font-size:12px;border:1px solid #ffffff50;border-radius:30px;padding:8px 13px;color:#e4f4f8}.hero-panel{background:#ffffff13;backdrop-filter:blur(10px);border:1px solid #ffffff36;border-radius:20px;padding:26px;box-shadow:0 20px 70px #031e3345}.panel-head{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#aee9ee;letter-spacing:.13em}.panel-product{display:flex;align-items:center;gap:17px;margin:22px 0;padding:22px 16px;border-radius:12px;background:#ffffffee;color:#1c3850}.panel-illustration{width:78px;height:78px;background:#e9f5f8;border-radius:14px;display:grid;place-items:center;color:#117b91}.panel-illustration svg{width:54px;height:54px}.panel-product b{display:block;font-size:20px}.panel-product small{display:block;color:#6d8190;margin-top:7px}.panel-row{display:flex;justify-content:space-between;padding:13px 0;border-top:1px solid #ffffff24;font-size:12px}.panel-row strong{color:#a9f0e8}.section{padding:75px 0}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}.section-heading h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.04em;margin:8px 0}.section-heading p{color:var(--muted);margin:0;font-size:14px;line-height:1.7}.kicker{color:#08829b;font-size:11px;font-weight:900;letter-spacing:.16em}.section-link{color:#087c9d;font-size:13px;font-weight:800;white-space:nowrap}.categories{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px}.category{border:1px solid var(--line);background:#fff;border-radius:14px;padding:22px 13px;text-align:center;transition:.2s;cursor:pointer;color:var(--ink)}.category:hover,.category.active{border-color:#27a9b9;transform:translateY(-3px);box-shadow:0 9px 25px #12364d12}.cat-icon{width:62px;height:62px;border-radius:16px;background:#eaf4f8;margin:0 auto 15px;display:grid;place-items:center;color:#22768f}.cat-icon svg{width:38px;height:38px}.category strong{font-size:13px}.category small{display:block;color:#8b9bab;font-size:11px;margin-top:7px}.catalog-section{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.toolbar{display:flex;gap:10px;margin-bottom:25px}.toolbar input,.toolbar select{border:1px solid #dbe5ed;border-radius:9px;padding:13px 15px;background:#fff;color:#263c50;min-width:0}.toolbar input{flex:1}.toolbar select{width:190px}.count{font-size:13px;color:#7a8c9d;margin:0 0 17px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{border:1px solid #e2eaf0;border-radius:16px;overflow:hidden;background:#fff;transition:.2s;display:flex;flex-direction:column}.card:hover{transform:translateY(-4px);box-shadow:0 14px 40px #0d2e4815}.card-art{height:180px;display:grid;place-items:center;background:linear-gradient(135deg,#e9f2f7,#f7fafc);position:relative}.card-art svg{width:110px;height:110px;stroke:#397e98;fill:none;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}.card-art small{position:absolute;bottom:11px;right:12px;font-size:10px;color:#7791a2}.card-content{padding:23px;flex:1;display:flex;flex-direction:column}.brand{font-size:11px;color:#1782a0;font-weight:900;letter-spacing:.06em}.card h3{font-size:21px;margin:9px 0 7px}.desc{font-size:13px;color:#5f7385;line-height:1.65;margin:0 0 13px}.specs{display:grid;gap:8px;margin:8px 0 20px}.spec{font-size:11px;line-height:1.55;color:#556a7c;border-left:2px solid #b7d8e2;padding-left:10px;overflow-wrap:anywhere}.card-bottom{margin-top:auto;padding-top:15px;border-top:1px solid #edf1f5;display:flex;justify-content:space-between;align-items:center;gap:8px}.source{font-size:10px;color:#6b8b94}.card-bottom a{font-size:12px;font-weight:900;color:#087b9c}.empty{padding:45px;text-align:center;color:var(--muted);grid-column:1/-1}.more{text-align:center;margin-top:32px}.more a{display:inline-block;border:1px solid #1d819d;border-radius:9px;padding:14px 24px;color:#087b9c;font-weight:800;font-size:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:#fff;border:1px solid var(--line);border-radius:15px;padding:29px}.step b{color:#0b9aab;font-size:12px}.step h3{font-size:20px;margin:13px 0}.step p{font-size:13px;color:var(--muted);line-height:1.85}.footer{background:#102b40;color:#c0d1db;padding:42px 0;font-size:12px}.footer-in{display:flex;justify-content:space-between;gap:25px}.footer a{color:#d6eaf2}.footer .logo{color:#fff}.footer-links{display:flex;gap:22px;flex-wrap:wrap}.mobile-nav{display:none}@media(max-width:950px){.hero-in{grid-template-columns:1fr}.hero-panel{display:none}.categories{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.shell{width:min(100% - 28px,1200px)}.header{height:65px}.logo{font-size:19px}.nav{display:none}.header .nav-cta{font-size:11px;padding:10px}.hero-in{padding:57px 0 65px}.hero h1{font-size:36px}.hero p{font-size:13px}.searchbox input{font-size:12px;padding:10px}.searchbox button{padding:12px;font-size:12px}.section{padding:48px 0}.section-heading{align-items:start;flex-direction:column}.categories{grid-template-columns:repeat(3,1fr);gap:9px}.category{padding:16px 5px}.category strong{font-size:11px}.cat-icon{width:50px;height:50px}.cards{grid-template-columns:1fr}.toolbar{flex-wrap:wrap}.toolbar input{flex-basis:100%}.toolbar select{flex:1}.steps{grid-template-columns:1fr}.footer-in{flex-direction:column}.card-art{height:190px}}
-</style><style>
-/* BASELAYER motion system — CSS animation, no third-party video or tracking */
-.hero{background:radial-gradient(ellipse at 83% 24%,#127d8b 0%,transparent 44%),linear-gradient(120deg,#091e36,#103c5b 65%,#073d51)}
-.hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background:linear-gradient(100deg,transparent 10%,#5ef1e516 48%,transparent 55%);background-size:200% 100%;animation:heroLight 11s ease-in-out infinite}
-.hero-in>div:first-child{animation:heroEnter .8s ease-out both}
-.hero h1 em{background:linear-gradient(90deg,#55e2df,#d6ffff,#55e2df);background-size:250% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:textShimmer 7s linear infinite}
-.hero-panel{position:relative;overflow:hidden;animation:panelFloat 7s ease-in-out infinite}
-.hero-panel:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff25;border-radius:50%;right:-90px;top:-95px;pointer-events:none;animation:radar 5s ease-in-out infinite}
-.panel-illustration svg{animation:deviceFloat 5s ease-in-out infinite}
-.panel-row strong{animation:glow 4s ease-in-out infinite}
-.category,.card,.step{animation:riseIn .55s ease-out both}
-.category:nth-child(2),.card:nth-child(2),.step:nth-child(2){animation-delay:.07s}
-.category:nth-child(3),.card:nth-child(3),.step:nth-child(3){animation-delay:.14s}
-.category:nth-child(4),.card:nth-child(4){animation-delay:.21s}
-.category:nth-child(5),.card:nth-child(5){animation-delay:.28s}
-.category:nth-child(6),.card:nth-child(6){animation-delay:.35s}
-.card-art{overflow:hidden}.card-art:before{content:"";position:absolute;width:190px;height:190px;border:1px solid #6ca9bd38;border-radius:50%;box-shadow:0 0 0 35px #5ca0b010,0 0 0 70px #5ca0b008;transition:transform .4s}
-.card:hover .card-art:before{transform:scale(1.12)}.card-art svg{position:relative;transition:transform .4s}.card:hover .card-art svg{transform:translateY(-6px) scale(1.05)}
-.hero-live{display:flex;align-items:center;gap:8px;color:#b7edf0;font-size:11px;font-weight:700;letter-spacing:.07em;margin-top:19px}
-.live-dot{height:7px;width:7px;border-radius:50%;background:#60e7ca;box-shadow:0 0 0 5px #60e7ca20;animation:pulse 2.4s infinite}
-@keyframes heroLight{0%,100%{background-position:100% 0}50%{background-position:0 0}}
-@keyframes textShimmer{to{background-position:250% center}}
-@keyframes heroEnter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes riseIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-@keyframes panelFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes deviceFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@keyframes radar{0%,100%{transform:scale(.8);opacity:.3}50%{transform:scale(1.35);opacity:1}}
-@keyframes glow{0%,100%{opacity:.7}50%{opacity:1}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 4px #60e7ca20}50%{box-shadow:0 0 0 9px #60e7ca08}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-</style><style>
-/* Network topology — built-in vector motion, no external assets */
-.network-stage{padding:20px 21px 14px;animation:none;box-shadow:0 30px 90px #00162c66;transform:perspective(1100px) rotateY(-4deg);transition:transform .45s ease}
-.network-stage:hover{transform:perspective(1100px) rotateY(0deg) translateY(-5px)}
-.network-stage:after{display:none}
-.network-stage-head,.network-stage-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:9px;letter-spacing:.11em;color:#c5e9ee;font-weight:800}
-.network-stage-head span:last-child{color:#75e4ce}.network-stage-head span:first-child{flex:0 0 auto}.network-pulse{height:7px;width:7px;border-radius:50%;background:#4aeac6;box-shadow:0 0 0 4px #4aeac622}
-.topology{display:block;width:100%;height:auto;margin:13px 0 5px;overflow:visible}
-.network-grid{fill:none;stroke:#a4d4e5;stroke-width:.6;opacity:.1}
-.network-wires path{stroke-dasharray:100;stroke-dashoffset:100;animation:wireDraw 1.6s ease-out forwards}
-.network-wires path:nth-child(2){animation-delay:.3s}.network-wires path:nth-child(3){animation-delay:.55s}.network-wires path:nth-child(4){animation-delay:.8s}
-.network-nodes rect{fill:#dceff5;stroke:#82d8df;stroke-width:1.3}
-.network-nodes path{fill:none;stroke:#0d6e8b;stroke-width:2.5;stroke-linecap:round}
-.network-nodes text{fill:#d2f6f7;font-size:11px;font-weight:800;letter-spacing:1.4px;text-anchor:middle}
-.network-dots circle{fill:#a6fff3;filter:drop-shadow(0 0 4px #a6fff3)}
-.network-stage-footer{border-top:1px solid #ffffff29;padding:14px 0 2px;font-size:8px;color:#b2cdd9}
-@keyframes wireDraw{to{stroke-dashoffset:0}}
-@media(max-width:950px){.hero-panel.network-stage{display:block;max-width:550px;margin:0 auto}.hero-in{gap:25px}.network-stage{transform:none}}
-@media(max-width:650px){.hero-panel.network-stage{padding:15px}.network-stage-footer{font-size:7px}}
-@media(prefers-reduced-motion:reduce){.network-wires path{stroke-dashoffset:0!important}.network-dots{display:none}.network-stage{transform:none!important}}
-</style><style>.card-art.has-photo>svg,.card-art.has-photo>small{display:none}.card-art .catalog-photo{max-width:88%;max-height:155px;object-fit:contain;position:relative;z-index:1}.card-art .catalog-photo-credit{position:absolute;right:10px;bottom:8px;z-index:2;background:#ffffffeb;padding:4px 7px;border-radius:5px;color:#136b8b;font-size:10px;text-decoration:underline}</style><style>.manufacturer-links{border-top:1px solid #e6edf3;padding:12px 0 2px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:11px}.manufacturer-links a{color:#087e9c;font-weight:800;text-decoration:underline;text-underline-offset:3px}.manufacturer-links span{color:#718196}.card-art{background:linear-gradient(145deg,#f2f7fa,#e8f1f6)}.card-content h3{font-size:19px;letter-spacing:-.03em}.card{transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-5px);box-shadow:0 16px 35px #173d591a}</style></head><body><header class="header"><div class="shell header-in"><a class="logo" href="index.html">BASE<span>LAYER.</span></a><nav class="nav" aria-label="メインメニュー"><a href="#categories">カテゴリー</a><a href="#catalog">製品を探す</a><a href="search.html?mode=compare">仕様比較</a><a href="search.html?mode=alternatives">代替候補</a><a href="network.html">構成比較</a></nav><a class="nav-cta" href="search.html">製品を検索 ↗</a></div></header>
-<main><section class="hero"><div class="shell hero-in"><div><div class="eyebrow">IT PRODUCT DISCOVERY PLATFORM</div><h1>IT機器選びを、<br><em>もっとわかりやすく。</em></h1><p>ルーター、スイッチ、Wi-Fi、モニターまで。型番から探す。用途から見つける。公式情報をもとに、製品の違いを整理する。</p><form class="searchbox" action="search.html" method="get"><input name="q" type="search" placeholder="製品名・型番で検索　例：RTX1300" aria-label="製品名・型番で検索"><button type="submit">製品を探す →</button></form><div class="hero-live"><span class="live-dot" aria-hidden="true"></span> 製品を見つける・比較する・構成を考える</div><div class="hero-chips"><a href="search.html?q=RTX1300">RTX1300</a><a href="search.html?q=SWX2210-8G">SWX2210-8G</a><a href="search.html?q=U2723QE">U2723QE</a></div></div><div class="hero-panel network-stage" aria-label="ルーターからスイッチ、無線LAN、端末へつながるネットワークのイメージ">
-<div class="network-stage-head"><span class="network-pulse"></span><span>NETWORK VISUALIZER</span><span>LIVE TOPOLOGY</span></div>
-<svg class="topology" viewBox="0 0 500 345" role="img" aria-labelledby="topologyTitle"><title id="topologyTitle">ルーターからスイッチ、アクセスポイント、PC、サーバーへ接続するネットワーク構成のアニメーション</title>
-<defs><linearGradient id="wire" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#50e3df"/><stop offset="1" stop-color="#7faaff"/></linearGradient><filter id="halo"><feGaussianBlur stdDeviation="4"/></filter></defs>
-<g class="network-grid"><path d="M0 40H500M0 90H500M0 140H500M0 190H500M0 240H500M0 290H500M0 340H500M50 0V345M100 0V345M150 0V345M200 0V345M250 0V345M300 0V345M350 0V345M400 0V345M450 0V345"/></g>
-<g class="network-wires" fill="none" stroke="url(#wire)" stroke-width="2.5" stroke-linecap="round"><path d="M250 86V140" pathLength="100"/><path d="M250 198V233H102V258" pathLength="100"/><path d="M250 198V233H250V258" pathLength="100"/><path d="M250 198V233H398V258" pathLength="100"/></g>
-<g class="network-nodes">
-<g transform="translate(199 32)"><rect width="102" height="54" rx="13"/><path d="M18 22h36M18 32h25M76 26h5M87 26h4" /><text x="51" y="-10">ROUTER</text></g>
-<g transform="translate(199 140)"><rect width="102" height="58" rx="13"/><path d="M16 22h13m7 0h13m7 0h13m7 0h13M16 36h13m7 0h13m7 0h13m7 0h13"/><text x="51" y="-10">SWITCH</text></g>
-<g transform="translate(63 258)"><rect width="78" height="53" rx="12"/><path d="M24 25a18 18 0 0 1 30 0M31 32a10 10 0 0 1 16 0M39 40h.1"/><text x="39" y="70">WI-FI</text></g>
-<g transform="translate(211 258)"><rect width="78" height="53" rx="12"/><rect x="17" y="11" width="44" height="27" rx="3"/><path d="M39 38v7M27 45h24"/><text x="39" y="70">CLIENT</text></g>
-<g transform="translate(359 258)"><rect width="78" height="53" rx="12"/><rect x="23" y="10" width="32" height="33" rx="3"/><path d="M29 20h20M29 29h20M29 37h10"/><text x="39" y="70">SERVER</text></g></g>
-<g class="network-dots"><circle r="5"><animateMotion dur="2.5s" repeatCount="indefinite" path="M250 86V140"/></circle><circle r="5"><animateMotion dur="3.2s" repeatCount="indefinite" path="M250 198V233H102V258"/></circle><circle r="5"><animateMotion dur="3.7s" repeatCount="indefinite" path="M250 198V233H250V258"/></circle><circle r="5"><animateMotion dur="4s" repeatCount="indefinite" path="M250 198V233H398V258"/></circle></g>
-</svg><div class="network-stage-footer"><span>DEVICE DISCOVERY</span><span>SPEC COMPARISON</span><span>NETWORK DESIGN</span></div>
-</div></div></section>
-<section class="section shell" id="categories"><div class="section-heading"><div><div class="kicker">EXPLORE BY CATEGORY</div><h2>カテゴリーから探す</h2><p>何を探せばいいかわからなくても、機器の種類から選べます。</p></div><a class="section-link" href="search.html">すべての製品を見る ↗</a></div><div class="categories" id="categoryGrid"></div></section>
-<section class="section catalog-section" id="catalog"><div class="shell"><div class="section-heading"><div><div class="kicker">PRODUCT CATALOG</div><h2>製品を探す・比べる</h2><p>見たい製品をすぐに。メーカーの出典がある仕様を優先して表示します。</p></div><a class="section-link" href="products-30.html">30製品ギャラリー ↗</a></div><div class="toolbar"><input id="filterText" type="search" placeholder="型番・メーカー・用途で絞り込む" aria-label="製品を絞り込む"><select id="filterCat" aria-label="カテゴリーを選択"><option value="">すべてのカテゴリー</option></select><select id="filterBrand" aria-label="メーカーを選択"><option value="">すべてのメーカー</option></select></div><p class="count" id="count" aria-live="polite">製品を読み込み中…</p><div class="cards" id="productCards"></div><div class="catalog-more"><button type="button" id="loadMore" hidden>さらに製品を表示する</button></div><div class="more"><a href="search.html">仕様比較・代替候補も見る ↗</a></div></div></section>
-<section class="section shell"><div class="section-heading"><div><div class="kicker">HOW IT WORKS</div><h2>選定を、3つのステップで。</h2><p>調べるだけで終わらない。比較して、構成まで検討できます。</p></div></div><div class="steps"><a class="step" href="search.html"><b>STEP 01</b><h3>製品を見つける →</h3><p>型番・メーカー・カテゴリーから、候補となるIT機器を探す。</p></a><a class="step" href="search.html?mode=compare"><b>STEP 02</b><h3>仕様を比較する →</h3><p>複数製品の違いを整理。確認済みの仕様と未確認情報を区別。</p></a><a class="step" href="network.html"><b>STEP 03</b><h3>構成を検討する →</h3><p>機器を組み合わせ、ネットワーク構成案を比較する。</p></a></div></section></main>
-<footer class="footer"><div class="shell footer-in"><div><a class="logo" href="index.html">BASE<span>LAYER.</span></a><p>IT機器選定を、もっとわかりやすく。</p></div><div class="footer-links"><a href="search.html">製品検索</a><a href="search.html?mode=alternatives">代替候補</a><a href="network.html">構成比較</a><a href="products-30.html">30製品ギャラリー</a></div></div></footer>
-<script src="product-data.js"></script><script defer src="product-photos.js"></script><script>
-(()=>{'use strict';const all=Array.isArray(window.BASELAYER_PRODUCTS)?window.BASELAYER_PRODUCTS:[];const cats={router:'ルーター',switch:'スイッチ',ap:'無線LAN',monitor:'モニター',printer:'プリンター',lan:'LANケーブル',firewall:'セキュリティ',server:'サーバー・NAS',pc:'パソコン',peripheral:'周辺機器',storage:'ストレージ',meeting:'会議機器',power:'電源',rack:'ラック',fiber:'光ケーブル',cable:'ケーブル'};const shapes={router:'<rect x="12" y="27" width="76" height="42" rx="8"/><path d="M24 43h27M24 54h14M67 47h4M77 47h3M27 69v8M73 69v8"/>',switch:'<rect x="9" y="31" width="82" height="38" rx="7"/><path d="M18 42h10m6 0h10m6 0h10m6 0h10M18 55h10m6 0h10m6 0h10m6 0h10"/>',monitor:'<rect x="12" y="15" width="76" height="55" rx="7"/><path d="M50 70v13M32 83h36"/>',ap:'<rect x="33" y="47" width="34" height="31" rx="7"/><path d="M19 37a45 45 0 0 1 62 0M30 46a30 30 0 0 1 40 0M50 61h.1"/>',printer:'<path d="M25 34V15h50v19M25 73H14V38h72v35H75M25 62h50v25H25zM70 49h3"/>',lan:'<path d="M32 15h36v28L58 55v30H42V55L32 43zM42 25v17M50 25v17M58 25v17"/>',firewall:'<path d="M50 10 80 24v25c0 20-12 32-30 41-18-9-30-21-30-41V24zM35 51l10 10 22-23"/>'};const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const svg=c=>'<svg viewBox="0 0 100 100" aria-hidden="true">'+(shapes[c]||'<rect x="20" y="18" width="60" height="64" rx="8"/><path d="M32 36h36M32 50h36M32 64h23"/>')+'</svg>';const filter=document.getElementById('filterText'),cat=document.getElementById('filterCat'),brand=document.getElementById('filterBrand'),cards=document.getElementById('productCards'),count=document.getElementById('count');const catGrid=document.getElementById('categoryGrid');const priority=['router','switch','ap','monitor','printer','lan'];priority.forEach(c=>{const n=all.filter(p=>p.cat===c).length;catGrid.insertAdjacentHTML('beforeend','<button type="button" class="category" data-cat="'+c+'"><div class="cat-icon">'+svg(c)+'</div><strong>'+cats[c]+'</strong><small>'+n+' 製品</small></button>')});Object.entries(cats).filter(([c])=>all.some(p=>p.cat===c)).forEach(([c,name])=>cat.insertAdjacentHTML('beforeend','<option value="'+esc(c)+'">'+esc(name)+'</option>'));[...new Set(all.map(p=>p.brand))].sort().forEach(b=>brand.insertAdjacentHTML('beforeend','<option value="'+esc(b)+'">'+esc(b)+'</option>'));let visible=24;const more=document.getElementById('loadMore');function render(){const q=filter.value.trim().toLocaleLowerCase();const matched=all.filter(p=>(!cat.value||p.cat===cat.value)&&(!brand.value||p.brand===brand.value)&&(!q||[p.model,p.brand,p.category,...Object.values(p.specs||{})].join(' ').toLocaleLowerCase().includes(q)));count.textContent=matched.length+' 製品が見つかりました';more.hidden=matched.length<=visible;more.textContent='さらに表示する（残り '+Math.max(0,matched.length-visible)+' 製品）';cards.innerHTML=matched.length?matched.slice(0,visible).map(p=>{const specs=Object.entries(p.specs||{}).slice(0,2).map(([k,v])=>'<div class="spec">'+esc(k)+'：'+esc(v)+'</div>').join('');return '<article class="card"><div class="card-art" data-model-photo="'+esc(p.model)+'" data-brand-photo="'+esc(p.brand)+'">'+svg(p.cat)+'<small>カテゴリーイメージ</small></div><div class="card-content"><span class="brand">'+esc(p.brand)+' / '+esc(cats[p.cat]||p.cat)+'</span><h3>'+esc(p.model)+'</h3><p class="desc">'+esc(p.category||'IT機器')+'</p><div class="specs">'+(specs||'<div class="spec">仕様の確認を進めています</div>')+'</div><div class="card-bottom"><span class="source">'+(p.source&&p.checked?'公式出典を記録':'情報確認中')+'</span><a href="search.html?q='+encodeURIComponent(p.model)+'">詳しく見る ↗</a></div>'+(p.brand==='アライドテレシス'?'<div class="manufacturer-links"><a href="https://www.allied-telesis.co.jp/products/library/switch/" target="_blank" rel="noopener noreferrer">公式写真ライブラリ ↗</a><span>型番別に写真を確認</span></div>':'')+'</div></article>'}).join(''):'<div class="empty">条件に合う製品がありません。検索条件を変更してください。</div>';}more.addEventListener('click',()=>{visible+=24;render()});filter.addEventListener('input',()=>{visible=24;render()});cat.addEventListener('change',()=>{visible=24;render()});brand.addEventListener('change',()=>{visible=24;render()});catGrid.addEventListener('click',e=>{const b=e.target.closest('button[data-cat]');if(!b)return;cat.value=b.dataset.cat;visible=24;document.querySelectorAll('.category').forEach(x=>x.classList.toggle('active',x===b));render();document.getElementById('catalog').scrollIntoView({behavior:'smooth'})});render()})();
-</script></body></html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102638">
+<meta name="description" content="BASELAYERはクラウドストレージ・NAS・外付けHDDを用途から探し、仕様を比較し、購入先を確認できるストレージ選定サイトです。">
+<meta property="og:title" content="BASELAYER — データの保管に、確かな選択を。">
+<meta property="og:description" content="クラウド、NAS、外付けHDD。選び方から比較、購入先の確認まで。">
+<title>BASELAYER | クラウド・NAS・外付けHDDの選定・比較</title>
+<link rel="stylesheet" href="storage-site.css">
+<script defer src="storage-data.js"></script>
+<script defer src="storage-site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<header class="header" id="top">
+  <div class="wrap header-in">
+    <a href="index.html" class="logo" aria-label="BASELAYER ホーム"><span class="logo-mark">B<span>.</span></span><span>BASELAYER</span></a>
+    <nav class="desktop-nav" aria-label="メインナビゲーション">
+      <a href="#categories">カテゴリから探す</a><a href="#advisor">選び方ナビ</a><a href="#catalog">製品比較</a><a href="#guide">選び方の基本</a>
+    </nav>
+    <a class="header-btn" href="#catalog">製品を探す <span aria-hidden="true">↗</span></a>
+    <button class="menu-button" type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+  <nav id="mobileMenu" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="#categories">カテゴリから探す</a><a href="#advisor">選び方ナビ</a><a href="#catalog">製品比較</a><a href="#guide">選び方の基本</a><a href="#policy">運営方針</a></nav>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="signal"></span> THE STORAGE DECISION PLATFORM</p>
+        <h1>大切なデータに、<br><em>確かな置き場所を。</em></h1>
+        <p class="hero-lead">クラウドストレージ、NAS、外付けHDD。<br>特徴を知り、条件で比べ、納得して選ぶ。<br>会社にも、個人にも。データ保管の選択を、もっと明快に。</p>
+        <form id="heroForm" class="hero-search" role="search">
+          <label class="sr-only" for="heroQuery">製品名・型番・メーカーから探す</label>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3" stroke="currentColor" stroke-width="1.9"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          <input id="heroQuery" type="search" placeholder="製品名・型番から探す　例：DS225+" maxlength="80" autocomplete="off">
+          <button type="submit">検索する <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="hero-shortcuts"><span>目的から探す</span><a href="#advisor">最適な保存方法を考える ↗</a><a href="#catalog">製品一覧を見る ↗</a></div>
+        <p class="hero-note">メーカー公式情報を参照 ／ 未確認情報は推測しません ／ 登録なしで利用可能</p>
+      </div>
+      <div class="hero-visual" aria-label="クラウド、NAS、外付けHDDの違いを比較するイメージ">
+        <div class="visual-title"><span class="vis-dot"></span><span>STORAGE WORKSPACE</span><span>01 / 03</span></div>
+        <div class="visual-main"><div class="visual-kicker">YOUR STORAGE, YOUR CHOICE</div><strong>データの保管方法を<br>ひと目で整理。</strong>
+          <div class="visual-devices">
+            <div class="visual-device"><div class="device-symbol cloud-symbol"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M15 44h34a11 11 0 0 0 0-22h-2A17 17 0 0 0 14 27a9 9 0 0 0 1 17Z" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/></svg></div><span>クラウド</span><small>オンラインで共有</small></div>
+            <div class="visual-device"><div class="device-symbol"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="14" y="10" width="36" height="44" rx="7" stroke="currentColor" stroke-width="2.8"/><path d="M32 17v25M20 45h24M20 49h2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><span>NAS</span><small>ネットワークで共有</small></div>
+            <div class="visual-device"><div class="device-symbol"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="11" y="16" width="42" height="31" rx="6" stroke="currentColor" stroke-width="2.8"/><path d="M19 39h26M22 25h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div><span>外付けHDD</span><small>USBで保存</small></div>
+          </div>
+        </div>
+        <div class="visual-foot"><span><b>CHECK 01</b> 目的から選定</span><span><b>CHECK 02</b> 仕様を比較</span><span><b>CHECK 03</b> 購入先へ</span></div>
+      </div>
+    </div>
+    <div class="wrap hero-base"><span>INDEPENDENT RESEARCH / STORAGE & DATA PROTECTION</span><span>比較の根拠を明確に。</span></div>
+  </section>
+
+  <section id="categories" class="section wrap" aria-labelledby="categoriesTitle">
+    <div class="section-head"><div><p class="eyebrow light">EXPLORE BY CATEGORY</p><h2 id="categoriesTitle">探しているのは、どの保存方法ですか？</h2><p>クラウド・NAS・外付けHDD。まずは3つの特徴から。</p></div></div>
+    <div class="category-grid">
+      <button class="category-tile tile-cloud" data-category="cloud" type="button"><span class="tile-index">01 / CLOUD STORAGE</span><span class="tile-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M14 45h36a11 11 0 0 0 0-22h-4A17 17 0 0 0 13 29a9 9 0 0 0 1 16Z" stroke="currentColor" stroke-width="3"/></svg></span><h3>クラウドストレージ</h3><p>インターネットでファイルを共有。拠点や端末をまたいで使いたい方に。</p><span class="tile-link">サービスを見る <span aria-hidden="true">↗</span></span></button>
+      <button class="category-tile tile-nas" data-category="nas" type="button"><span class="tile-index">02 / NETWORK STORAGE</span><span class="tile-icon"><svg viewBox="0 0 64 64" fill="none"><rect x="13" y="8" width="38" height="48" rx="7" stroke="currentColor" stroke-width="3"/><path d="M32 17v24M20 47h24M21 51h1" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><h3>NAS</h3><p>社内ネットワークに保存場所を作る。容量や管理方法もあわせて比較。</p><span class="tile-link">NASを探す <span aria-hidden="true">↗</span></span></button>
+      <button class="category-tile tile-hdd" data-category="hdd" type="button"><span class="tile-index">03 / EXTERNAL DRIVES</span><span class="tile-icon"><svg viewBox="0 0 64 64" fill="none"><rect x="9" y="16" width="46" height="31" rx="7" stroke="currentColor" stroke-width="3"/><path d="M17 39h30M21 25h9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><h3>外付けHDD・SSD</h3><p>PCに接続して保存・バックアップ。容量と対応機器を確認して選ぶ。</p><span class="tile-link">ドライブを見る <span aria-hidden="true">↗</span></span></button>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="advisor" aria-labelledby="advisorTitle">
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow light">FIND YOUR FIT</p><h2 id="advisorTitle">何を選ぶべきか、条件から考える。</h2><p>専門用語を知らなくても大丈夫。まずは利用目的を教えてください。</p></div><span class="head-tag">3ステップで整理</span></div>
+      <div class="advisor-layout">
+        <form id="advisorForm" class="advisor-panel">
+          <div class="field-number">STEP 01 <span>何をしたいですか？</span></div>
+          <fieldset class="choice-grid"><legend class="sr-only">利用目的</legend>
+            <label class="choice"><input type="radio" name="goal" value="share" checked><span>社員・チームで共有したい</span></label>
+            <label class="choice"><input type="radio" name="goal" value="office"><span>社内に保存場所を作りたい</span></label>
+            <label class="choice"><input type="radio" name="goal" value="backup"><span>PCのバックアップを取りたい</span></label>
+          </fieldset>
+          <div class="field-number">STEP 02 <span>何人くらいで使いますか？</span></div>
+          <div class="select-wrap"><label for="memberCount" class="sr-only">利用人数</label><select id="memberCount"><option value="1">1人</option><option value="5">2〜5人</option><option value="20" selected>6〜20人</option><option value="50">21人以上</option></select></div>
+          <div class="field-number">STEP 03 <span>社外からアクセスする必要はありますか？</span></div>
+          <div class="select-wrap"><label for="remoteNeed" class="sr-only">社外アクセス</label><select id="remoteNeed"><option value="yes">必要</option><option value="no">基本的に不要</option><option value="unsure">まだ分からない</option></select></div>
+          <button class="primary wide" type="submit">保存方法の候補を確認 <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="advisor-result" id="advisorResult" aria-live="polite"><div class="result-tag">YOUR DIRECTION / 選定のヒント</div><div class="result-symbol" aria-hidden="true">↗</div><h3>条件を選ぶと、ここに<br>検討の方向性を表示します。</h3><p>特定商品の適合を断定するものではありません。導入時には容量・権限・保守・バックアップの確認が必要です。</p><div class="result-divider"></div><span class="result-footer">目的に合うカテゴリを探すための簡易ガイド</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="catalog" aria-labelledby="catalogTitle">
+    <div class="section-head catalog-head"><div><p class="eyebrow light">CURATED PRODUCT LIBRARY</p><h2 id="catalogTitle">製品・サービスを探して、比較する。</h2><p>まずは出典を確認した少数の候補から。詳しい仕様と購入先を確認できます。</p></div><span class="head-tag" id="catalogCount">登録製品を読み込み中</span></div>
+    <div class="filter-bar">
+      <div class="search-field"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8"/></svg><label class="sr-only" for="catalogSearch">検索する</label><input id="catalogSearch" type="search" placeholder="メーカー・商品名・型番で検索"></div>
+      <div class="filter-pills" role="group" aria-label="カテゴリ絞り込み"><button type="button" data-filter="all" class="is-active" aria-pressed="true">すべて</button><button type="button" data-filter="cloud" aria-pressed="false">クラウド</button><button type="button" data-filter="nas" aria-pressed="false">NAS</button><button type="button" data-filter="hdd" aria-pressed="false">外付けHDD</button></div>
+    </div>
+    <p id="resultCount" class="count" role="status" aria-live="polite"></p>
+    <div id="productGrid" class="product-grid"></div>
+    <div class="catalog-notice"><span>ⓘ</span><p>価格・在庫のリアルタイム取得は行っていません。購入時は販売先の価格・在庫・型番を必ず確認してください。クラウドの紹介リンクは提携確認後に設定します。</p></div>
+    <div class="compare-intro"><div><strong>迷ったら、並べて比較。</strong><span>最大3件の違いを一覧で確認できます。</span></div><button class="text-action" id="openCompare" type="button">比較表を見る <span aria-hidden="true">↗</span></button></div>
+  </section>
+
+  <section class="section section-tint" id="updates" aria-labelledby="updatesTitle">
+    <div class="wrap mini-grid">
+      <div><p class="eyebrow light">DATA & SOURCES</p><h2 id="updatesTitle">情報は、出典と確認日を添えて。</h2><p>掲載内容はメーカー公式情報を優先して確認しています。更新情報と確認状況は、製品の詳細画面でご覧いただけます。</p></div>
+      <div class="source-stack"><div><span class="source-icon">01</span><span>メーカー公式ページへのリンク</span><b>掲載</b></div><div><span class="source-icon">02</span><span>確認した日付</span><b>掲載</b></div><div><span class="source-icon">03</span><span>未確認の条件・注意事項</span><b>明記</b></div></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="guide" aria-labelledby="guideTitle">
+    <div class="section-head"><div><p class="eyebrow light">KNOW BEFORE YOU BUY</p><h2 id="guideTitle">購入前に、知っておきたいこと。</h2><p>用語を覚えるより、違いを理解する。選ぶための要点を短く整理しました。</p></div></div>
+    <div class="guide-grid">
+      <article class="guide-card"><span class="guide-number">01 — CLOUD</span><h3>クラウドストレージとは</h3><p>オンライン上にファイルを保存し、共有するサービス。月額料金、利用人数、権限管理を確認しましょう。</p><button type="button" class="inline-link" data-topic="cloud">ポイントを確認 ↗</button></article>
+      <article class="guide-card"><span class="guide-number">02 — NAS</span><h3>NASとは</h3><p>ネットワークで複数の端末から利用する保存装置。HDDの有無、管理作業、障害への備えが重要です。</p><button type="button" class="inline-link" data-topic="nas">ポイントを確認 ↗</button></article>
+      <article class="guide-card"><span class="guide-number">03 — BACKUP</span><h3>バックアップは別に考える</h3><p>共有や同期、RAIDだけで万全とは限りません。別の場所に復元可能なコピーを残すことが大切です。</p><button type="button" class="inline-link" data-topic="backup">ポイントを確認 ↗</button></article>
+    </div>
+  </section>
+
+  <section class="section purchase-section" id="purchase" aria-labelledby="purchaseTitle">
+    <div class="wrap purchase-grid">
+      <div><p class="eyebrow">PURCHASE WITH CLARITY</p><h2 id="purchaseTitle">選んだ先まで、<br>迷わず進める。</h2><p>クラウドサービスは公式プランや申込先へ。NAS・外付けHDDは、メーカー仕様を確認したうえで通販サイトの型番検索へ進めます。</p><a href="#catalog" class="purchase-btn">製品を探す <span aria-hidden="true">↗</span></a></div>
+      <div class="purchase-points"><div><span>01</span><strong>公式仕様を確認</strong><p>製品の仕様・利用条件の出典を表示。</p></div><div><span>02</span><strong>比較して選定</strong><p>費用、運用、必要な追加機器を整理。</p></div><div><span>03</span><strong>購入先を確認</strong><p>申込み・購入はリンク先の販売サイトで行います。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="policy" aria-labelledby="policyTitle">
+    <div class="policy-panel"><div><p class="eyebrow light">OUR PRINCIPLE</p><h2 id="policyTitle">判断材料を、公平に。</h2><p>BASELAYERは、IT機器の選定実務で重要となる「仕様・利用条件・運用の手間」を分かりやすく整理します。収益性だけで商品を推薦せず、公式資料を優先し、不明なことは不明と記載します。</p><p class="policy-fine">アフィリエイト広告（PR）を含む場合があります。対象リンクから購入・契約されると、当サイトが紹介料を受け取ることがあります。現在、提携前のリンクには紹介IDを設定していません。</p></div><a href="storage-policy.html" class="policy-link">掲載・広告方針を読む <span aria-hidden="true">↗</span></a></div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap footer-top"><div><a class="logo footer-logo" href="index.html"><span class="logo-mark">B<span>.</span></span><span>BASELAYER</span></a><p>大切なデータに、確かな置き場所を。<br>調べる・比べる・選ぶ、その一歩を。</p></div><div><strong>探す</strong><a href="#catalog">製品を探す</a><a href="#advisor">保存方法を考える</a><a href="#guide">選び方の基本</a></div><div><strong>サイト情報</strong><a href="storage-policy.html">情報掲載・広告について</a><a href="privacy.html">旧版プライバシー情報</a></div></div><div class="wrap footer-bottom"><span>© 2026 BASELAYER</span><span>製品選定の参考情報です。購入前に最新のメーカー公式情報をご確認ください。</span></div></footer>
+<div class="compare-tray" id="compareTray" hidden><div class="wrap compare-tray-inner"><div><strong id="trayLabel">比較対象</strong><span id="trayNames">製品を選択してください</span></div><div class="tray-actions"><button type="button" class="clear-btn" id="clearCompare">クリア</button><button type="button" class="primary" id="trayOpen">比較を見る →</button></div></div></div>
+<dialog class="modal" id="detailDialog" aria-labelledby="detailTitle"><button type="button" class="modal-close" data-close="detailDialog" aria-label="閉じる">×</button><div id="detailContent"></div></dialog>
+<dialog class="modal compare-modal" id="compareDialog" aria-labelledby="compareTitle"><button type="button" class="modal-close" data-close="compareDialog" aria-label="閉じる">×</button><div id="compareContent"></div></dialog>
+<dialog class="modal" id="guideDialog" aria-labelledby="guideDialogTitle"><button type="button" class="modal-close" data-close="guideDialog" aria-label="閉じる">×</button><div id="guideContent"></div></dialog>
+</body>
+</html>
