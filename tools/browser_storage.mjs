@@ -10,10 +10,14 @@ try {
  await goto(page,'index.html');
  assert.match(await page.locator('h1').innerText(),/今の保存方法/);
  assert.equal(await page.locator('.problem-row').count(),3);
+ assert.equal(await page.locator('#remoteSceneTitle').count(),1,'outside-work illustration missing');
+ assert.equal(await page.locator('.story-card').count(),3,'photographic use-case paths missing');
+ assert.equal(await page.locator('.scene-flow').count(),1,'office access flow absent');
  await page.screenshot({path:'decision-home.png',fullPage:true});
  await page.locator('.problem-row').first().click();
  await page.waitForURL(/start.html\?goal=share/);
  assert.match(await page.locator('#wizardTitle').innerText(),/困っていますか/);
+ assert.equal(await page.locator('.visual-choice img').count(),3,'beginner scenarios must include photos');
  await page.locator('#f_mode').selectOption('advanced');
  await page.locator('[data-action="next"]').click();
  await page.locator('#f_people').selectOption('medium');
@@ -61,6 +65,10 @@ try {
  assert.match(await page.locator('#detailBody').innerText(),/RAID1/);
  assert.match(await page.locator('#detailBody').innerText(),/Synology/);
  assert.match(await page.locator('#detailBody').innerText(),/他の製品と何が違う/);
+ assert.equal(await page.locator('.product-media-panel img').count(),1,'BUFFALO product image absent');
+ await page.waitForFunction(() => {const i=document.querySelector('.product-media-panel img');return i&&i.complete;},null,{timeout:20000});
+ assert(await page.locator('.product-media-panel img').evaluate(i=>i.naturalWidth>0),'BUFFALO photo failed to load');
+ await page.screenshot({path:'visual-product-desktop.png',fullPage:true});
  await goto(page,'product.html?id=iodata-usb');
  assert.match(await page.locator('#detailBody').innerText(),/在庫限り/);
  await goto(page,'product.html?id=unknown-part');
@@ -72,6 +80,9 @@ try {
  assert.match(await page.locator('#compareTable').innerText(),/DS225\+/);
  await goto(page,'learn.html');
  assert.match(await page.locator('#purpose').innerText(),/バックアップ/);
+ assert.equal(await page.locator('#remote-example .scene-flow').count(),1,'external-access flow missing on learning page');
+ assert.equal(await page.locator('#backup-example .scene-flow').count(),1,'backup data flow missing');
+
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});
  mobile.on('pageerror',e=>errors.push('mobile: '+e.message));
  for(const path of ['index.html','start.html','learn.html','compare.html','price-guide.html','product.html?id=iodata-hdd']){
@@ -79,6 +90,15 @@ try {
   const dim=await mobile.evaluate(()=>({scroll:document.documentElement.scrollWidth,viewport:window.innerWidth}));
   assert(dim.scroll<=dim.viewport+3,path+' horizontal overflow '+JSON.stringify(dim));
  }
+ 
+ await goto(mobile,'index.html');
+ const menu=mobile.locator('.mobile-menu-button');
+ assert.equal(await menu.isVisible(),true,'mobile text menu hidden');
+ await menu.click();
+ assert.equal(await mobile.locator('#baselayerMobileNavigation').isVisible(),true,'mobile nav failed to expand');
+ await mobile.locator('#baselayerMobileNavigation a[href="learn.html"]').click();
+ await mobile.waitForURL(/learn.html/);
+ assert.equal(await mobile.locator('#baselayerMobileNavigation').isVisible(),false,'mobile menu not closed');
  await mobile.screenshot({path:'decision-mobile-product.png',fullPage:true});
  assert.equal(errors.length,0,errors.join('; '));
  console.log('PASS: education, 4-step report, RTO/RPO, role tabs, 3yr prepay cost, USD exclusion, full product rationale, price guide, comparison, mobile.');
