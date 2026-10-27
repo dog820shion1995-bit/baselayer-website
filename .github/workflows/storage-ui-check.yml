@@ -1,11 +1,15 @@
-name: BASELAYER Storage UI & Catalog
+name: BASELAYER Goal-First Journey
 on:
   pull_request:
     paths:
       - index.html
+      - start.html
+      - learn.html
+      - compare.html
+      - journey.css
+      - journey-app.js
+      - catalog-guide.js
       - storage-data.js
-      - storage-site.js
-      - storage-site.css
       - storage-policy.html
       - tools/test_storage.js
       - tools/browser_storage.mjs
@@ -22,17 +26,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check frontend syntax
+      - name: Check all frontend scripts
         run: |
           node --check storage-data.js
-          node --check storage-site.js
+          node --check journey-app.js
+          node --check catalog-guide.js
           node --check tools/test_storage.js
           node --check tools/browser_storage.mjs
-      - name: Validate catalog and page
+      - name: Validate goal-first pages, storage records and logic
         run: node tools/test_storage.js
   browser-checks:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 14
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -42,15 +47,16 @@ jobs:
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
-      - name: Verify real desktop and mobile browser interactions
+      - name: Test desktop and mobile education-to-purchase journey
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/storage-http.log 2>&1 &
           node tools/browser_storage.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: baselayer-storage-screenshots
+          name: baselayer-goal-first-screenshots
           path: |
-            storage-home-desktop.png
-            storage-home-mobile.png
+            journey-home-desktop.png
+            journey-result-desktop.png
+            journey-mobile.png
           if-no-files-found: ignore
