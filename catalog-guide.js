@@ -4,6 +4,7 @@ const $=id=>document.getElementById(id);
 const escape=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const items=Array.isArray(window.BL_STORAGE_ITEMS)?window.BL_STORAGE_ITEMS:[];
 const group={cloud:"クラウド",nas:"NAS",hdd:"外付けHDD・SSD"};
+const editorial=window.BL_EDITORIAL||{},pricing=window.BL_PRICES?.entries||{};
 let kind=new URLSearchParams(location.search).get("kind")||"all";
 if(!["all","cloud","nas","hdd"].includes(kind))kind="all";
 let query="",selected=[];
@@ -16,7 +17,7 @@ $("catalogItems").innerHTML=filtered.length?filtered.map(p=>{
 const checked=selected.includes(p.id);
 const amazon="https://www.amazon.co.jp/s?k="+encodeURIComponent(p.brand+" "+p.model);
 const rakuten="https://search.rakuten.co.jp/search/mall/"+encodeURIComponent(p.brand+" "+p.model)+"/";
-return '<article class="catalog-item"><span class="pill">'+escape(group[p.kind])+'</span><h3>'+escape(p.name)+'</h3><p>'+escape(p.subtitle)+'</p><p>'+escape(p.feature)+'</p><details><summary style="cursor:pointer;font-weight:800;font-size:12px">仕様・注意点を確認する</summary><table class="learning-table"><tbody>'+Object.entries(p.specs||{}).map(([k,v])=>'<tr><th>'+escape(k)+'</th><td>'+escape(v)+'</td></tr>').join("")+'</tbody></table><p class="warning">'+escape(p.limits)+'</p><p class="smallnote">確認日：'+escape(p.reviewed)+' / '+ext(p.source,"メーカー公式情報")+'</p></details><div class="action-row">'+ext(p.official,"公式情報・申込先")+ (p.kind==="cloud"?"":ext(amazon,"Amazonで型番検索")+ext(rakuten,"楽天で型番検索"))+'</div><label><input type="checkbox" data-compare="'+escape(p.id)+'" '+(checked?"checked":"")+' aria-label="'+escape(p.name)+'を比較する"> 比較に'+(checked?"追加済み":"追加")+'</label><small>公式リンク・検索リンク。正式なアフィリエイトID未設定。価格・在庫は販売先で要確認。</small></article>';
+return '<article class="catalog-item"><span class="pill">'+escape(group[p.kind])+'</span><h3>'+escape(p.name)+'</h3><p>'+escape(p.subtitle)+'</p><p>'+escape(p.feature)+'</p><p class="smallnote"><strong>比較候補にする理由：</strong>'+escape(editorial[p.id]?.pitch||"利用目的に応じて比較")+'</p><a href="product.html?id='+encodeURIComponent(p.id)+'">選定理由・他製品との違い・価格を詳しく見る →</a><details><summary style="cursor:pointer;font-weight:800;font-size:12px">仕様・注意点を確認する</summary><table class="learning-table"><tbody>'+Object.entries(p.specs||{}).map(([k,v])=>'<tr><th>'+escape(k)+'</th><td>'+escape(v)+'</td></tr>').join("")+'</tbody></table><p class="warning">'+escape(p.limits)+'</p><p class="smallnote">確認日：'+escape(p.reviewed)+' / '+ext(p.source,"メーカー公式情報")+'</p></details><div class="action-row">'+ext(p.official,"公式情報・申込先")+ (p.kind==="cloud"?"":ext(amazon,"Amazonで型番検索")+ext(rakuten,"楽天で型番検索"))+'</div><label><input type="checkbox" data-compare="'+escape(p.id)+'" '+(checked?"checked":"")+' aria-label="'+escape(p.name)+'を比較する"> 比較に'+(checked?"追加済み":"追加")+'</label><small>公式リンク・検索リンク。正式なアフィリエイトID未設定。価格・在庫は販売先で要確認。</small></article>';
 }).join(""):'<p class="card">該当する商品が見つかりませんでした（未登録）。キーワードやカテゴリを変えてください。</p>';
 drawComparison();
 }
