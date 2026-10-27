@@ -11,7 +11,12 @@ const editorial=window.BL_EDITORIAL||{};
 const kinds={cloud:"クラウドストレージ",nas:"NAS",hdd:"外付けHDD・SSD"};
 const goals={share:"ファイル共有を改善",office:"保存場所・容量の改善",backup:"バックアップと復元の対策"};
 const opts=(key,label,entries,help)=>'<div class="field-row"><label for="f_'+key+'">'+escape(label)+'</label><select id="f_'+key+'" data-value="'+key+'">'+entries.map(([v,t])=>'<option value="'+escape(v)+'" '+(state[key]===v?"selected":"")+'>'+escape(t)+'</option>').join("")+'</select>'+(help?'<small>'+escape(help)+'</small>':"")+'</div>';
-const option=(key,v,title,sub)=>'<label class="option-card"><input type="radio" name="'+key+'" value="'+v+'" '+(state[key]===v?"checked":"")+'><span><strong>'+escape(title)+'</strong><small>'+escape(sub)+'</small></span></label>';
+const choiceVisual={
+ share:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=75",
+ office:"https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=500&q=75",
+ backup:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=75"
+};
+const option=(key,v,title,sub)=>'<label class="option-card"><img src="'+choiceVisual[v]+'" alt="" loading="lazy"><span><input type="radio" name="'+key+'" value="'+v+'" '+(state[key]===v?"checked":"")+'><strong>'+escape(title)+'</strong><small>'+escape(sub)+'</small></span></label>';
 const link=(url,title,cls="")=>{try{const u=new URL(url,location.href);if(u.protocol!=="https:")return "";return '<a class="'+escape(cls)+'" href="'+escape(u.href)+'" target="_blank" rel="noopener noreferrer">'+escape(title)+' ↗</a>';}catch{return "";}};
 const init={step:1,goal:"share",mode:"simple",people:"small",capacity:"small",remote:"yes",already:"none",admin:"no",backup:"unknown",rto:"unknown",rpo:"unknown",critical:"normal",sensitive:"unknown",growth:"normal",budget:"unknown",deviceCount:"unknown",hasNas:"unknown",selectedId:"",extraInitial:"",extraMonthly:"",view:"owner"};
 const state={...init};
@@ -21,7 +26,7 @@ const meaning={people:{one:"1人",small:"2〜5人",medium:"6〜20人",large:"21�
 const show=(key)=>meaning[key]?.[state[key]]||state[key];
 const nav=(prev,nextTitle)=>'<div class="wiz-actions">'+(prev?'<button type="button" class="btn btn-ghost" data-action="back">← 前に戻る</button>':'<a class="btn btn-ghost" href="index.html">← ホームへ</a>')+'<button type="button" class="btn btn-dark" data-action="next">'+escape(nextTitle)+' →</button></div>';
 function stepOne(){
- return '<div class="wizard-counter">STEP 01 / 04　解決したい問題</div><h2 id="wizardTitle">何に困っていますか？</h2><p>最初は製品の名前ではなく、今の課題を選びます。</p><div class="option-grid">'+
+ return '<div class="wizard-counter">STEP 01 / 04　解決したい問題</div><h2 id="wizardTitle">何に困っていますか？</h2><p>最初は製品の名前ではなく、今の課題を選びます。</p><div class="option-grid visual-choice">'+
  option("goal","share","複数人で共有したい","社内・社外からファイルを利用したい")+
  option("goal","office","保存容量・置き場所を整えたい","保存先の散在や容量不足を解決したい")+
  option("goal","backup","データを安全に戻せるようにしたい","故障・誤削除・攻撃から復旧したい")+'</div>'+
@@ -32,6 +37,7 @@ function stepTwo(){
 return '<div class="wizard-counter">STEP 02 / 04　利用環境</div><h2 id="wizardTitle">どのくらいの環境で使いますか？</h2><p>おおよその人数・容量が分かれば診断を進められます。</p>'+
 opts("people","利用人数",[["one","1人"],["small","2〜5人"],["medium","6〜20人"],["large","21人以上"]])+
 opts("capacity","いま保存したい容量",[["tiny","100GB未満"],["small","100GB〜1TB"],["medium","1〜4TB"],["large","4TB超"]],"NASの総容量とRAID構成による実効容量は異なります。")+
+'<div class="visual-question"><div class="visual-question-grid"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=75" alt="スマホやPCで外から資料を確認する仕事のイメージ" loading="lazy"><div><strong>社外からも資料を見たい？</strong><p>外出中の営業担当がスマホで見積書を開くような使い方です。</p><div class="flow-mini"><span>外出先</span>→<span>認証</span>→<span>会社の保存先</span></div></div></div></div>'+
 opts("remote","外出先や別の拠点からアクセスしますか？",[["yes","必要"],["no","基本的に不要"],["unknown","まだ分からない"]])+
 opts("already","すでに利用している共有サービス",[["none","特になし／分からない"],["m365","Microsoft 365・OneDrive・SharePointなど"],["google","Google Workspace・Google Driveなど"],["other","その他のクラウドやファイル共有サービス"]])+
 opts("hasNas","現在NASやファイルサーバーを使っていますか？",[["unknown","分からない"],["yes","利用している"],["no","利用していない"]])+
@@ -39,6 +45,7 @@ nav(true,"データ保護と運用を確認する");
 }
 function stepThree(){
 return '<div class="wizard-counter">STEP 03 / 04　復元と管理</div><h2 id="wizardTitle">データが使えない場合、どのくらい困りますか？</h2><p>難しい単語は不要です。分からない質問は「未確認」のままでも進めます。</p>'+
+'<div class="visual-question"><div class="visual-question-grid"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=75" alt="故障時に備えたい業務PCのイメージ" loading="lazy"><div><strong>PCが壊れても元に戻せる？</strong><p>共有先があることと、復元用の別コピーがあることは違います。</p><div class="flow-mini"><span>仕事のデータ</span>→<span>別のコピー</span>→<span>復元</span></div></div></div></div>'+
 opts("backup","別の場所に、復元できるバックアップはありますか？",[["unknown","分からない・未確認"],["none","ない"],["yes","ある（復元テスト済み）"]])+
 opts("rto","データが使えない場合、いつまでに業務を再開したいですか？",[["unknown","まだ分からない"],["hour","1時間以内"],["day","当日中"],["days","2〜3日以内"],["week","数日以上かかってもよい"]],"目標復旧時間（RTO）の参考質問です。速いほど別の設計・費用が必要になる場合があります。")+
 opts("rpo","直近のデータをどれくらい失っても許容できますか？",[["unknown","まだ分からない"],["hour","過去1時間以内のデータまで必要"],["day","前日のデータが残ればよい"],["week","数日前のデータでもよい"]],"目標復旧時点（RPO）の参考質問です。自動バックアップの頻度を決める判断材料です。")+
