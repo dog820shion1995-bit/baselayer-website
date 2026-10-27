@@ -90,6 +90,10 @@ try {
  assert.match(await page.locator('#purpose').innerText(),/バックアップ/);
  assert.equal(await page.locator('#remote-example .scene-flow').count(),1,'external-access flow missing on learning page');
  assert.equal(await page.locator('#backup-example .scene-flow').count(),1,'backup data flow missing');
+ assert.equal(await page.locator('#lan-example .location-card').count(),2,'LAN and cloud storage location diagrams missing');
+ assert.match(await page.locator('#lan-example').innerText(),/主な保存先/);
+ assert.match(await page.locator('#lan-example').innerText(),/同期/);
+ await page.screenshot({path:'data-location-desktop.png',fullPage:true});
 
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});
  mobile.on('pageerror',e=>errors.push('mobile: '+e.message));
@@ -99,6 +103,10 @@ try {
   assert(dim.scroll<=dim.viewport+3,path+' horizontal overflow '+JSON.stringify(dim));
  }
  
+ await goto(mobile,'learn.html#lan-example');
+ assert.equal(await mobile.locator('#lan-example .location-card').count(),2);
+ assert(await mobile.locator('#lan-example').evaluate(el=>getComputedStyle(el.querySelector('.location-grid')).gridTemplateColumns.split(' ').length===1),'mobile data-location cards not stacked');
+ await mobile.screenshot({path:'data-location-mobile.png',fullPage:true});
  await goto(mobile,'index.html');
  const menu=mobile.locator('.mobile-menu-button');
  assert.equal(await menu.isVisible(),true,'mobile text menu hidden');
