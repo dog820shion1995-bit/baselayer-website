@@ -9,6 +9,9 @@ on:
       - product.html
       - price-guide.html
       - journey.css
+      - visual-story.css
+      - visual-media.js
+      - site-navigation.js
       - journey-app.js
       - product-editorial.js
       - official-prices.js
@@ -40,6 +43,8 @@ jobs:
           node --check product-detail.js
           node --check price-guide.js
           node --check catalog-guide.js
+          node --check visual-media.js
+          node --check site-navigation.js
           node --check storage-data.js
           node --check tools/test_storage.js
           node --check tools/browser_storage.mjs
@@ -69,4 +74,5 @@ jobs:
             decision-home.png
             decision-report.png
             decision-mobile-product.png
+            visual-product-desktop.png
           if-no-files-found: ignore
