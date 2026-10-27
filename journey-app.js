@@ -196,6 +196,7 @@ function result(){
 }
 function render(){
  state.step=Math.min(4,Math.max(1,state.step));
+ document.querySelector(".wizard-shell")?.classList.toggle("report-wide",state.step===4);
  $("wizardContent").innerHTML=[null,stepOne,stepTwo,stepThree,result][state.step]();
  $("progressList").querySelectorAll("li").forEach((li,i)=>{li.classList.toggle("current",i===state.step-1);li.classList.toggle("done",i<state.step-1);});
  if(state.step===4){updateAmounts();changeView(state.view);}
