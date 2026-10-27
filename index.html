@@ -3,185 +3,151 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fbfbf8">
-<meta name="description" content="BASELAYERは、クラウドストレージ・NAS・外付けHDDの違いをわかりやすく整理した専門比較サイト。目的から探す、仕様を比べる、購入先を確認する。">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="クラウドストレージ・NAS・外付けHDDを、用途と仕様から比較。BASELAYERは製品の選定から購入先の確認までをサポートするストレージ専門サイトです。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="BASELAYER｜そのデータ、どこに置く？">
-<meta property="og:description" content="クラウド・NAS・外付けHDDを用途で選び、公式情報をもとに比較。">
-<title>BASELAYER｜クラウド・NAS・外付けHDDを探す・比較する</title>
-<link rel="stylesheet" href="storage-site.css">
+<meta property="og:title" content="BASELAYER | ストレージ選びを、もっとシンプルに。">
+<meta property="og:description" content="データの保存先を、目的から探して比較する。クラウドストレージ・NAS・外付けHDDの選定ガイド。">
+<title>BASELAYER | ストレージ選びを、もっとシンプルに。</title>
+<link rel="stylesheet" href="storage-site.css?v=2">
 <script defer src="storage-data.js"></script>
 <script defer src="storage-site.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#main">メインコンテンツへ</a>
-<header class="header" id="top">
-  <div class="wrap header-inner">
-    <a class="identity" href="index.html" aria-label="BASELAYER トップページ">
-      <span class="identity-emblem" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="identity-wordmark">BASE<span>LAYER</span><small>STORAGE SELECTION</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="メインメニュー">
-      <a href="#categories">カテゴリから探す</a><a href="#advisor">目的から選ぶ</a><a href="#catalog">製品を比較</a><a href="#guide">選び方を知る</a>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<div class="top-note"><div class="wrap top-note-inner"><span><span class="top-note-dot"></span> データの保存先選びを、わかりやすく。</span><a href="storage-policy.html">BASELAYERの掲載方針 <span aria-hidden="true">↗</span></a></div></div>
+<header class="header">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="BASELAYER ホーム"><span class="logo-mark">B<span>.</span></span><span>BASELAYER<small>STORAGE GUIDE</small></span></a>
+    <nav class="desktop-nav" aria-label="メインナビゲーション">
+      <a href="#categories">カテゴリから探す</a>
+      <a href="#advisor">選び方ナビ</a>
+      <a href="#catalog">製品・サービス比較</a>
+      <a href="#guide">選ぶ前に知る</a>
     </nav>
-    <a class="nav-action" href="#catalog">製品を探す <span aria-hidden="true">↗</span></a>
-    <button type="button" class="menu-button" id="menuToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    <a href="#catalog" class="header-btn">製品を比較する <span aria-hidden="true">↗</span></a>
+    <button class="menu-button" type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
-  <nav class="mobile-nav" id="mobileMenu" aria-label="スマートフォン向けメニュー" hidden>
-    <a href="#categories">カテゴリから探す</a><a href="#advisor">目的から選ぶ</a><a href="#catalog">製品を比較</a><a href="#guide">選び方を知る</a><a href="storage-policy.html">運営・広告方針</a>
+  <nav id="mobileMenu" class="mobile-nav" aria-label="スマートフォン用メニュー" hidden>
+    <a href="#categories">カテゴリから探す</a><a href="#advisor">選び方ナビ</a><a href="#catalog">製品・サービス比較</a><a href="#guide">選ぶ前に知る</a><a href="storage-policy.html">運営・広告について</a>
   </nav>
 </header>
 <main id="main">
   <section class="hero" aria-labelledby="heroTitle">
-    <div class="wrap hero-layout">
-      <div class="hero-intro">
-        <p class="eyebrow"><span class="eyebrow-line"></span> THE STORAGE GUIDE FOR BETTER DECISIONS</p>
-        <h1 id="heroTitle">大切なデータ、<br><span>どこに置く？</span></h1>
-        <p class="hero-text">クラウドに預ける。NASにまとめる。外付けHDDに残す。<br>選択肢が多いからこそ、まずは違いを知ることから。<br>BASELAYERは、保存先選びをもっと簡単にする比較サイトです。</p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="hero-overline"><span class="hero-overline-line"></span> STORAGE SELECTION, MADE SIMPLE.</div>
+        <h1 id="heroTitle">大切なデータの<br><span class="hero-accent">置き場所、</span><br>ちゃんと選ぼう。</h1>
+        <p class="hero-lead">クラウド、NAS、外付けHDD。<br>よく似ているようで、得意なことは違います。<br>自分に合った保存方法を、ここから見つけませんか。</p>
         <form class="hero-search" id="heroForm" role="search">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><circle cx="10.5" cy="10.5" r="6.3" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <label for="heroQuery" class="sr-only">製品・型番・メーカーから検索</label>
-          <input id="heroQuery" type="search" maxlength="80" placeholder="製品・型番・メーカーを検索　例：DS225+">
-          <button type="submit">検索 <span aria-hidden="true">→</span></button>
+          <label class="sr-only" for="heroQuery">商品名・メーカー・型番を検索</label>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.4" stroke="currentColor" stroke-width="1.9"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          <input id="heroQuery" type="search" maxlength="80" autocomplete="off" placeholder="メーカー・商品名・型番で検索">
+          <button type="submit">検索する <span aria-hidden="true">→</span></button>
         </form>
-        <div class="hero-links"><span>まず何をしたい？</span><a href="#advisor">保存方法を相談する <span aria-hidden="true">↗</span></a><a href="#categories">カテゴリを見る <span aria-hidden="true">↗</span></a></div>
-        <div class="hero-fine">法人利用も、個人利用も。登録不要で比較できます。</div>
+        <div class="hero-paths"><span class="path-caption">たとえば</span><a href="#advisor">何を選べばいいかわからない <span aria-hidden="true">↗</span></a><a href="#categories">種類から探したい <span aria-hidden="true">↗</span></a></div>
       </div>
-      <div class="hero-art" role="img" aria-label="クラウド・NAS・外付けHDDの保存方法を表現したオリジナルの図解">
-        <div class="art-top"><span class="art-ring"><i></i></span><span>STORAGE AT A GLANCE</span><span>01 — 03</span></div>
-        <div class="art-grid-pattern" aria-hidden="true"></div>
-        <div class="art-cloud">
-          <span class="art-index">01 / CLOUD</span>
-          <div class="art-cloud-head"><span>● ● ●</span><span>WORKSPACE</span></div>
-          <div class="art-file-row"><span class="art-file-icon">▤</span><span><i></i><i></i></span><span class="art-check">✓</span></div>
-          <div class="art-file-row"><span class="art-file-icon blue">▦</span><span><i></i><i></i></span><span class="art-check">✓</span></div>
-          <div class="art-file-row"><span class="art-file-icon peach">▣</span><span><i></i><i></i></span><span class="art-check">✓</span></div>
+      <div class="hero-art" aria-label="クラウド、NAS、外付けHDDを比較するイメージ">
+        <div class="art-background-circle"></div><div class="art-background-circle two"></div>
+        <div class="art-paper art-main">
+          <div class="art-paper-head"><span class="art-symbol"><span></span><span></span><span></span><span></span></span><span>STORAGE SELECT</span><span class="art-check">✓</span></div>
+          <div class="art-paper-heading">あなたに合う保存方法は？</div>
+          <div class="art-paper-sub">目的から見つける、3つの選択肢。</div>
+          <div class="art-option"><div class="art-device cloud"><svg viewBox="0 0 60 60" fill="none" aria-hidden="true"><path d="M12 42h35a11 11 0 0 0-2-22 15 15 0 0 0-29 5 9 9 0 0 0-4 17Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg></div><div><strong>CLOUD STORAGE</strong><span>オンラインで共有する</span></div><i>↗</i></div>
+          <div class="art-option"><div class="art-device nas"><svg viewBox="0 0 60 60" fill="none" aria-hidden="true"><rect x="16" y="8" width="28" height="44" rx="5" stroke="currentColor" stroke-width="3"/><path d="M30 17v19M23 44h14" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg></div><div><strong>NETWORK STORAGE</strong><span>ネットワークで共有する</span></div><i>↗</i></div>
+          <div class="art-option"><div class="art-device hdd"><svg viewBox="0 0 60 60" fill="none" aria-hidden="true"><rect x="9" y="17" width="42" height="27" rx="6" stroke="currentColor" stroke-width="3"/><path d="M17 36h27" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/></svg></div><div><strong>EXTERNAL DRIVE</strong><span>USBで保存する</span></div><i>↗</i></div>
         </div>
-        <div class="art-nas"><span class="art-index">02 / NAS</span><div class="art-nas-body"><div class="art-nas-bay"><span></span><span></span></div><div class="art-nas-status"><i></i><i></i><i></i></div></div></div>
-        <div class="art-drive"><span class="art-index">03 / EXTERNAL HDD</span><div class="art-drive-body"><span class="art-drive-light"></span><div class="art-drive-lines"></div></div></div>
-        <div class="art-stroke one"></div><div class="art-stroke two"></div>
-        <span class="art-label cloud-label">共有する</span><span class="art-label nas-label">まとめる</span><span class="art-label hdd-label">残す</span>
-        <div class="art-bottom">FIND · COMPARE · CHOOSE <span>BASELAYER / STORAGE</span></div>
+        <div class="art-sticker top-sticker"><span class="mini-star">✦</span><b>COMPARE</b><span>機能も違いも比較</span></div>
+        <div class="art-sticker bottom-sticker"><span class="mini-check">✓</span><span>YOUR DATA,<br><b>YOUR CHOICE.</b></span></div>
       </div>
     </div>
   </section>
-  <section class="value-strip" aria-label="BASELAYERでできること"><div class="wrap value-list">
-    <div><span class="value-number">01</span><strong>目的から探す</strong><span>用途に合わせて候補を整理</span></div>
-    <div><span class="value-number">02</span><strong>違いを比べる</strong><span>仕様と注意点を横並びで</span></div>
-    <div><span class="value-number">03</span><strong>購入先を確認</strong><span>公式情報と販売先へ</span></div>
+  <section class="trust-strip" aria-label="BASELAYERの情報掲載方針"><div class="wrap trust-strip-inner">
+    <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5 8 14l8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> メーカー公式情報を参照</span>
+    <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="4" y="4" width="12" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 8h6M7 11h6" stroke="currentColor" stroke-width="1.6"/></svg> 出典・確認日を掲載</span>
+    <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2 3 5v5c0 5 4 7 7 8 3-1 7-3 7-8V5l-7-3Z" stroke="currentColor" stroke-width="1.6"/></svg> 未確認情報を推測しない</span>
   </div></section>
 
-  <section class="section wrap" id="categories" aria-labelledby="categoryTitle">
-    <div class="section-heading"><div><span class="smallcap">FIND BY CATEGORY</span><h2 id="categoryTitle">あなたが探している<br>保存方法は、どれですか？</h2><p>3つの選択肢は、似ているようで役割が違います。</p></div><a class="section-shortcut" href="#advisor">決められない方はこちら ↗</a></div>
-    <div class="category-grid">
-      <button type="button" data-category="cloud" class="category-tile tile-cloud">
-        <span class="category-topline"><b>01</b> CLOUD STORAGE</span>
-        <span class="category-illustration cloud">
-          <svg viewBox="0 0 210 130" aria-hidden="true" fill="none"><path d="M56 94h97c22 0 32-15 32-30s-13-28-31-29c-5-20-21-31-41-31-22 0-39 14-42 34C54 37 39 49 39 65c0 17 8 29 17 29Z" stroke="currentColor" stroke-width="3"/><path d="m98 65 11-11 11 11M109 54v30M90 85h38" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="category-title">クラウドストレージ</span><span class="category-description">社内外からファイルを共有。サービスの料金や管理機能を比較したい人へ。</span>
-        <span class="category-more">サービスを比較する <span aria-hidden="true">↗</span></span>
-      </button>
-      <button type="button" data-category="nas" class="category-tile tile-nas">
-        <span class="category-topline"><b>02</b> NETWORK STORAGE</span>
-        <span class="category-illustration nas">
-          <svg viewBox="0 0 210 130" aria-hidden="true" fill="none"><rect x="53" y="12" width="104" height="105" rx="13" stroke="currentColor" stroke-width="3"/><rect x="68" y="27" width="33" height="68" rx="5" stroke="currentColor" stroke-width="2.5"/><rect x="108" y="27" width="33" height="68" rx="5" stroke="currentColor" stroke-width="2.5"/><circle cx="85" cy="106" r="3.5" fill="currentColor"/><circle cx="97" cy="106" r="3.5" fill="currentColor"/><path d="M76 34v35M116 34v35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </span>
-        <span class="category-title">NAS</span><span class="category-description">社内ネットワークに保存場所を作る。容量・HDD構成・管理方法から検討。</span>
-        <span class="category-more">NASを比較する <span aria-hidden="true">↗</span></span>
-      </button>
-      <button type="button" data-category="hdd" class="category-tile tile-hdd">
-        <span class="category-topline"><b>03</b> EXTERNAL DRIVES</span>
-        <span class="category-illustration hdd">
-          <svg viewBox="0 0 210 130" aria-hidden="true" fill="none"><rect x="47" y="22" width="116" height="85" rx="13" stroke="currentColor" stroke-width="3"/><path d="M59 89h92M67 39h32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="142" cy="40" r="4" fill="currentColor"/><path d="M80 107v10h50v-10" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="category-title">外付けHDD・SSD</span><span class="category-description">PCの保存・バックアップに。必要容量や接続方法を確かめながら選ぶ。</span>
-        <span class="category-more">ドライブを比較する <span aria-hidden="true">↗</span></span>
-      </button>
-    </div>
-    <p class="category-footnote">※このページの機器図はカテゴリを説明する図解であり、実際の商品写真ではありません。</p>
-  </section>
-
-  <section class="section advisor-section" id="advisor" aria-labelledby="advisorTitle">
+  <section class="section section-problems" id="problems" aria-labelledby="problemsTitle">
     <div class="wrap">
-      <div class="section-heading"><div><span class="smallcap">FIND BY PURPOSE</span><h2 id="advisorTitle">何を選べばいいか<br>分からない方へ。</h2><p>最初に、保存したい目的を選ぶだけ。検討の入口を一緒に整理します。</p></div><div class="steps-pill"><span>3 STEP</span> かんたん選定ナビ</div></div>
-      <div class="advisor-layout">
-        <form id="advisorForm" class="advisor-panel">
-          <fieldset class="advisor-field"><legend><span class="step-circle">1</span> 主な目的は何ですか？</legend>
-            <div class="choice-grid">
-              <label class="choice"><input type="radio" name="goal" value="share" checked><span class="choice-text"><b>チームでファイルを共有</b><small>社内外で共同利用したい</small></span><span class="choice-tick" aria-hidden="true">✓</span></label>
-              <label class="choice"><input type="radio" name="goal" value="office"><span class="choice-text"><b>会社に保存場所を作る</b><small>オフィス内にデータを集めたい</small></span><span class="choice-tick" aria-hidden="true">✓</span></label>
-              <label class="choice"><input type="radio" name="goal" value="backup"><span class="choice-text"><b>データをバックアップ</b><small>削除・故障などに備えたい</small></span><span class="choice-tick" aria-hidden="true">✓</span></label>
-            </div>
-          </fieldset>
-          <div class="advisor-row">
-            <div class="advisor-field"><label for="memberCount" class="field-label"><span class="step-circle">2</span> 利用人数</label><select id="memberCount"><option value="1">1人</option><option value="5">2〜5人</option><option value="20" selected>6〜20人</option><option value="50">21人以上</option></select></div>
-            <div class="advisor-field"><label for="remoteNeed" class="field-label"><span class="step-circle">3</span> 社外から使いますか？</label><select id="remoteNeed"><option value="yes">はい、必要です</option><option value="no">いいえ、社内のみ</option><option value="unsure">まだ分かりません</option></select></div>
-          </div>
-          <button class="primary advisor-submit" type="submit">検討する保存方法を見る <span aria-hidden="true">→</span></button>
-          <p class="advisor-caveat">結果はカテゴリを整理するためのヒントです。特定商品の動作や導入適合性を保証するものではありません。</p>
-        </form>
-        <div class="advisor-result" id="advisorResult" aria-live="polite">
-          <div class="result-tag"><span class="result-small-dot"></span> YOUR STORAGE DIRECTION</div>
-          <div class="result-symbol" aria-hidden="true">↗</div>
-          <h3>どこに保存するか。<br>ここから見えてくる。</h3>
-          <p>左側の3つの質問に答えてください。クラウド・NAS・外付けHDDのどこから検討するとよいか、整理して表示します。</p>
-          <div class="result-divider"></div><span class="result-footer">用途・運用・バックアップは個別に確認</span>
-        </div>
+      <div class="section-heading"><div><span class="section-kicker"><span class="kicker-rule"></span> START WITH YOUR NEED</span><h2 id="problemsTitle">「何をしたい？」から、<br>探してみよう。</h2></div><p class="section-intro">専門用語がわからなくても大丈夫。<br>利用シーンから、選び方を整理できます。</p></div>
+      <div class="need-grid">
+        <a class="need-card need-one" href="#advisor"><span class="need-number">01</span><span class="need-icon"><svg viewBox="0 0 50 50" fill="none" aria-hidden="true"><rect x="4" y="13" width="24" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 32v5M9 38h14M36 16v17M30 22h12M30 28h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><h3>複数人で<br>ファイルを共有したい</h3><p>社内・社外から使える保存方法は？</p><span class="need-arrow">選び方を見る <span aria-hidden="true">↗</span></span></a>
+        <a class="need-card need-two" href="#advisor"><span class="need-number">02</span><span class="need-icon"><svg viewBox="0 0 50 50" fill="none" aria-hidden="true"><rect x="9" y="3" width="32" height="44" rx="5" stroke="currentColor" stroke-width="2"/><path d="M25 12v19M16 36h18M16 41h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><h3>会社や自宅に<br>保存先を作りたい</h3><p>NASに必要なものや管理の手間は？</p><span class="need-arrow">選び方を見る <span aria-hidden="true">↗</span></span></a>
+        <a class="need-card need-three" href="#advisor"><span class="need-number">03</span><span class="need-icon"><svg viewBox="0 0 50 50" fill="none" aria-hidden="true"><rect x="4" y="12" width="42" height="27" rx="5" stroke="currentColor" stroke-width="2"/><path d="M12 32h27M12 20h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><h3>大切なデータを<br>バックアップしたい</h3><p>何を、どこに、どう残せばいい？</p><span class="need-arrow">選び方を見る <span aria-hidden="true">↗</span></span></a>
       </div>
     </div>
   </section>
 
-  <section class="section wrap" id="catalog" aria-labelledby="catalogTitle">
-    <div class="section-heading catalog-title-row"><div><span class="smallcap">COMPARE PRODUCTS</span><h2 id="catalogTitle">製品を探す。<br>違いを、見つける。</h2><p>型番から検索し、気になる製品を最大3件まで比較できます。</p></div><span class="catalog-total" id="catalogCount">製品データを読み込み中</span></div>
-    <div class="catalog-tools">
-      <label class="search-field" for="catalogSearch"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.3" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="catalogSearch" type="search" placeholder="型番・メーカー・商品名で検索"></label>
-      <div class="filter-pills" role="group" aria-label="製品カテゴリ"><button type="button" data-filter="all" class="is-active" aria-pressed="true">すべて</button><button type="button" data-filter="cloud" aria-pressed="false">クラウド</button><button type="button" data-filter="nas" aria-pressed="false">NAS</button><button type="button" data-filter="hdd" aria-pressed="false">外付けHDD</button></div>
+  <section class="section section-categories" id="categories" aria-labelledby="categoriesTitle"><div class="wrap">
+    <div class="section-heading"><div><span class="section-kicker"><span class="kicker-rule"></span> THREE WAYS TO STORE</span><h2 id="categoriesTitle">保存方法は、大きく3つ。</h2></div><p class="section-intro">それぞれの得意なことを知って、<br>自分に合う製品を選びましょう。</p></div>
+    <div class="category-grid">
+      <button class="category-tile cloud-tile" type="button" data-category="cloud"><span class="tile-top">01 <span>/ ONLINE</span></span><div class="tile-media"><svg viewBox="0 0 150 118" fill="none" aria-hidden="true"><path d="M34 90h79a25 25 0 0 0-3-50 38 38 0 0 0-72 12 19 19 0 0 0-4 38Z" fill="#fff" stroke="#6db5c5" stroke-width="3"/><path d="M75 52v36M63 65l12-13 12 13" stroke="#2995ae" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>クラウドストレージ</h3><p>インターネットを使って、チームや離れた場所からファイルを共有。</p><span class="tile-bottom">サービスを比較する <span aria-hidden="true">↗</span></span></button>
+      <button class="category-tile nas-tile" type="button" data-category="nas"><span class="tile-top">02 <span>/ NETWORK</span></span><div class="tile-media"><svg viewBox="0 0 150 118" fill="none" aria-hidden="true"><rect x="48" y="14" width="57" height="90" rx="10" fill="#fff" stroke="#9c92ca" stroke-width="3"/><rect x="59" y="27" width="15" height="54" rx="4" fill="#ebedf8" stroke="#b3a9d5" stroke-width="2"/><rect x="79" y="27" width="15" height="54" rx="4" fill="#ebedf8" stroke="#b3a9d5" stroke-width="2"/><circle cx="67" cy="94" r="2" fill="#9c92ca"/><circle cx="87" cy="94" r="2" fill="#9c92ca"/></svg></div><h3>NAS</h3><p>社内ネットワークに保存先を用意。複数人でファイルを扱える機器。</p><span class="tile-bottom">NASを比較する <span aria-hidden="true">↗</span></span></button>
+      <button class="category-tile hdd-tile" type="button" data-category="hdd"><span class="tile-top">03 <span>/ USB DRIVE</span></span><div class="tile-media"><svg viewBox="0 0 150 118" fill="none" aria-hidden="true"><rect x="28" y="32" width="93" height="57" rx="12" fill="#fff" stroke="#d5a781" stroke-width="3"/><path d="M46 74h55M46 47h25" stroke="#c99570" stroke-width="4" stroke-linecap="round"/><circle cx="109" cy="46" r="3" fill="#d5a781"/></svg></div><h3>外付けHDD・SSD</h3><p>PCなどに接続してデータを保存。手軽なバックアップにも。</p><span class="tile-bottom">外付けドライブを見る <span aria-hidden="true">↗</span></span></button>
     </div>
-    <div class="catalog-statusbar"><p class="count" id="resultCount" role="status" aria-live="polite"></p><span>画像はカテゴリの図解です</span></div>
-    <div id="productGrid" class="product-grid"></div>
-    <div class="catalog-bottom">
-      <div><span class="compare-mini-mark" aria-hidden="true">≍</span><div><strong>気になる製品を並べて比べる</strong><p>上の「比較に追加」から2〜3件選んでください。</p></div></div>
-      <button type="button" id="openCompare" class="outline-button">比較表を開く <span aria-hidden="true">↗</span></button>
-    </div>
-    <div class="catalog-notice"><span aria-hidden="true">ⓘ</span><p>掲載データは編集時点の公式情報に基づく参考情報です。価格・在庫はリアルタイム取得していません。通販リンクは検索結果に移動するため、購入前に商品型番と販売条件をご確認ください。</p></div>
-  </section>
+    <div class="category-hint"><span class="hint-icon">i</span><p>ファイルを共有する仕組みと、復元できるバックアップは別のものです。NASのRAIDも単独ではバックアップの代わりになりません。</p><a href="#guide">詳しく見る ↗</a></div>
+  </div></section>
 
-  <section class="section source-section" id="updates">
-    <div class="wrap source-content">
-      <div><span class="smallcap">A BETTER WAY TO COMPARE</span><h2>比べる前に、<br>確かめておきたいこと。</h2><p>誰かのおすすめより、自分に合う選択を。情報が確認できない部分は断定しない。それがBASELAYERの基本姿勢です。</p></div>
-      <div class="source-three"><div><span>01</span><strong>参照元が分かる</strong><p>できる限りメーカーや提供元の公式ページを案内。</p></div><div><span>02</span><strong>確認日が分かる</strong><p>仕様を調べた日付と、未確認の条件を明記。</p></div><div><span>03</span><strong>広告かどうか分かる</strong><p>提携・広告リンクは区別し、紹介料だけで選ばない。</p></div></div>
-    </div>
-  </section>
+  <section class="section section-catalog" id="catalog" aria-labelledby="catalogTitle"><div class="wrap">
+    <div class="section-heading catalog-head"><div><span class="section-kicker"><span class="kicker-rule"></span> PRODUCT FINDER</span><h2 id="catalogTitle">製品・サービスを探す。</h2><p class="section-intro inline">公式情報を参照した候補から、仕様と使い方を比べられます。</p></div><span class="head-tag" id="catalogCount">登録情報を読み込み中</span></div>
+    <div class="catalog-tool"><div class="filter-bar">
+      <div class="search-field"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.4" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><label class="sr-only" for="catalogSearch">掲載製品を検索</label><input id="catalogSearch" type="search" placeholder="商品名・型番・メーカーで検索" maxlength="80"></div>
+      <div class="filter-pills" role="group" aria-label="製品カテゴリの絞り込み"><button type="button" data-filter="all" class="is-active" aria-pressed="true">すべて</button><button type="button" data-filter="cloud" aria-pressed="false">クラウド</button><button type="button" data-filter="nas" aria-pressed="false">NAS</button><button type="button" data-filter="hdd" aria-pressed="false">外付けHDD</button></div>
+    </div><p class="count" id="resultCount" role="status" aria-live="polite"></p><div class="product-grid" id="productGrid"></div></div>
+    <div class="compare-intro"><div class="compare-badge">↔</div><div><strong>複数の製品で迷ったら、並べて比較。</strong><p>気になる製品を最大3件選ぶと、違いを同じ表で確認できます。</p></div><button class="text-action" type="button" id="openCompare">比較表を見る ↗</button></div>
+    <div class="catalog-notice"><span>ⓘ</span><p>掲載内容は確認時点の情報です。実売価格・在庫は取得していません。購入先では、型番・最新価格・販売条件を確認してください。公式後継品や完全互換は推測しません。</p></div>
+  </div></section>
 
-  <section class="section wrap" id="guide" aria-labelledby="guideTitle">
-    <div class="section-heading"><div><span class="smallcap">THE BASICS, SIMPLY</span><h2 id="guideTitle">選ぶ前の、3つの基本。</h2><p>専門用語よりも、失敗しないための判断ポイントを。</p></div></div>
+  <section class="section section-advisor" id="advisor" aria-labelledby="advisorTitle"><div class="wrap">
+    <div class="advisor-intro"><div><span class="section-kicker"><span class="kicker-rule"></span> STORAGE CHOICE NAVI</span><h2 id="advisorTitle">迷っているなら、<br><span>3つの質問から。</span></h2><p>難しい知識はいりません。利用シーンを入力すると、まず比較すべき保存方法が見えてきます。</p></div><div class="advisor-intro-label"><span>01</span><span>02</span><span>03</span><strong>FIND YOUR WAY</strong></div></div>
+    <div class="advisor-layout">
+      <form id="advisorForm" class="advisor-panel">
+        <div class="field-number">Q1 <span>何をしたいですか？</span></div>
+        <fieldset class="choice-grid"><legend class="sr-only">利用目的を選択</legend>
+          <label class="choice"><input type="radio" name="goal" value="share" checked><span>チームでファイルを共有したい</span></label>
+          <label class="choice"><input type="radio" name="goal" value="office"><span>社内・自宅に保存場所を作りたい</span></label>
+          <label class="choice"><input type="radio" name="goal" value="backup"><span>PCのバックアップを取りたい</span></label>
+        </fieldset>
+        <div class="field-number">Q2 <span>何人で利用しますか？</span></div>
+        <div class="select-wrap"><label class="sr-only" for="memberCount">利用人数</label><select id="memberCount"><option value="1">1人</option><option value="5">2〜5人</option><option value="20" selected>6〜20人</option><option value="50">21人以上</option></select></div>
+        <div class="field-number">Q3 <span>外出先からも使いますか？</span></div>
+        <div class="select-wrap"><label class="sr-only" for="remoteNeed">社外からの利用</label><select id="remoteNeed"><option value="yes">はい、使いたい</option><option value="no">基本的に使わない</option><option value="unsure">まだわからない</option></select></div>
+        <button class="primary wide" type="submit">保存方法の候補を見る <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="advisor-result" id="advisorResult" aria-live="polite">
+        <div class="result-tag"><span class="result-dot"></span> YOUR STORAGE DIRECTION</div>
+        <div class="result-symbol" aria-hidden="true">↗</div>
+        <h3>あなたに合う<br>保存方法を整理します。</h3>
+        <p>左の質問に答えると、まず比較したいカテゴリと、購入前に確認するポイントを表示します。</p>
+        <div class="result-divider"></div><span class="result-footer">結果は簡易な参考情報です。導入時には利用条件を確認してください。</span>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section section-basics" id="guide" aria-labelledby="guideTitle"><div class="wrap">
+    <div class="section-heading"><div><span class="section-kicker"><span class="kicker-rule"></span> THE ESSENTIALS</span><h2 id="guideTitle">選ぶ前に知っておきたい、<br>たった3つのこと。</h2></div><p class="section-intro">必要なところだけ、短く読めます。<br>買ってから後悔しないための基礎知識。</p></div>
     <div class="guide-grid">
-      <article class="guide-card"><span class="guide-top"><b>01</b> / CLOUD</span><div class="guide-symbol">☁</div><h3>クラウドは、どんなときに？</h3><p>外出先からアクセスしたい。メンバーと共有したい。そんなときの選択肢と確認点。</p><button type="button" data-topic="cloud" class="inline-link">ポイントを読む <span aria-hidden="true">↗</span></button></article>
-      <article class="guide-card"><span class="guide-top"><b>02</b> / NAS</span><div class="guide-symbol">▥</div><h3>NASを選ぶ前に。</h3><p>本体だけで使える？ ドライブは別売り？ 導入前に確認したい費用と運用のこと。</p><button type="button" data-topic="nas" class="inline-link">ポイントを読む <span aria-hidden="true">↗</span></button></article>
-      <article class="guide-card"><span class="guide-top"><b>03</b> / BACKUP</span><div class="guide-symbol">↺</div><h3>保存とバックアップは違う。</h3><p>共有できても、消えたデータを戻せるとは限りません。保護の基本を整理。</p><button type="button" data-topic="backup" class="inline-link">ポイントを読む <span aria-hidden="true">↗</span></button></article>
+      <article class="guide-card"><span class="guide-number">GUIDE / 01</span><span class="guide-mark">☁</span><h3>クラウドストレージとは？</h3><p>ネット上でファイルを保管・共有するサービス。人数、容量、権限管理を確かめましょう。</p><button type="button" class="inline-link" data-topic="cloud">詳しく確認する <span aria-hidden="true">→</span></button></article>
+      <article class="guide-card"><span class="guide-number">GUIDE / 02</span><span class="guide-mark">▣</span><h3>NASを選ぶときの注意点</h3><p>ネットワークで使う保存装置。ドライブの有無、管理方法、バックアップ先をチェック。</p><button type="button" class="inline-link" data-topic="nas">詳しく確認する <span aria-hidden="true">→</span></button></article>
+      <article class="guide-card"><span class="guide-number">GUIDE / 03</span><span class="guide-mark">↺</span><h3>バックアップはなぜ必要？</h3><p>同期やRAIDだけでは守れないデータも。別の保存先と復元方法まで考えましょう。</p><button type="button" class="inline-link" data-topic="backup">詳しく確認する <span aria-hidden="true">→</span></button></article>
     </div>
-  </section>
-
-  <section class="purchase-section" id="purchase">
-    <div class="wrap purchase-content">
-      <div><span class="smallcap">FROM RESEARCH TO ACTION</span><h2>比べた、その先へ。</h2><p>クラウドはサービス公式サイトへ。NASや外付けHDDは、型番を確認して通販サイトへ。選んで終わりではなく、次の行動につながる案内を。</p><a href="#catalog" class="purchase-btn">製品・サービスを探す <span aria-hidden="true">→</span></a></div>
-      <div class="purchase-route" aria-label="選定の流れ"><span>01 <b>知る</b></span><span>02 <b>比較する</b></span><span>03 <b>確認・購入</b></span></div>
-    </div>
-  </section>
-
-  <section class="section policy-section wrap" id="policy" aria-labelledby="policyTitle">
-    <div><span class="smallcap">ABOUT BASELAYER</span><h2 id="policyTitle">広告より先に、<br>納得できる情報を。</h2></div>
-    <div class="policy-side"><p>BASELAYERはクラウドストレージ・NAS・外付けHDDの選定を支援する専門サイトです。仕様・注意点・情報の参照元を可能な限り明示し、購入判断をサポートします。</p><p class="policy-fine">アフィリエイト広告（PR）を含む場合があります。リンクを通じて契約・購入が成立すると、紹介料を受け取ることがあります。現在は提携ID未設定の通常リンクを中心に掲載しています。</p><a class="policy-link" href="storage-policy.html">掲載・広告・プライバシーの方針 <span aria-hidden="true">↗</span></a></div>
-  </section>
+  </div></section>
+  <section class="section section-purchase" id="purchase" aria-labelledby="purchaseTitle"><div class="wrap purchase-grid">
+    <div><span class="section-kicker inverse"><span class="kicker-rule"></span> FROM RESEARCH TO DECISION</span><h2 id="purchaseTitle">選ぶところから、<br>購入先の確認まで。</h2><p>クラウドサービスは提供元のプランへ。NASや外付けHDDは、型番を確認して通販サイトで検索。判断に必要な情報を、一か所にまとめています。</p><a class="purchase-btn" href="#catalog">製品を探してみる <span aria-hidden="true">↗</span></a></div>
+    <div class="purchase-points"><div><span class="purchase-step">STEP 01</span><strong>用途を整理する</strong><p>利用人数や共有方法、保存したいデータを考える。</p></div><div><span class="purchase-step">STEP 02</span><strong>仕様と条件を比較する</strong><p>購入前の注意点・メーカー公式情報を確認。</p></div><div><span class="purchase-step">STEP 03</span><strong>購入先で最新情報を確認する</strong><p>価格・在庫・契約条件を確認して判断する。</p></div></div>
+  </div></section>
+  <section class="section section-editorial" id="policy" aria-labelledby="policyTitle"><div class="wrap editorial-panel">
+    <div class="editorial-emblem"><span>B<span>.</span></span><small>OUR APPROACH</small></div>
+    <div><span class="section-kicker"><span class="kicker-rule"></span> ABOUT BASELAYER</span><h2 id="policyTitle">情報の数より、<br>選ぶための確かさを。</h2><p>BASELAYERは、IT製品選定の実務で大切な「用途・仕様・導入時の注意点」を整理する専門サイトです。メーカー公式情報を優先し、確認日と出典を示します。広告の有無だけでおすすめを決めません。</p><p class="policy-fine">当サイトにはアフィリエイト広告（PR）が含まれる場合があります。対象リンクからの契約・購入により紹介料を受け取ることがあります。現在、提携リンクは未設定です。</p><a href="storage-policy.html" class="policy-link">掲載・広告方針を見る <span aria-hidden="true">↗</span></a></div>
+  </div></section>
 </main>
-<footer class="footer"><div class="wrap footer-main">
-  <div><a href="index.html" class="footer-brand">BASELAYER<span>.</span></a><p>大切なデータ、その置き場所を<br>もっと分かりやすく。</p></div>
-  <nav aria-label="フッターメニュー"><a href="#categories">カテゴリから探す</a><a href="#advisor">用途から選ぶ</a><a href="#catalog">製品検索・比較</a></nav>
-  <nav aria-label="サイト情報"><a href="#guide">選び方の基本</a><a href="storage-policy.html">掲載・広告方針</a><a href="#top">ページ上部へ ↑</a></nav>
-</div><div class="wrap footer-bottom"><span>© 2026 BASELAYER</span><span>製品の価格・在庫・導入条件は購入先の最新情報をご確認ください。</span></div></footer>
-
-<div class="compare-tray" id="compareTray" hidden><div class="wrap compare-tray-inner"><div><strong id="trayLabel">比較対象</strong><span id="trayNames"></span></div><div class="tray-actions"><button type="button" class="clear-btn" id="clearCompare">クリア</button><button type="button" class="primary" id="trayOpen">比較を見る <span aria-hidden="true">→</span></button></div></div></div>
+<footer class="footer"><div class="wrap footer-top">
+  <div><a class="logo footer-logo" href="index.html"><span class="logo-mark">B<span>.</span></span><span>BASELAYER<small>STORAGE GUIDE</small></span></a><p>ストレージ選びを、もっとシンプルに。<br>クラウド・NAS・外付けHDDの選定・比較。</p></div>
+  <div><strong>製品を探す</strong><a href="#categories">カテゴリから探す</a><a href="#catalog">製品・サービス比較</a><a href="#advisor">選び方ナビ</a></div>
+  <div><strong>BASELAYERについて</strong><a href="#guide">選ぶ前に知る</a><a href="storage-policy.html">掲載・広告方針</a><a href="#policy">サイトの考え方</a></div>
+</div><div class="wrap footer-bottom"><span>© 2026 BASELAYER.</span><span>購入・契約前には最新の公式情報を必ずご確認ください。</span></div></footer>
+<div class="compare-tray" id="compareTray" hidden><div class="wrap compare-tray-inner"><div><strong id="trayLabel">比較候補</strong><span id="trayNames"></span></div><div class="tray-actions"><button type="button" class="clear-btn" id="clearCompare">クリア</button><button type="button" class="primary" id="trayOpen">比較を見る →</button></div></div></div>
 <dialog class="modal" id="detailDialog" aria-labelledby="detailTitle"><button type="button" class="modal-close" data-close="detailDialog" aria-label="閉じる">×</button><div id="detailContent"></div></dialog>
 <dialog class="modal compare-modal" id="compareDialog" aria-labelledby="compareTitle"><button type="button" class="modal-close" data-close="compareDialog" aria-label="閉じる">×</button><div id="compareContent"></div></dialog>
 <dialog class="modal" id="guideDialog" aria-labelledby="guideDialogTitle"><button type="button" class="modal-close" data-close="guideDialog" aria-label="閉じる">×</button><div id="guideContent"></div></dialog>
