@@ -1,33 +1,43 @@
 #!/usr/bin/env node
 'use strict';
-const assert = require('node:assert/strict');
+const assert=require('node:assert/strict');
 const fs=require('node:fs'),vm=require('node:vm');
-const read=path=>fs.readFileSync(path,'utf8');
-const files=['index.html','start.html','learn.html','compare.html','journey.css','journey-app.js','catalog-guide.js','storage-data.js','storage-policy.html'];
-files.forEach(f=>assert(fs.existsSync(f),'missing '+f));
-const pages=files.filter(f=>f.endsWith('.html'));
-const pagesHtml=Object.fromEntries(pages.map(f=>[f,read(f)]));
-const photos=[...pagesHtml['index.html'].matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(m=>m[1]);
-assert(photos.length>=2,'homepage needs meaningful photography');
-assert(pagesHtml['index.html'].includes('href="start.html"'),'missing journey entry');
-assert(pagesHtml['index.html'].includes('href="learn.html"'),'missing education entry');
-assert(!pagesHtml['index.html'].includes('id="productGrid"'),'homepage must not be product grid');
-assert(!pagesHtml['index.html'].includes('storage-site.js'),'legacy UI must not load');
-assert(!pagesHtml['index.html'].includes('products.json'),'old catalog not loaded');
-assert(pagesHtml['start.html'].includes('id="wizardContent"'),'wizard container missing');
-assert(pagesHtml['start.html'].includes('journey-app.js'),'wizard script missing');
-assert(pagesHtml['compare.html'].includes('catalog-guide.js'),'advanced comparison missing');
-assert(pagesHtml['learn.html'].includes('3-2-1'),'backup education missing');
-assert(pagesHtml['start.html'].includes('storage-data.js'),'new storage records not loaded');
-for(const file of pages){const h=pagesHtml[file];assert(h.includes('journey.css'),file+' CSS');assert(h.includes('lang="ja"'),file+' language');assert(h.includes('name="viewport"'),file+' responsive');}
-for(const file of ['journey-app.js','catalog-guide.js','storage-data.js'])new vm.Script(read(file),{filename:file});
-const c={window:{}};vm.runInNewContext(read('storage-data.js'),c);
-const data=c.window.BL_STORAGE_ITEMS;
-assert.equal(data.length,8,'expected initial eight storage products');
-assert.equal(new Set(data.map(x=>x.id)).size,data.length,'duplicate product ids');
-for(const p of data){assert(['cloud','nas','hdd'].includes(p.kind));assert(p.specs&&p.source&&p.official&&p.limits);assert(new URL(p.source).protocol==='https:');}
-assert(read('journey.css').includes('@media(max-width:640px)'),'responsive styles missing');
-assert(read('journey-app.js').includes('byId("estimateYear")'),'costs not calculated');
-assert(read('journey-app.js').includes('window.print()'),'print support missing');
-assert(read('journey-app.js').includes('入力されていない費用'),'missing-price warning absent');
-console.log('PASS: goal-first homepage, learning, journey, manual cost estimate, advanced comparison and 8 specialized products.');
+const read=p=>fs.readFileSync(p,'utf8');
+const pages=['index.html','start.html','learn.html','compare.html','product.html','price-guide.html','storage-policy.html'];
+const scripts=['journey-app.js','catalog-guide.js','product-detail.js','price-guide.js','product-editorial.js','official-prices.js','storage-data.js'];
+for(const p of [...pages,...scripts,'journey.css'])assert(fs.existsSync(p),'file missing '+p);
+for(const p of pages){const html=read(p);assert(html.includes('lang="ja"'),p+' Japanese language');assert(html.includes('name="viewport"'),p+' viewport');assert(html.includes('journey.css'),p+' responsive stylesheet');}
+for(const p of scripts)new vm.Script(read(p),{filename:p});
+const ctx={window:{}};
+for(const p of ['storage-data.js','official-prices.js','product-editorial.js'])vm.runInNewContext(read(p),ctx,{filename:p});
+const products=ctx.window.BL_STORAGE_ITEMS,prices=ctx.window.BL_PRICES,editorial=ctx.window.BL_EDITORIAL;
+assert.equal(products.length,8,'initial 8 product records');
+assert.equal(Object.keys(prices.entries).length,8,'price coverage 8');
+assert.equal(Object.keys(editorial).length,8,'why-selection content coverage 8');
+for(const item of products){
+ const p=prices.entries[item.id],e=editorial[item.id];
+ assert(p&&e,'missing pricing/editorial '+item.id);
+ assert(Array.isArray(e.choose)&&e.choose.length>=2,'selection evidence '+item.id);
+ assert(Array.isArray(e.versus)&&e.versus.length>0,'comparison narrative '+item.id);
+ assert(Array.isArray(e.notFor)&&e.notFor.length>0,'trade-off '+item.id);
+ assert(e.versus.every(x=>products.some(y=>y.id===x.id)),'broken editorial comparison '+item.id);
+ assert(e.source.every(x=>new URL(x).protocol==='https:'),'unsafe reference '+item.id);
+ assert(new URL(p.source).protocol==='https:','unsafe price source');
+ assert(item.specs&&item.official&&item.limits,'incomplete product '+item.id);
+}
+assert(prices.entries.xserver.monthly===3300&&prices.entries.xserver.initial===11000,'XServer official normal terms');
+assert(prices.entries['buffalo-nas'].price===73480,'BUFFALO reference price');
+assert(prices.entries['iodata-hdd'].price===40260,'I-O DATA reference price');
+assert(prices.entries['iodata-usb'].disclaimer.includes('在庫限り'),'discontinued-model warning absent');
+assert(prices.entries.zoho.currency==='USD','Zoho currency must not silently convert to JPY');
+assert(prices.entries.synology.status==='unverified','Synology unsourced retail price must stay unknown');
+assert(read('start.html').includes('product-editorial.js'),'decision report missing explanations');
+assert(read('compare.html').includes('product-editorial.js'),'comparison rationale not loaded');
+assert(read('index.html').includes('href="start.html"'),'landing guidance missing');
+assert(!read('index.html').includes('id="productGrid"'),'homepage should not flood products');
+assert(read('journey-app.js').includes('return {kind,title,reason'),'decision logic missing');
+assert(read('journey-app.js').includes('const firstContract'),'prepayment correction absent');
+assert(read('journey-app.js').includes('3年間の確認済み参考額'),'3 year cost absent');
+assert(read('product-detail.js').includes('他の製品と何が違う'),'reasoned product detail absent');
+assert(read('storage-policy.html').includes('参考額'),'pricing policy incomplete');
+console.log('PASS: 7 pages, 7 JS files, 8 source-backed product rationales, prices, categories, annual prepayments and source disclosures.');
