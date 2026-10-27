@@ -75,4 +75,6 @@ jobs:
             decision-report.png
             decision-mobile-product.png
             visual-product-desktop.png
+            data-location-desktop.png
+            data-location-mobile.png
           if-no-files-found: ignore
