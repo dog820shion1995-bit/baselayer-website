@@ -22,3 +22,24 @@
 /* Verified relationship evidence; distinct from an automatic compatibility claim. */
 .curated-evidence {display:block;border-left:3px solid #2b786a;background:#eaf4f0;border-radius:4px;padding:9px 12px;font-size:.84rem;line-height:1.6;color:#214e44;margin:9px 0}
 .curated-evidence a {font-weight:650;text-decoration:underline;text-underline-offset:2px;color:#0d6258}
+
+
+/* v32 — stable, accessible product media slots; actual photos require verified reuse rights. */
+.product-media{position:relative;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex:0 0 72px;width:72px;height:72px;overflow:hidden;border:1px solid #dbe7ec;border-radius:12px;background:linear-gradient(145deg,#f4f8fa,#eaf2f5);color:#4a7688}
+.product-media-fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.product-media-fallback svg{width:38px;height:38px}
+.product-media-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;background:#fff}
+.featured-card>.product-media{margin-bottom:12px}
+.product-row-main>.product-media{float:left;margin:0 14px 8px 0}
+.product-row-main::after{content:"";display:block;clear:both}
+.dialog-body-content>.product-media{float:right;margin:0 0 14px 16px;width:84px;height:84px}
+.selected-card>.product-media{display:flex;width:56px;height:56px;flex-basis:56px;margin:0 0 7px}
+.selected-card>.product-media svg{width:30px;height:30px}
+.alternative-reference>.product-media,.alternative-card .product-media{float:left;margin:0 13px 10px 0}
+.alternative-reference::after,.alternative-card>div:first-child::after{content:"";display:block;clear:both}
+.config-row>.product-media{float:left;width:52px;height:52px;margin:0 10px 8px 0}
+.config-row>.product-media svg{width:29px;height:29px}
+.change-row .product-media{float:left;width:44px;height:44px;margin:0 11px 6px 0}
+.change-row .product-media svg{width:26px;height:26px}
+@media(max-width:760px){.product-media{width:60px;height:60px;flex-basis:60px}.product-media-fallback svg{width:33px;height:33px}.selected-card>.product-media{width:44px;height:44px;flex-basis:44px}.selected-card>.product-media svg{width:25px;height:25px}}
+@media(max-width:380px){.product-row-main>.product-media{margin-right:11px}}
