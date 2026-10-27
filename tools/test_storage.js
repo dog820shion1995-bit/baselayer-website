@@ -7,7 +7,7 @@ const files=['index.html','start.html','learn.html','compare.html','journey.css'
 files.forEach(f=>assert(fs.existsSync(f),'missing '+f));
 const pages=files.filter(f=>f.endsWith('.html'));
 const pagesHtml=Object.fromEntries(pages.map(f=>[f,read(f)]));
-const photos=[...pagesHtml['index.html'].matchAll(/<img\s[^>]+src="([^"]+)"/g)].map(m=>m[1]);
+const photos=[...pagesHtml['index.html'].matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(m=>m[1]);
 assert(photos.length>=2,'homepage needs meaningful photography');
 assert(pagesHtml['index.html'].includes('href="start.html"'),'missing journey entry');
 assert(pagesHtml['index.html'].includes('href="learn.html"'),'missing education entry');
