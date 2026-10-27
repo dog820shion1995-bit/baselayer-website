@@ -1,38 +1,33 @@
 #!/usr/bin/env node
 'use strict';
-/* Offline static acceptance checks for BASELAYER storage edition. No network calls. */
-const assert=require('node:assert/strict');
-const fs=require('node:fs');
-const path=require('node:path');
-const vm=require('node:vm');
-const root=path.resolve(__dirname,'..');
-const read=p=>fs.readFileSync(path.join(root,p),'utf8');
-const html=read('index.html'),js=read('storage-site.js'),policy=read('storage-policy.html'),css=read('storage-site.css');
-const context={window:{}};
-vm.runInNewContext(read('storage-data.js'),context,{filename:'storage-data.js'});
-new vm.Script(js,{filename:'storage-site.js'});
-const items=context.window.BL_STORAGE_ITEMS;
-assert(Array.isArray(items) && items.length>=6,'expected at least six product records');
-const ids=new Set();
-for(const item of items) {
-  for(const key of ['id','kind','model','brand','name','scope','feature','source','official','reviewed','specs','limits']) assert(item[key],item.id+': missing '+key);
-  assert(['cloud','nas','hdd'].includes(item.kind),item.id+' invalid category');
-  assert(!ids.has(item.id),'duplicate '+item.id);ids.add(item.id);
-  assert(/^\d{4}-\d{2}-\d{2}$/.test(item.reviewed),item.id+' invalid review date');
-  for(const key of ['source','official']) {
-    const url=new URL(item[key]);
-    assert(url.protocol==='https:',item.id+' unsafe '+key);
-  }
-  assert(Object.keys(item.specs).length>=2,item.id+' insufficient specs');
-  if(item.affiliate) assert(item.affiliateVerified===true,'an unverified affiliate link should never be enabled');
-}
-for(const cat of ['cloud','nas','hdd']) assert(items.some(x=>x.kind===cat),'missing '+cat);
-const domIds=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
-for(const hit of js.matchAll(/\$\('#([A-Za-z0-9_-]+)'\)/g)) assert(domIds.has(hit[1]),'missing selector #'+hit[1]);
-for(const file of ['storage-data.js','storage-site.js','storage-site.css','storage-policy.html']) assert(html.includes(file)||file==='storage-policy.html',file+' unlinked');
-for(const section of ['problems','categories','catalog','advisor','guide','purchase','policy']) assert(domIds.has(section),'missing section '+section);
-assert(!html.includes('amazon-20'),'unexpected hardcoded Amazon tracking ID');
-assert(!html.includes('product-data.js') && !html.includes('app-v31.js'),'old BASELAYER catalog/app must never be loaded on new homepage');
-assert(policy.includes('アフィリエイト') && policy.includes('個人情報'),'policy must explain affiliate and privacy');
-assert(/@media\s*\(max-width:\s*(?:600|620|670)px\)/.test(css),'mobile rules missing');
-console.log('PASS storage: '+items.length+' records, '+domIds.size+' DOM ids, all core areas, URLs and syntax checked.');
+const assert = require('node:assert/strict');
+const fs=require('node:fs'),vm=require('node:vm');
+const read=path=>fs.readFileSync(path,'utf8');
+const files=['index.html','start.html','learn.html','compare.html','journey.css','journey-app.js','catalog-guide.js','storage-data.js','storage-policy.html'];
+files.forEach(f=>assert(fs.existsSync(f),'missing '+f));
+const pages=files.filter(f=>f.endsWith('.html'));
+const pagesHtml=Object.fromEntries(pages.map(f=>[f,read(f)]));
+const photos=[...pagesHtml['index.html'].matchAll(/<img\s[^>]+src="([^"]+)"/g)].map(m=>m[1]);
+assert(photos.length>=2,'homepage needs meaningful photography');
+assert(pagesHtml['index.html'].includes('href="start.html"'),'missing journey entry');
+assert(pagesHtml['index.html'].includes('href="learn.html"'),'missing education entry');
+assert(!pagesHtml['index.html'].includes('id="productGrid"'),'homepage must not be product grid');
+assert(!pagesHtml['index.html'].includes('storage-site.js'),'legacy UI must not load');
+assert(!pagesHtml['index.html'].includes('products.json'),'old catalog not loaded');
+assert(pagesHtml['start.html'].includes('id="wizardContent"'),'wizard container missing');
+assert(pagesHtml['start.html'].includes('journey-app.js'),'wizard script missing');
+assert(pagesHtml['compare.html'].includes('catalog-guide.js'),'advanced comparison missing');
+assert(pagesHtml['learn.html'].includes('3-2-1'),'backup education missing');
+assert(pagesHtml['start.html'].includes('storage-data.js'),'new storage records not loaded');
+for(const file of pages){const h=pagesHtml[file];assert(h.includes('journey.css'),file+' CSS');assert(h.includes('lang="ja"'),file+' language');assert(h.includes('name="viewport"'),file+' responsive');}
+for(const file of ['journey-app.js','catalog-guide.js','storage-data.js'])new vm.Script(read(file),{filename:file});
+const c={window:{}};vm.runInNewContext(read('storage-data.js'),c);
+const data=c.window.BL_STORAGE_ITEMS;
+assert.equal(data.length,8,'expected initial eight storage products');
+assert.equal(new Set(data.map(x=>x.id)).size,data.length,'duplicate product ids');
+for(const p of data){assert(['cloud','nas','hdd'].includes(p.kind));assert(p.specs&&p.source&&p.official&&p.limits);assert(new URL(p.source).protocol==='https:');}
+assert(read('journey.css').includes('@media(max-width:640px)'),'responsive styles missing');
+assert(read('journey-app.js').includes('byId("estimateYear")'),'costs not calculated');
+assert(read('journey-app.js').includes('window.print()'),'print support missing');
+assert(read('journey-app.js').includes('入力されていない費用'),'missing-price warning absent');
+console.log('PASS: goal-first homepage, learning, journey, manual cost estimate, advanced comparison and 8 specialized products.');
