@@ -603,7 +603,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-SBx908 GEN2",
@@ -618,7 +623,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-SBx8112",
@@ -633,7 +643,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-SBx8106",
@@ -648,7 +663,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x560-28YSQ",
@@ -663,7 +683,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x550-18XTQ",
@@ -694,7 +719,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x530DP-52GHXm",
@@ -851,7 +881,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x540L-52XTm",
@@ -866,7 +901,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x540L-28XTm",
@@ -881,7 +921,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x540L-28XS",
@@ -896,7 +941,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x530L-52GPX",
@@ -912,7 +962,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x530L-52GTX",
@@ -927,7 +982,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x530L-28GPX",
@@ -943,7 +1003,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x530L-28GTX",
@@ -958,7 +1023,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-x250-52XHm",
@@ -1328,7 +1398,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS980M/52",
@@ -1343,7 +1418,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-SE250-28XHm",
@@ -1359,7 +1439,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-mGS950/10HS",
@@ -1375,7 +1460,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-mGS950/18HS",
@@ -1391,7 +1481,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-mGS950/28HS",
@@ -1407,7 +1502,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/18PS V2",
@@ -1423,7 +1523,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/28PS V2",
@@ -1439,7 +1544,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/52PS V2",
@@ -1455,7 +1565,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/10PS V2",
@@ -1471,7 +1586,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/10 V2",
@@ -1486,7 +1606,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/18 V2",
@@ -1501,7 +1626,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/28 V2",
@@ -1516,7 +1646,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/52 V2",
@@ -1531,7 +1666,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS950/16",
@@ -1546,7 +1686,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "GS908S-TP V2",
@@ -1591,7 +1736,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS920/16",
@@ -1606,7 +1756,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS920/8",
@@ -1621,7 +1776,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS920/8PS",
@@ -1637,7 +1797,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/26XST",
@@ -1652,7 +1817,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/18XST",
@@ -1667,7 +1837,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/10XST",
@@ -1682,7 +1857,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/24",
@@ -1697,7 +1877,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/16",
@@ -1712,7 +1897,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/8",
@@ -1727,7 +1917,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/8E",
@@ -1742,7 +1937,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/5",
@@ -1757,7 +1957,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-GS910/5E",
@@ -1772,7 +1977,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-FS710/24",
@@ -1787,7 +1997,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-FS710/16",
@@ -1802,7 +2017,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-FS710/8",
@@ -1817,7 +2037,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-FS710/5",
@@ -1832,7 +2057,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE340-20GP",
@@ -1848,7 +2078,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE340-12GP",
@@ -1864,7 +2099,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE340-12GT",
@@ -1879,7 +2119,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE340L-18GP",
@@ -1895,7 +2140,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE220-10GHX",
@@ -1911,7 +2161,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE220-6GHX",
@@ -1927,7 +2182,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE210L-18GP",
@@ -1943,7 +2203,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IE210L-10GP",
@@ -1959,7 +2224,12 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   },
   {
     "model": "AT-IS130-6GP",
@@ -1975,6 +2245,11 @@
     "checked": "2026-10-27",
     "verified": "メーカー公式製品一覧で型番・標準ポート数・分類を確認。個別仕様・写真は未検証",
     "photoSource": "https://www.allied-telesis.co.jp/products/library/switch/",
-    "photoStatus": "未登録（転載許諾・画像URL未確認）"
+    "photoStatus": "未登録（転載許諾・画像URL未確認）",
+    "photoEvidence": {
+      "status": "official_jpeg_listing_matched",
+      "source": "https://www.allied-telesis.co.jp/products/library/switch/",
+      "note": "メーカー公式ライブラリのJPEG掲載行で型番を照合。画像URL・転載許諾・実画像の目視検証は未完了。"
+    }
   }
 ]
