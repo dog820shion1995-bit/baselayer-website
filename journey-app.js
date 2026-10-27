@@ -152,6 +152,19 @@ function updateAmounts(){
  const p=priceCatalog[state.selectedId];if(p?.kind==="service")notes.push("サービスの12か月前払いは月額換算を12倍して年費用に含めます。初期費用は初年度のみ計上。");
  $("costNote").textContent=notes.join(" ");
 }
+function personalFit(p){
+ const warnings=[];
+ const choose=editorial[p.id]?.choose?.[0]||p.feature;
+ if(p.id==="buffalo-nas"&&state.capacity==="medium")warnings.push("4TBはHDDの合計容量です。出荷時RAID1の利用可能容量は約2TB。必要容量が2TBを超える場合は本型番では不足します。");
+ if(p.id==="buffalo-nas"&&state.capacity==="large")warnings.push("4TB超の必要容量には、2TB×2のこの型番では容量不足です。");
+ if(p.id==="synology")warnings.push("HDD別売りのため、メーカー対応ドライブと実効容量・総費用は未確定です。");
+ if(p.kind==="hdd"&&state.capacity==="large")warnings.push("容量4TBの機器1台では4TB超を保存できません。");
+ if(p.id==="xserver"&&(state.capacity==="medium"||state.capacity==="large"))warnings.push("XServerスモールビジネスはHDD 1TB／SSD 500GB。必要容量に応じて上位プランを比較してください。");
+ if(p.id==="iodata-usb")warnings.push("メーカーサイトでは在庫限り・後継HDD-UT4KCと案内しています。継続調達時は後継品も確認してください。");
+ if(state.already!=="none"&&p.kind==="cloud")warnings.push("既存クラウド契約で条件を満たすなら、追加契約しない選択を優先します。");
+ if(state.goal==="backup")warnings.push("この機器単体ではバックアップ構成が完成しません。保存場所・自動化・復元テストまで設計してください。");
+ return {choose,warnings};
+}
 function result(){
  const d=decide(),canBuy=catalog.filter(p=>p.kind===d.kind);
  const useExisting=d.isExisting&&d.kind==="cloud";
@@ -167,7 +180,7 @@ function result(){
  '<div class="callout"><b>1. 選定の前に大切なこと</b><p>'+escape(d.reason)+'</p>'+((d.isExisting)?"<p><strong>既存サービスで対応できる場合、新規契約は不要です。</strong></p>":"")+'</div>'+
  '<h3>2. 確認が必要な条件とリスク</h3>'+bullet([...d.must,...d.notes])+
  '<div class="warning"><b>未確認事項（確定前に確認してください）</b>'+bullet(d.unknown.length?d.unknown:["実際の運用、メーカー仕様、バックアップ復元可否"])+(d.requireSpecialist?"<strong>障害復旧・機密データの要件が厳しいため、設計者・提供会社の確認を強く推奨します。</strong>":"")+'</div>'+
- '<h3>3. この条件で比較する理由付き製品候補</h3><p class="smallnote">条件を満たすと確定した製品ではありません。追加購入不要の可能性も残したうえで比較します。</p><div class="report-product-list">'+canBuy.map(p=>'<div><strong>'+escape(p.brand+" "+p.model)+'</strong><span>'+escape(priceText(priceCatalog[p.id]))+'</span><p class="smallnote" style="grid-column:1/-1;margin:0"><b>選ぶ理由：</b>'+escape(editorial[p.id]?.pitch||"利用目的に応じて仕様を比較")+'</p><p class="smallnote" style="grid-column:1/-1;margin:0"><b>要確認：</b>'+escape(editorial[p.id]?.checks?.[0]||p.limits)+'</p><div style="grid-column:1/-1">'+link("https://dog820shion1995-bit.github.io/baselayer-website/product.html?id="+encodeURIComponent(p.id),"選定理由・他製品との違いを詳しく見る")+'</div></div>').join("")+'</div>'+
+ '<h3>3. この条件で比較する理由付き製品候補</h3><p class="smallnote">条件を満たすと確定した製品ではありません。追加購入不要の可能性も残したうえで比較します。</p><div class="report-product-list">'+canBuy.map(p=>{const fit=personalFit(p);return '<div><strong>'+escape(p.brand+" "+p.model)+'</strong><span>'+escape(priceText(priceCatalog[p.id]))+'</span><p class="smallnote" style="grid-column:1/-1;margin:0"><b>比較候補にする理由：</b>'+escape(fit.choose)+'</p><p class="smallnote" style="grid-column:1/-1;margin:0"><b>他製品との違い：</b>'+escape(editorial[p.id]?.versus?.[0]?.text||"同じ用途の選択肢と比べます")+'</p>'+(fit.warnings.length?'<p class="warning" style="grid-column:1/-1;margin:0">'+escape(fit.warnings.join(" "))+'</p>':'')+'<p class="smallnote" style="grid-column:1/-1;margin:0"><b>購入前の確認：</b>'+escape(editorial[p.id]?.checks?.[0]||p.limits)+'</p><div style="grid-column:1/-1"><a class="text-link" href="product.html?id='+encodeURIComponent(p.id)+'">詳しい選定理由・比較・注意点を見る →</a></div></div>'}).join("")+'</div>'+
  '<div class="report-tabs" role="group" aria-label="レポートの表示対象"><button type="button" data-view="owner" aria-pressed="true">社長・決裁者向け</button><button type="button" data-view="technical" aria-pressed="false">社内SE向け</button><button type="button" data-view="sales" aria-pressed="false">OA営業向け</button></div>'+founder+
  pricePanel()+
  '<div class="report-handoff"><h3>5. 導入の準備から購入まで</h3><ol><li>未確認事項と復旧条件を確認</li><li>既存契約の機能・容量を再確認</li><li>メーカー公式仕様と価格を確認</li><li>必要な機器・設定・保守・バックアップを見積依頼</li><li>正規販売先で契約・購入</li><li>導入後、権限・バックアップと復元をテスト</li></ol><p class="smallnote">BASELAYERは利用者から代金を徴収せず、購入・SaaSの申込みや請求は各販売会社で行われます。</p></div>'+
