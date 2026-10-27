@@ -1,0 +1,47 @@
+name: BASELAYER catalog data validation
+on:
+  pull_request:
+    paths:
+      - 'data/products.json'
+      - 'data/relationships.json'
+      - 'product-data.js'
+      - 'relationship-data.js'
+      - 'app-v31.js'
+      - 'search.html'
+      - 'tools/build_catalog.py'
+      - 'tools/validate_relationships.py'
+      - 'tools/catalog_quality.py'
+      - 'tools/build_relationships.py'
+      - '.github/workflows/catalog-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/products.json'
+      - 'data/relationships.json'
+      - 'product-data.js'
+      - 'relationship-data.js'
+      - 'app-v31.js'
+      - 'search.html'
+      - 'tools/build_catalog.py'
+      - 'tools/validate_relationships.py'
+      - 'tools/catalog_quality.py'
+      - 'tools/build_relationships.py'
+      - '.github/workflows/catalog-quality.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate product source records
+        run: |
+          python tools/build_catalog.py
+          python tools/validate_relationships.py
+          python tools/build_relationships.py
+          python tools/catalog_quality.py
+          git diff --exit-code -- product-data.js relationship-data.js

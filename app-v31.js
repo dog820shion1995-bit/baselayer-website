@@ -2,6 +2,7 @@
 (() => {
   'use strict';
   const products = Array.isArray(window.BASELAYER_PRODUCTS) ? window.BASELAYER_PRODUCTS : [];
+  const curatedRelations = Array.isArray(window.BASELAYER_RELATIONSHIPS) ? window.BASELAYER_RELATIONSHIPS : [];
   const $ = (selector, scope=document) => scope.querySelector(selector);
   const $$ = (selector, scope=document) => [...scope.querySelectorAll(selector)];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -158,11 +159,12 @@
       if(!ref){target.innerHTML='<div class="alternative-empty">基準となる製品を選ぶと、同じカテゴリの比較候補が表示されます。製品の置き換え可否は自動判定しません。</div>';return;}
       const candidates=products.filter(p=>p.cat===ref.cat&&modelKey(p)!==modelKey(ref)).map(p=>{
         const keys=Object.keys(ref.specs||{}).filter(k=>Object.hasOwn(p.specs||{},k));
-        return {p,overlap:keys.length,same:keys.filter(k=>ref.specs[k]===p.specs[k]).length};
-      }).sort((a,b)=>Number(validSpecs(b.p))-Number(validSpecs(a.p))||b.overlap-a.overlap||a.p.model.localeCompare(b.p.model,'ja'));
+        const relation=curatedRelations.find(r=>r.from_brand===ref.brand&&r.from_model===ref.model&&r.to_brand===p.brand&&r.to_model===p.model);
+        return {p,overlap:keys.length,same:keys.filter(k=>ref.specs[k]===p.specs[k]).length,relation};
+      }).sort((a,b)=>Number(Boolean(b.relation))-Number(Boolean(a.relation))||Number(validSpecs(b.p))-Number(validSpecs(a.p))||b.overlap-a.overlap||a.p.model.localeCompare(b.p.model,'ja'));
       const main=`<div class="alternative-reference"><div class="product-brand">基準となる製品 · ${esc(labelCat(ref.cat))}</div><h3>${esc(ref.brand)} ${esc(ref.model)}</h3><p>${validSpecs(ref)?'出典付き仕様の記録があります。':'仕様未登録のため、詳細な一致・相違を確認できません。'}</p></div>`;
       if(!candidates.length){target.innerHTML=main+'<div class="alternative-empty">同じカテゴリに登録されている比較候補はまだありません。ほかのカテゴリの機器を代替品として提示することはしません。</div>';return;}
-      target.innerHTML=main+`<div class="alternative-candidates">${candidates.map(({p,overlap,same})=>`<article class="alternative-card"><div><div class="product-row-top"><span class="product-brand">${esc(p.brand)} · ${esc(labelCat(p.cat))}</span>${statusBadge(p)}</div><h3>${esc(p.model)}</h3><p>${esc(p.category)}</p><span class="alternative-scope">${overlap?`共通の仕様項目：${overlap}件 ／ 記録値が同じ項目：${same}件。その他の条件・測定条件は要確認。`:'仕様項目の比較は未完了。同じカテゴリの登録製品として表示しています。'} 公式後継品・互換品という認定ではありません。</span></div><div class="candidate-actions"><button class="btn-primary" type="button" data-pair="${escapeAttr(modelKey(p))}">2製品を比較 →</button></div></article>`).join('')}</div>`;
+      target.innerHTML=main+`<div class="alternative-candidates">${candidates.map(({p,overlap,same,relation})=>`<article class="alternative-card"><div><div class="product-row-top"><span class="product-brand">${esc(p.brand)} · ${esc(labelCat(p.cat))}</span>${statusBadge(p)}</div><h3>${esc(p.model)}</h3><p>${esc(p.category)}</p>${relation?`<p class="curated-evidence">${relation.relation==='official_successor'?'メーカーが後継品と明記した関係':'メーカー資料に基づく比較候補'}（導入前に適合条件を要確認） ${safeSource(relation.source)?`<a href="${escapeAttr(safeSource(relation.source))}" target="_blank" rel="noopener noreferrer">公式出典を確認 ↗</a>`:''}</p>`:''}<span class="alternative-scope">${overlap?`共通の仕様項目：${overlap}件 ／ 記録値が同じ項目：${same}件。その他の条件・測定条件は要確認。`:'仕様項目の比較は未完了。同じカテゴリの登録製品として表示しています。'} 公式後継品・互換品という認定ではありません。</span></div><div class="candidate-actions"><button class="btn-primary" type="button" data-pair="${escapeAttr(modelKey(p))}">2製品を比較 →</button></div></article>`).join('')}</div>`;
     }
     selectMode(initialMode);
     renderResults();renderTray();$('#tabCompareCount').textContent=String(selected.length);
