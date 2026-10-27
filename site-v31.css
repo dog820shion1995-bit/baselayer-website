@@ -18,3 +18,7 @@
 @media(max-width:380px){.shell{width:calc(100% - 25px)}.workspace-tab{font-size:10px}.hero-search{padding-left:12px}.hero-search input{padding:0 5px;font-size:12px}.hero-search button{font-size:10px;padding:11px 9px}.catalog-sidebar{grid-template-columns:1fr}.product-row{grid-template-columns:1fr}.product-row-actions{flex-direction:row}.product-row-actions button{flex:1}.hero-visual{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media print{.site-header,.site-footer,.mobile-toggle,.config-toolbar-actions,.btn-primary,.config-next,.notice-compact,.workspace-tabs,.compare-tray,.dialog-head{display:none!important}body{background:#fff}.shell{width:100%}.config-panel{break-inside:avoid}.config-grid{gap:10px}.tool-shell{padding:0}.config-summary{margin-top:15px}}
+
+/* Verified relationship evidence; distinct from an automatic compatibility claim. */
+.curated-evidence {display:block;border-left:3px solid #2b786a;background:#eaf4f0;border-radius:4px;padding:9px 12px;font-size:.84rem;line-height:1.6;color:#214e44;margin:9px 0}
+.curated-evidence a {font-weight:650;text-decoration:underline;text-underline-offset:2px;color:#0d6258}

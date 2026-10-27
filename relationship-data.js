@@ -1,0 +1,2 @@
+/* Generated from data/relationships.json; review before publishing. */
+window.BASELAYER_RELATIONSHIPS = [{"from_brand":"ヤマハ","from_model":"RTX830","to_brand":"ヤマハ","to_model":"RTX840","relation":"suggested_alternative","source":"https://network.yamaha.com/products/routers/rtx840/spec","checked":"2026-10-27","note":"メーカーはRTX830からの置き換えの容易さに言及。公式後継や完全互換とは断定せず個別要件を確認。"}];
