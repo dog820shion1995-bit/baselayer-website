@@ -1,5 +1,22 @@
 [
   {
+    "model": "RTX1300",
+    "brand": "ヤマハ",
+    "cat": "router",
+    "category": "10ギガアクセスVPNルーター",
+    "memo": "LAN1は8ポートL2スイッチ。SFP+はLANポートと排他利用。WANとして任意のLANインターフェースを利用可能。画像で確認できた項目のみ登録。",
+    "specs": {
+      "LANポート": "LAN1：8ポート、LAN2：1ポート、LAN3：1ポート",
+      "LAN1規格": "10/100/1000BASE-T（ストレート/クロス自動判別）",
+      "LAN2・LAN3規格": "10/100/1000BASE-T、2.5GBASE-T、5GBASE-T、10GBASE-T（ストレート/クロス自動判別）",
+      "SFP+スロット": "2ポート（LANポートと排他、1000BASE-SX/LX、10GBASE-SR/LR）",
+      "WAN利用": "任意のLANインターフェースをWANインターフェースとして利用可能"
+    },
+    "source": "https://network.yamaha.com/products/routers/rtx1300/spec",
+    "checked": "2026-10-25",
+    "verified": "メーカー公式仕様ページのユーザー提供画像で確認"
+  },
+  {
     "model": "RTX830",
     "brand": "ヤマハ",
     "cat": "router",
