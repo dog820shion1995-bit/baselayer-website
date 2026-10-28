@@ -359,3 +359,27 @@ Target: `main` (review only; do not merge or publish)
 - New products **0**; existing product specification supplements **0**; new comparison relationships **0** (presentation only); newly rights-cleared real photographs **0**. Master catalog still **47 products**, **34** with recorded official specifications, **6** suggested relationships and **1** rights-recorded photo; isolated preview remains **6 NAS / 5 relationships** before filtering.
 - **No main publication and no PR-wide merge.** Next: inspect current GitHub Actions run and browser artifacts; if green, verify live image or ensure safe fallback, recheck latest main SHA and stage a strictly isolated two-file integration before considering a small release. If CI fails, fix in the same PR and record the failure.
 - Additional read-back static validation after the three code/test commits: **PASS** — 47/47 unique product keys, 34 sourced-spec records, 6 master comparisons, 1 licensed-photo metadata record; six-NAS subset with 5 valid relationship endpoints; scoped relationship counts **5 all / 1 DS918+ / 2 DS920+ / 2 QNAP / 0 unmatched**; inline controller and both browser test modules parse. **This is not a substitute for GitHub Actions or a running browser.**
+
+## 2026-10-28 19:55 JST onward — v32 review continuation (run 12)
+
+### Preflight
+- Confirmed the existing scheduled development task was enabled; re-read open draft [PR #4](https://github.com/dog820shion1995-bit/baselayer-website/pull/4), the feature branch, prior commit `8c0488f97f3e21e0f98bcb69a68c0942a8f68cf6`, and this status file before editing.
+- Branch was **80 commits ahead / 40 behind main** at preflight, with PR still unmergeable wholesale. Current public main uses the storage/backup decision journey. No competing PR, no main changes.
+- Pending blockers: no confirmed successful current-main overlay Actions run; live Wikimedia image delivery still not confirmed. Previous successful Actions run `40654459122` predates the current-main overlay.
+
+### Committed improvement
+- `dbff3e085428ee35c447854cf184f7efbf17a97a` — hardened `tools/browser_v32_overlay.mjs` (review branch only).
+- Previously the staging browser test could pass its photo fallback assertion immediately because the placeholder exists **before** the image request fails. It now waits for the DS918+ image error to remove its credit and leave no rendered image; verifies the test exercises a record with permitted photo metadata; also asserts that the unlicensed DS925+ never shows a photo/credit and that unmatched search shows no comparison.
+- No product facts, image rights, comparison relationships, or live-site files were changed.
+
+### Verification and limitations
+- PASS: read back the updated GitHub file and parsed the overlay test module body with V8; also parsed `tools/browser_v32.mjs`, preview inline JavaScript, and generated NAS bundle. This is a syntax check, **not** an executed Playwright run.
+- PASS: parsed committed data: **47** master products with unique brand/model keys; **34** with source/date/specifications; **6** master comparison records; isolated bundle **6** sourced NAS, **5** valid suggested-alternative relationships, and **1** rights-recorded real-photo metadata entry. The bundle has unique keys and allowed official-source hostnames. Link response codes were not rechecked this run.
+- CI status **NOT VERIFIED**: GitHub's available commit-run lookup returned no pull-request-triggered runs for the new push; combined commit status list was empty. This does not imply failure or success. Inspect GitHub Actions push runs and browser artifacts on the next execution.
+- Main release **NOT PERFORMED**: current-main browser regression and live Commons image delivery are still unconfirmed. Do not publish the two-file overlay or merge PR #4 without the required checks.
+- This run's saved delta: **0** new products, **0** existing-specification supplements, **0** comparison additions, **0** newly rights-cleared real photos; **1** code/test commit plus this progress commit; **0** main commits.
+
+### Next
+1. Inspect the latest push-triggered Actions jobs and screenshot artifacts; fix any real overlay failure in this same PR.
+2. Verify actual Commons redirect image delivery separately from mocked tests; if unavailable, retain explicit fallback and do not claim a published photograph.
+3. Rebase only a separately tested two-file staging overlay onto the latest main snapshot (never blindly merge the diverged PR), check the current backup wizard and comparison flows on desktop/mobile, then consider an isolated main release only after successful verification.
