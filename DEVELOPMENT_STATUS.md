@@ -206,3 +206,32 @@ Target: `main` (review only; do not merge or publish)
 - No live images or unsupported specifications were published. The one Commons image remains a review-branch metadata entry with CC BY-SA 4.0 attribution; actual rendering still unverified.
 - This run's saved delta: **new products 0; existing specs supplemented 0; comparison relationships added 0; newly permitted real photos 0; main commits 0**.
 - **Next:** obtain GitHub Actions run details and execute the Python suites; resolve the 37-commit divergence with current storage-journey architecture in isolated changes; verify actual Commons photo delivery and fallback on desktop/mobile before considering a small safe main release.
+
+## 2026-10-28 14:00 JST — v32 review continuation (run 6)
+
+### Preflight and deployment boundary
+- Scheduled task confirmed enabled at start. Reused the existing PR #4: https://github.com/dog820shion1995-bit/baselayer-website/pull/4 . Read previous commit `62d7390e3597973cef69d529e4595f3238f52516`, branch, progress file, CI configuration and current main homepage before editing.
+- At start, branch was **42 commits ahead / 37 behind** main; after review changes (before this status commit) **48 ahead / 37 behind**. Main remains a different storage/backup journey, so the whole PR is not safe to merge. **No main changes and no public release.**
+- The container could not resolve github.com for a clone, and GitHub connector exposes no general push-workflow-run listing. A PR-triggered workflow lookup and combined-status lookup returned no entries; this is **not evidence of CI passing or failing**.
+
+### Official-source additions (review branch only)
+- Added two separate exact-SKU QNAP 4-bay NAS products: **TS-464-8G** and **TS-464-4G**, each with **10 official-source-backed hardware fields**: CPU, memory, 4 SATA bays, 2 M.2 slots, dual 2.5GbE, PCIe expansion, USB, HDMI, dimensions and weight.
+- Source: [QNAP official Japanese TS-464 hardware specification](https://www.qnap.com/ja-jp/product/ts-464/specs/hardware), inspected **2026-10-28 JST**. The 8GB base-memory statement is specifically for the TS-464-8G entry **from 2024-01 onward**; the 4G SKU is separately identified. No current stock, support, price, drive compatibility, or photo usage rights were assumed.
+- Added `www.qnap.com` to the QNAP-only official-source host allowlist; synchronized generated `product-data.js`.
+- Added **two** evidence-linked `suggested_alternative` records: QNAP TS-464-4G → TS-464-8G (memory variant comparison) and Synology DS925+ → QNAP TS-464-8G (cross-brand 4-bay/dual-2.5GbE comparison). Both have explicit caveats and are **not** official-successor, interchangeability, or purchase claims. Synchronized `relationship-data.js`.
+- Added isolated `nas-catalog-v32-preview.html` for review only: responsive NAS list, model/brand search, official-source links, specification disclosures, evidence-linked comparison notes, exact-model Commons license gate and category fallback. No manufacturer image without verified reuse rights is loaded. This preview is not linked from the current main site and has `noindex,nofollow`.
+
+### Commits and verification
+- `87e3a29fe94150e39f6a78a6d44ad69a3552ab71` — QNAP official-host allowlist.
+- `c655f1f0156d47ab3a9dfd894a32c9f5ae4b9c81` — two sourced TS-464 SKU records.
+- `387aea06aa7f63593211bb065afcea30a9e0f514` — regenerated product JS.
+- `48b314f9a936877f477e851a0379e7d034691ed2` — two alternative relationships.
+- `966b720ae6945f9010095e77ea8248a9827d5f7e` — regenerated relationship JS.
+- `a26e7257b6a167e956cd48e7bf85940e3f2f5dfd` — isolated NAS review UI.
+- PASS (connector-fetched files checked in V8): **47** products, **34** with source/spec metadata, **6** comparisons, **0** duplicate normalized product IDs, **0** orphan comparisons, source/date checks for new QNAP records, generated JS/JSON data equality, JS parse for `app-v31.js`, `product-data.js`, `relationship-data.js`, and preview inline JS; CSS braces balanced.
+- Newly rights-approved real photos: **0**; cumulative licensed photo metadata: **1** (DS918+). No photo rights were invented.
+- NOT VERIFIED: Python unittest execution (23 tests), GitHub Actions success, actual Commons image delivery, desktop/mobile browser interactions, deployment. The preview's static JavaScript parse does not prove functional browser behavior.
+
+### Saved delta this run
+- **New products +2; existing products' specification supplements +0; new-product specification fields +20; comparison relationships +2; newly rights-approved real photos +0; main commits 0.**
+- Next: obtain actual GitHub Actions run details; run the Python tests and browser smoke checks; reconcile v32 with the live storage/backup architecture in a small tested integration; verify remote licensed image loading and fallback before any main release.
