@@ -19,6 +19,7 @@ OFFICIAL_DOMAINS = {
     'ELECOM': {'www.elecom.co.jp'},
     'BUFFALO': {'www.buffalo.jp'},
     'EPSON': {'www.epson.jp'},
+    'Synology': {'global.download.synology.com'},
 }
 
 def main():
