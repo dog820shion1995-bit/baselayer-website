@@ -320,7 +320,7 @@ Target: `main` (review only; do not merge or publish)
 - **Next:** run a controlled current-main integration regression for the isolated bundle and storage/backup journey; verify actual Commons image redirect response and live browser delivery or keep fallback. Only then consider a separately tested, small main publication. PR remains review-only and nonmergeable wholesale.
 - Manual live-link check (2026-10-28 JST): all **5 distinct manufacturer source URLs** used by the six NAS entries were retrievable: Synology DS918+, DS920+, DS923+, DS925+ official PDF files and QNAP TS-464 official hardware specifications. This confirms link accessibility at check time, not automatic verification of every recorded specification or current stock. The Commons photo file-description page was also retrievable, but its actual redirect image response remained unverified.
 
-## 2026-10-28 18:04–18:XX JST — v32 review continuation (run 10)
+## 2026-10-28 18:04 JST onward — v32 review continuation (run 10)
 
 ### Preflight and outstanding blockers
 - Read existing draft PR #4, branch `feature/v32-catalog-media-office`, previous head `d63d5c444284da0737e2d451bbc604218efb2619` and its commit, and this progress file before changing code.
