@@ -16,7 +16,7 @@ try {
   const desktop=await browser.newPage({viewport:{width:1365,height:900}});
   desktop.on('pageerror',e=>errors.push('desktop: '+e.message));
   let imageRoutes=0;
-  await desktop.route(/commons\\.wikimedia\\.org/,route=>{
+  await desktop.route(/commons\.wikimedia\.org/,route=>{
     imageRoutes++;
     return route.fulfill({status:200,contentType:'image/svg+xml',body:photoSvg});
   });
