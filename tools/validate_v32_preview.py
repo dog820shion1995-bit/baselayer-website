@@ -20,11 +20,19 @@ def main():
     if '<meta name="robots" content="noindex,nofollow">' not in page:
         errors.append("review preview must be noindex,nofollow")
     assets = re.findall(r'<script[^>]*\bsrc="([^"]+)"', page)
-    if assets != ["product-data.js", "relationship-data.js"]:
+    if assets != ["nas-catalog-v32-data.js"]:
         errors.append(f"unexpected data script assets: {assets!r}")
     for asset in assets:
         if not (ROOT / asset).is_file():
             errors.append(f"missing local script: {asset}")
+        else:
+            check_asset = subprocess.run(["node", "--check", str(ROOT / asset)], capture_output=True, text=True, check=False)
+            if check_asset.returncode:
+                errors.append("data bundle JavaScript syntax: " + check_asset.stderr.strip())
+    if "BASELAYER_PRODUCTS" in page or "BASELAYER_RELATIONSHIPS" in page:
+        errors.append("review preview still depends on legacy global catalog")
+    if "BASELAYER_V32_NAS_DATA" not in page:
+        errors.append("review preview must use its isolated dataset")
     scripts = [s for s in re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', page, re.S) if s.strip()]
     if len(scripts) != 1:
         errors.append(f"expected one inline controller, found {len(scripts)}")
