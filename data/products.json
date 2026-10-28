@@ -640,5 +640,25 @@
     "source": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/20-year/DS920%2B/jpn/Product_Spec_DS920%2B_jpn.pdf",
     "checked": "2026-10-28",
     "verified": "Synology公式日本語製品仕様（2023-01-06更新、PDF pp.2–4）と照合。現行販売・サポート・移行互換性は未検証。"
+  },
+  {
+    "model": "DS923+",
+    "brand": "Synology",
+    "cat": "server",
+    "category": "4ベイNAS（2022年公開モデル）",
+    "memo": "メーカー公式2022年版データシートに基づく仕様。現時点の販売状況・サポート・移行互換性は未確認。旧機種からの移行や購入を推奨するものではありません。",
+    "specs": {
+      "CPU": "AMD Ryzen R1600（2コア／4スレッド、最大3.1GHz）",
+      "メモリー": "4GB DDR4 ECC SODIMM（最大32GB）",
+      "ドライブベイ": "3.5／2.5インチ SATA HDD／SSD ×4（ドライブ別売）",
+      "M.2スロット": "M.2 2280 NVMe SSD ×2（ドライブ別売）",
+      "LAN": "1GbE RJ-45 ×2",
+      "ネットワーク拡張": "オプションのE10G22-T1-Miniによる10GbE RJ-45対応",
+      "外部ポート": "USB 3.2 Gen 1 ×2、拡張ポート（eSATA）×1",
+      "本体寸法": "166 × 199 × 223 mm（高さ×幅×奥行）"
+    },
+    "source": "https://global.download.synology.com/download/Document/Hardware/DataSheet/DiskStation/23-year/DS923%2B/jpn/Synology_DS923%2B_Data_Sheet_jpn.pdf",
+    "checked": "2026-10-28",
+    "verified": "Synology公式日本語DS923+データシート（DS923+-2022-JPN-REV001、p.5 技術仕様）で8項目を照合。販売・サポート・移行互換性は未検証。"
   }
 ]
