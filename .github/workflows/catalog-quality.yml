@@ -96,9 +96,16 @@ jobs:
         run: |
           test -f main-snapshot/journey-app.js
           test -f main-snapshot/catalog-guide.js
-          test ! -e main-snapshot/nas-catalog-v32-preview.html
-          test ! -e main-snapshot/nas-catalog-v32-data.js
-          cp nas-catalog-v32-preview.html nas-catalog-v32-data.js main-snapshot/
+          # Before first publication, stage the two files without overwriting main.
+          # After publication, demand byte-for-byte parity with the reviewed release.
+          if test -e main-snapshot/nas-catalog-v32-preview.html || test -e main-snapshot/nas-catalog-v32-data.js; then
+            test -f main-snapshot/nas-catalog-v32-preview.html
+            test -f main-snapshot/nas-catalog-v32-data.js
+            cmp nas-catalog-v32-preview.html main-snapshot/nas-catalog-v32-preview.html
+            cmp nas-catalog-v32-data.js main-snapshot/nas-catalog-v32-data.js
+          else
+            cp nas-catalog-v32-preview.html nas-catalog-v32-data.js main-snapshot/
+          fi
           python3 -m http.server 8766 --bind 127.0.0.1 --directory main-snapshot >/tmp/v32-overlay-http.log 2>&1 &
           node tools/browser_v32_overlay.mjs
       - uses: actions/upload-artifact@v4
