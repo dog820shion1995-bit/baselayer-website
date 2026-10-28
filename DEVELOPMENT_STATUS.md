@@ -319,3 +319,23 @@ Target: `main` (review only; do not merge or publish)
 - New products **0**, existing specification supplements **0**, new comparisons **0**, newly licensed real photos **0**, main commits **0**. Master totals unchanged; review NAS visible count intentionally reduced from 7 to 6 by excluding unsourced data.
 - **Next:** run a controlled current-main integration regression for the isolated bundle and storage/backup journey; verify actual Commons image redirect response and live browser delivery or keep fallback. Only then consider a separately tested, small main publication. PR remains review-only and nonmergeable wholesale.
 - Manual live-link check (2026-10-28 JST): all **5 distinct manufacturer source URLs** used by the six NAS entries were retrievable: Synology DS918+, DS920+, DS923+, DS925+ official PDF files and QNAP TS-464 official hardware specifications. This confirms link accessibility at check time, not automatic verification of every recorded specification or current stock. The Commons photo file-description page was also retrievable, but its actual redirect image response remained unverified.
+
+## 2026-10-28 18:04–18:XX JST — v32 review continuation (run 10)
+
+### Preflight and outstanding blockers
+- Read existing draft PR #4, branch `feature/v32-catalog-media-office`, previous head `d63d5c444284da0737e2d451bbc604218efb2619` and its commit, and this progress file before changing code.
+- Before edits, PR was open, draft, unmerged and nonmergeable; branch **70 ahead / 38 behind current main**. Main has moved since run 9, so do not reuse an old main snapshot or merge the entire PR.
+- Master catalog remains **47 products**, **34** with source-backed specifications, **6** evidence-linked suggested-alternative comparisons and **1** Commons photo metadata record. Isolated NAS subset: **6** source-gated products and **5** suggested comparisons. No new manufacturer facts or image rights were asserted.
+
+### Current-main staging overlay regression added (review only)
+- `ceaeefa1b88dad544d4a64322b4c267326fcd019`: added `tools/browser_v32_overlay.mjs` to test the **current main** homepage, 4-step backup decision report, current main product search/NAS filter/two-product comparison, and six-NAS v32 preview with five comparisons on desktop and mobile. Test blocks external images to check graceful fallback, asserts no mobile horizontal overflow, and saves screenshots.
+- `2b63c0d6135cffe1019c800cd494675d90f9538c`: updated `.github/workflows/catalog-quality.yml` to check out **main** into a separate `main-snapshot` directory, verify neither v32 file exists there, overlay only `nas-catalog-v32-preview.html` and `nas-catalog-v32-data.js`, and run the regression without modifying any main files. Existing v32 Python/browser jobs remain.
+- `f38ba2407290a5342bf9af451e0fcff854c21ac9`: added a nonblocking **real** Commons image delivery probe in the staging Chromium suite. It reports `PASS_WITH_ATTRIBUTION` or `NOT_VERIFIED_OR_UNAVAILABLE` and HTTP response summaries, without treating a third-party network failure as a deterministic site regression. A mocked-image success test remains separate.
+- Offline inspection of the committed JS: syntax parsed after wrapping top-level await and removing import declarations; checked workflow references, no-overwrite guard, main checkout and overlay paths. Verified source data and generated NAS subset counts from the branch itself.
+- Rechecked the Wikimedia Commons DS918+ file description on 2026-10-28: author mculi, own work, CC BY-SA 4.0. The file page provides a working thumbnail, but the **exact Commons redirect URL used by the app remains unverified**; the new CI probe will report whether the actual browser fetch succeeds.
+- **GitHub Actions result for these new commits is not yet confirmed** at this status update. Do not report the new overlay test as passing until job logs and run conclusion have been inspected.
+
+### Saved delta and release boundary
+- New products **0**; existing specifications supplemented **0**; new comparisons **0**; newly rights-approved photos **0**; main commits **0**. Review branch: 3 code/CI commits plus this status commit.
+- No public main files changed; no new PR created; no full PR merge.
+- Next: inspect the newest GitHub Actions run and screenshots, fix any real current-main regression found by the overlay, inspect the live Commons image probe, then consider a separate two-file main release only if current-main and v32 browser tests are green and media behavior/rights are fully verified. If not, retain review-only status and fallback.
