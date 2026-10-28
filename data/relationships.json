@@ -8,5 +8,15 @@
     "source": "https://network.yamaha.com/products/routers/rtx840/spec",
     "checked": "2026-10-27",
     "note": "メーカーはRTX830からの置き換えの容易さに言及。公式後継や完全互換とは断定せず個別要件を確認。"
+  },
+  {
+    "from_brand": "Synology",
+    "from_model": "DS918+",
+    "to_brand": "Synology",
+    "to_model": "DS920+",
+    "relation": "suggested_alternative",
+    "source": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/20-year/DS920%2B/jpn/Product_Spec_DS920%2B_jpn.pdf",
+    "checked": "2026-10-28",
+    "note": "同じ4ベイ・2×1GbE・2×M.2 NVMeを備える旧世代NAS同士の比較参考候補。メーカー公式後継認定ではない。DS920+も旧世代であり現行購入推奨ではない。ドライブ移行・ソフトウェア互換性・サポート状況は未確認。"
   }
 ]
