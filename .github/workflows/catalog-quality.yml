@@ -15,7 +15,7 @@ on:
       - 'tools/build_relationships.py'
       - '.github/workflows/catalog-quality.yml'
   push:
-    branches: [main]
+    branches: [main, feature/v32-catalog-media-office]
     paths:
       - 'data/products.json'
       - 'data/relationships.json'
@@ -24,6 +24,7 @@ on:
       - 'app-v31.js'
       - 'search.html'
       - 'tools/build_catalog.py'
+      - 'tools/validate_v32_media.py'
       - 'tools/validate_relationships.py'
       - 'tools/catalog_quality.py'
       - 'tools/build_relationships.py'
