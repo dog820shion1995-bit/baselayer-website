@@ -83,3 +83,32 @@ Target: `main` (review only; do not merge or publish)
 - NOT YET VERIFIED: newly added Python CI check actually runs and passes, Commons image redirect delivery, desktop/mobile browser smoke test, and public deployment.
 - **Blocking:** PR #4 cannot be safely merged with the new `main` architecture. Future run should reconcile the review branch against the latest `main` without losing the existing draft PR, adapt the photo/attribution design to current storage journey components, and run current-site regression tests. Do not force-merge or silently revert the new homepage.
 - This run: new products **1**, existing product specs supplemented **0**, new comparison relationships **0**, permitted photo metadata records **1**. All changes are review-only.
+
+## 2026-10-28 09:59 JST — v32 review continuation (run 2)
+
+### Preflight
+- Reused existing draft PR #4: https://github.com/dog820shion1995-bit/baselayer-website/pull/4; no new PR created.
+- Inspected prior status, previous commit `c3d923234c7bf320091b27fc58a2f8fce6eaa6b5`, review branch and main comparison.
+- Before changes: review branch 14 commits ahead and 37 behind main. The live homepage is now a storage/backup journey, not the old v31 catalog. **No main changes and no PR merge**; branch reconciliation and current-site browser regression remain blocking.
+
+### Source-backed changes (review branch only)
+- **1 new product**: Synology DS920+, historical 4-bay NAS, with **7 verified specifications** (CPU J4125, 4GB DDR4/max 8GB, 4 SATA bays, 2 M.2 NVMe slots, dual 1GbE, USB/eSATA, dimensions). Synology official Japanese product specification (2023-01-06 edition): https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/20-year/DS920%2B/jpn/Product_Spec_DS920%2B_jpn.pdf ; checked **2026-10-28**. No claim of current availability/support.
+- **1 new evidence-linked comparison**: DS918+ → DS920+ as `suggested_alternative`, **not** `official_successor`. This is a historical feature comparison, not a current buying recommendation or a verified migration/drive compatibility path. The source and warning are stored in `data/relationships.json` and displayed in the candidate UI.
+- **0 existing product specification supplements** and **0 new licensed image records**. The prior DS918+ image record remains the only approved image metadata entry; Wikimedia Commons identifies mculi and CC BY-SA 4.0 at https://commons.wikimedia.org/wiki/File:Synology_DS918%2B.png (rechecked 2026-10-28). Actual browser image loading still unverified.
+- Generated `product-data.js` and `relationship-data.js` synchronized with JSON. Added escaped comparison caution text and readable CSS.
+- CI workflow now also triggers on review-branch pushes, since PR merge conflicts can prevent pull-request checks. GitHub workflow result **not yet available** when checked; this is not a CI PASS claim.
+
+### Review commits
+- `2a3f7071df449560be54e07ddac31ae25c20cf3c` — official-source DS920+ data.
+- `f19ad25c2728f572f59aac6cf8d2a83dced304d0` — generated catalog.
+- `8115db25d8dedf8a3c62f4b1f13dbb3205e19e3d` — historical comparison relationship.
+- `096ad7b97ff29dc96211466729c074a0f3146da2` — generated relationships.
+- `0154e0cc225d7926f0045a453139740a4074442f` — escaped comparison warning UI.
+- `5d33bbcf3c18d5e4bee40fe4ae8f07e42d1f6c01` — warning CSS.
+- `0d472ecb7157bb684f1d6755e2c8803c4aeaf8dd` — review-branch CI push trigger.
+
+### Checks and remaining work
+- PASS (connector-fetched code checked in V8): JavaScript syntax of `app-v31.js`, `product-data.js`, `relationship-data.js`; JSON parse; 43 product records, 2 comparison relationships; zero duplicate normalized model IDs; valid HTTPS source/date metadata; valid relation endpoints and types; generated JS/JSON exact data match; 1 rights-metadata-approved exact-model image; CSS brace count; relation warning present.
+- NOT VERIFIED: GitHub Actions execution, Python validator runtime, network link status beyond inspected official PDF/Commons pages, browser interaction/mobile rendering, image delivery, live deployment.
+- Post-change branch: 20 commits ahead / 37 behind main; PR #4 remains review-only and not safe to merge wholesale.
+- **Next**: confirm CI execution; reconcile old v31 UI with current storage journey without overwriting the public homepage; implement a small isolated current-architecture component with real licensed media and category fallback; browser smoke test before any main publication.
