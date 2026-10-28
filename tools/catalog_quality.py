@@ -20,6 +20,7 @@ OFFICIAL_DOMAINS = {
     'BUFFALO': {'www.buffalo.jp'},
     'EPSON': {'www.epson.jp'},
     'Synology': {'global.download.synology.com'},
+    'QNAP': {'www.qnap.com'},
 }
 
 def main():
