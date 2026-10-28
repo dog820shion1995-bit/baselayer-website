@@ -24,7 +24,9 @@ def validate(items):
     errors = []
     seen = set()
     permitted = 0
+    used_photo_files = set()
     for p in items:
+        errors_before = len(errors)
         name = f"{p.get('brand', '?')} {p.get('model', '?')}"
         key = (p.get("brand", "").casefold(), re.sub(r"[^a-z0-9]", "", p.get("model", "").casefold()))
         if key in seen:
@@ -58,11 +60,23 @@ def validate(items):
             if source.netloc != "commons.wikimedia.org" or photo.netloc != "commons.wikimedia.org":
                 errors.append(f"{name}: non-Commons photo needs a separate permission review")
             else:
+                if not source.path.startswith("/wiki/File:") or not photo.path.startswith("/wiki/Special:Redirect/file/"):
+                    errors.append(f"{name}: photo links must use Commons file and redirect paths")
                 source_file = unquote(source.path.split("File:")[-1]).casefold()
                 photo_file = unquote(photo.path.split("/file/")[-1]).casefold()
                 if not source_file or source_file != photo_file:
                     errors.append(f"{name}: photo URL differs from license file page")
-        permitted += 1
+                if im.get("rightsEvidence") != im.get("source"):
+                    errors.append(f"{name}: Commons rights evidence must point to the same file page")
+                stem = source_file.rsplit(".", 1)[0]
+                model = str(p.get("model", "")).casefold()
+                if not model or not re.search(r"(?<![a-z0-9+])" + re.escape(model) + r"(?![a-z0-9+])", stem):
+                    errors.append(f"{name}: image filename does not identify the exact product model")
+                if source_file in used_photo_files:
+                    errors.append(f"{name}: photo file reused for multiple catalog records; manual review required")
+                used_photo_files.add(source_file)
+        if len(errors) == errors_before:
+            permitted += 1
     return errors, permitted
 
 def main():
