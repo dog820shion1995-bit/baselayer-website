@@ -10,6 +10,7 @@ on:
       - 'search.html'
       - 'nas-catalog-v32-preview.html'
       - 'tools/validate_v32_preview.py'
+      - 'tools/browser_v32.mjs'
       - 'tools/build_catalog.py'
       - 'tools/validate_v32_media.py'
       - 'tools/test_v32_media.py'
@@ -29,6 +30,7 @@ on:
       - 'search.html'
       - 'nas-catalog-v32-preview.html'
       - 'tools/validate_v32_preview.py'
+      - 'tools/browser_v32.mjs'
       - 'tools/build_catalog.py'
       - 'tools/validate_v32_media.py'
       - 'tools/test_v32_media.py'
@@ -59,3 +61,29 @@ jobs:
           python tools/build_relationships.py
           python tools/catalog_quality.py
           git diff --exit-code -- product-data.js relationship-data.js
+
+  browser-v32:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium for isolated v32 review smoke test
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Verify v32 NAS review page on desktop and mobile
+        run: |
+          node --check tools/browser_v32.mjs
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/v32-http.log 2>&1 &
+          node tools/browser_v32.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v32-nas-review-screenshots
+          path: |
+            v32-nas-desktop.png
+            v32-nas-mobile.png
+          if-no-files-found: ignore
