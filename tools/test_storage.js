@@ -3,10 +3,10 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),vm=require('node:vm');
 const read=p=>fs.readFileSync(p,'utf8');
-const pages=['index.html','start.html','learn.html','compare.html','product.html','price-guide.html','storage-policy.html'];
-const scripts=['journey-app.js','catalog-guide.js','product-detail.js','price-guide.js','product-editorial.js','official-prices.js','storage-data.js','visual-media.js','site-navigation.js'];
-for(const p of [...pages,...scripts,'journey.css','visual-story.css'])assert(fs.existsSync(p),'file missing '+p);
-for(const p of pages){const html=read(p);assert(html.includes('lang="ja"'),p+' Japanese language');assert(html.includes('name="viewport"'),p+' viewport');assert(html.includes('journey.css'),p+' responsive stylesheet');assert(html.includes('visual-story.css'),p+' visual stylesheet');assert(html.includes('site-navigation.js'),p+' accessible mobile navigation');}
+const pages=['index.html','start.html','learn.html','compare.html','product.html','price-guide.html','storage-policy.html','office-10-storage.html','nas-4tb-raid1.html','backup-first-steps.html'];
+const scripts=['journey-app.js','catalog-guide.js','product-detail.js','price-guide.js','product-editorial.js','official-prices.js','storage-data.js','visual-media.js','site-navigation.js','metrics-config.js','metrics-events.js'];
+for(const p of [...pages,...scripts,'journey.css','visual-story.css','decision-cases.css','sitemap.xml','robots.txt','docs/growth-pdca-20261028.md'])assert(fs.existsSync(p),'file missing '+p);
+for(const p of pages){const html=read(p);assert(html.includes('lang="ja"'),p+' Japanese language');assert(html.includes('name="viewport"'),p+' viewport');assert(html.includes('journey.css'),p+' responsive stylesheet');assert(html.includes('visual-story.css'),p+' visual stylesheet');assert(html.includes('site-navigation.js'),p+' accessible mobile navigation');assert(html.includes('metrics-events.js'),p+' metric event hook');}
 for(const p of scripts)new vm.Script(read(p),{filename:p});
 const ctx={window:{}};
 for(const p of ['storage-data.js','official-prices.js','product-editorial.js','visual-media.js'])vm.runInNewContext(read(p),ctx,{filename:p});
@@ -58,4 +58,17 @@ assert(read('journey-app.js').includes('const firstContract'),'prepayment correc
 assert(read('journey-app.js').includes('3年間の確認済み参考額'),'3 year cost absent');
 assert(read('product-detail.js').includes('他の製品と何が違う'),'reasoned product detail absent');
 assert(read('storage-policy.html').includes('参考額'),'pricing policy incomplete');
-console.log('PASS: 7 pages, 7 JS files, 8 source-backed product rationales, prices, categories, annual prepayments and source disclosures.');
+const sitemap=read('sitemap.xml');
+const rob=read('robots.txt');
+for(const file of ['office-10-storage.html','nas-4tb-raid1.html','backup-first-steps.html']){
+ assert(sitemap.includes('/'+file+'</loc>'),'search sitemap missing '+file);
+ assert(read(file).includes('href="start.html?goal='),'purchase decision CTA missing '+file);
+ assert(read(file).includes('rel="noopener noreferrer"'),'official citations missing '+file);
+ assert(read(file).includes('name="description"'),'search description missing '+file);
+ assert(read('index.html').includes('href="'+file+'"'),'home page case link missing '+file);
+}
+assert(rob.includes('Sitemap: https://dog820shion1995-bit.github.io/baselayer-website/sitemap.xml'),'robots sitemap location missing');
+assert(read('metrics-config.js').includes('enabled:false'),'remote tracking should be disabled without a measurement ID');
+assert(!read('metrics-events.js').includes('localStorage'),'event implementation must not persist inputs');
+assert(read('journey-app.js').includes('diagnosis_complete'),'diagnosis completion metric missing');
+console.log('PASS: 10 pages, 3 organic search cases, sitemap, disabled analytics and 8 source-backed products.');
