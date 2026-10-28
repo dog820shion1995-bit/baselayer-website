@@ -64,6 +64,7 @@ try{
   assert.equal(await page.evaluate(()=>typeof window.BL_STORAGE_ITEMS),'undefined','v32 leaked main catalog globals');
   assert.equal(await page.evaluate(()=>window.BASELAYER_V32_NAS_DATA?.products?.length),6);
   await page.locator('#search').fill('DS918+');
+  assert.equal(await page.locator('#rels li').count(),1,'staged NAS search shows unrelated comparisons');
   await page.locator('.placeholder').waitFor();
   assert.equal(await page.locator('.media img').count(),0,'remote-image failure must fall back');
   await noOverflow(page,size.name+' staged NAS preview');
