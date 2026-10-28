@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://dog820shion1995-bit.github.io/baselayer-website/sitemap.xml
