@@ -40,3 +40,8 @@
 .detail-page-section h2{font-size:21px;margin-top:0}.detail-page-section p{font-size:13px;color:#667a78}.detail-page-section li{font-size:12px;line-height:1.9}
 @media(max-width:640px){.report-header{display:block}.report-snapshot{grid-template-columns:1fr 1fr}.report-product-list>div{grid-template-columns:1fr}.report-product-list span{text-align:left}.report-tabs button{min-width:0;font-size:10px;padding:10px 7px}.report-pane{padding:17px}.estimate-output{grid-template-columns:1fr}.detail-hero{grid-template-columns:1fr}}
 @media print{.report-tabs,.no-print,.head-action{display:none!important}.report-owner,.report-technical,.report-sales{display:block!important;break-inside:avoid}.report-cost,.report-snapshot,.report-pane{break-inside:avoid}.report-cost select,.report-cost input{border:0;background:transparent}}
+
+/* Keep the active wizard question below the sticky header after each step. */
+#wizardContent{scroll-margin-top:92px}
+#wizardTitle:focus{outline:none}
+#wizardTitle:focus-visible{outline:3px solid #3cb2a0;outline-offset:5px;border-radius:4px}
