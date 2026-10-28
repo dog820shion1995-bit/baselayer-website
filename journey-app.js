@@ -199,7 +199,7 @@ function render(){
  state.step=Math.min(4,Math.max(1,state.step));
  document.querySelector(".wizard-shell")?.classList.toggle("report-wide",state.step===4);
  $("wizardContent").innerHTML=[null,stepOne,stepTwo,stepThree,result][state.step]();
- $("progressList").querySelectorAll("li").forEach((li,i)=>{li.classList.toggle("current",i===state.step-1);li.classList.toggle("done",i<state.step-1);});
+ $("progressList").querySelectorAll("li").forEach((li,i)=>{li.classList.toggle("current",i===state.step-1);li.classList.toggle("done",i<state.step-1);if(i===state.step-1)li.setAttribute("aria-current","step");else li.removeAttribute("aria-current");});
  if(state.step===4){updateAmounts();changeView(state.view);}
 }
 function changeView(view){
@@ -230,7 +230,13 @@ $("wizardContent").addEventListener("click",async event=>{
   if(cmd==="next"){const from=state.step;state.step=Math.min(4,state.step+1);if(state.step>from){window.BL_TRACK?.("diagnosis_step_"+from);if(state.step===4)window.BL_TRACK?.("diagnosis_complete");}}
   if(cmd==="back")state.step=Math.max(1,state.step-1);
   if(cmd==="reset"){Object.assign(state,init);history.replaceState(null,"",location.pathname);}
-  render();window.scrollTo({top:0,behavior:"auto"});return;
+  render();
+  // Keep the next question in view instead of jumping above the page hero.
+  // Move keyboard/screen-reader focus to the newly rendered question heading.
+  const heading=$("wizardTitle");
+  if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+  $("wizardContent")?.scrollIntoView({behavior:"instant",block:"start"});
+  return;
  }
  const view=event.target.closest("[data-view]");if(view){changeView(view.dataset.view);return;}
  if(event.target.closest("#printPlan")){window.BL_TRACK?.("report_print");window.print();return;}
