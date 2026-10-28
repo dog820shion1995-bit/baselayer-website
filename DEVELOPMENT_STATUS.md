@@ -339,3 +339,22 @@ Target: `main` (review only; do not merge or publish)
 - New products **0**; existing specifications supplemented **0**; new comparisons **0**; newly rights-approved photos **0**; main commits **0**. Review branch: 3 code/CI commits plus this status commit.
 - No public main files changed; no new PR created; no full PR merge.
 - Next: inspect the newest GitHub Actions run and screenshots, fix any real current-main regression found by the overlay, inspect the live Commons image probe, then consider a separate two-file main release only if current-main and v32 browser tests are green and media behavior/rights are fully verified. If not, retain review-only status and fallback.
+
+## 2026-10-28 18:58 JST onward — v32 review continuation (run 11)
+
+### Preflight / release safety
+- Re-read existing open review PR #4, the v32 branch head `1da3aba4f9698de91aad24a9e5cc92e62aab6444`, its prior commit, and this status file before editing.
+- Main moved again: before this run the review branch was **75 ahead / 39 behind main**, with current main at `35f2a68bdb8a20da46a0362f709321bb3f1a9e31`. Existing PR #4 remains the single review PR. Do not merge it wholesale.
+- Previous staging overlay's GitHub Actions conclusion and live Commons redirect delivery were not verifiable through the available commit-run lookup (no pull-request-triggered runs returned). **Do not claim the new integration passed.** The prior successful run `40654459122` predates the overlay work.
+
+### Completed, committed review-only improvement
+- Fixed a misleading catalog behavior: previously all five comparison relationships remained visible after searching or filtering to one NAS. The preview now displays **only comparisons touching a currently visible, source-verified NAS**, with a count and a clear empty state. Both endpoints' manufacturer names remain visible; suggested alternatives remain explicitly distinguished from official successors.
+- Commit `bfdcb44f9b1b43ec2a784a1b6b9215e2e0263c31`: `nas-catalog-v32-preview.html`, accessible `relsStatus` and filtered evidence-linked comparisons.
+- Commit `aed05f23b31b30e9d18fb4bf8f91021d05534146`: `tools/browser_v32.mjs`, desktop/mobile checks for search/brand-filtered comparisons and empty results.
+- Commit `e5f8c98dd107e6ef928afe093d46c7d8f3e553a3`: `tools/browser_v32_overlay.mjs`, current-main staging check for one relevant DS918+ comparison.
+- PASS: inline preview controller parsed in V8; both modified Playwright module bodies passed V8 syntax compilation after stripping imports and wrapping top-level await; all replacement anchors checked; comparison endpoints were inspected in the existing six-NAS bundle.
+- NOT VERIFIED: new GitHub Actions execution success, actual desktop/mobile runtime for this revision, live Commons photo delivery, deployed preview, and the complete current-main integration regression. Do not infer a passing browser run from syntax checks.
+
+### Saved counts and next steps
+- New products **0**; existing product specification supplements **0**; new comparison relationships **0** (presentation only); newly rights-cleared real photographs **0**. Master catalog still **47 products**, **34** with recorded official specifications, **6** suggested relationships and **1** rights-recorded photo; isolated preview remains **6 NAS / 5 relationships** before filtering.
+- **No main publication and no PR-wide merge.** Next: inspect current GitHub Actions run and browser artifacts; if green, verify live image or ensure safe fallback, recheck latest main SHA and stage a strictly isolated two-file integration before considering a small release. If CI fails, fix in the same PR and record the failure.
