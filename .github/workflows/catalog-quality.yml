@@ -11,6 +11,7 @@ on:
       - 'tools/build_catalog.py'
       - 'tools/validate_v32_media.py'
       - 'tools/test_v32_media.py'
+      - 'tools/test_v32_relationships.py'
       - 'tools/validate_relationships.py'
       - 'tools/catalog_quality.py'
       - 'tools/build_relationships.py'
@@ -27,6 +28,7 @@ on:
       - 'tools/build_catalog.py'
       - 'tools/validate_v32_media.py'
       - 'tools/test_v32_media.py'
+      - 'tools/test_v32_relationships.py'
       - 'tools/validate_relationships.py'
       - 'tools/catalog_quality.py'
       - 'tools/build_relationships.py'
@@ -46,7 +48,7 @@ jobs:
         run: |
           python tools/build_catalog.py
           python tools/validate_v32_media.py
-          python -m unittest discover -s tools -p 'test_v32_media.py' -v
+          python -m unittest discover -s tools -p 'test_v32_*.py' -v
           python tools/validate_relationships.py
           python tools/build_relationships.py
           python tools/catalog_quality.py
