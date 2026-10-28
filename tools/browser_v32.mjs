@@ -29,6 +29,8 @@ try {
   assert.equal(await desktop.locator('meta[name="robots"]').getAttribute('content'),'noindex,nofollow');
   await desktop.locator('#search').fill('DS918+');
   assert.equal(await desktop.locator('.card').count(),1);
+  assert.equal(await desktop.locator('#rels li').count(),1,'DS918+ should show only its evidence-linked comparison');
+  assert.match(await desktop.locator('#rels').innerText(),/DS920\+/);
   try {await desktop.locator('.media img').waitFor({timeout:6000});}
   catch {throw new Error('licensed image did not render; routes='+imageRoutes+' card='+await desktop.locator('.card').evaluate(n=>n.outerHTML.slice(0,1200)));}
   assert(await desktop.locator('.media img').evaluate(img=>img.complete&&img.naturalWidth>0),'licensed photo path did not load');
@@ -44,9 +46,12 @@ try {
   await desktop.locator('#search').fill('');
   await desktop.locator('#brand').selectOption('QNAP');
   assert.equal(await desktop.locator('.card').count(),2);
+  assert.equal(await desktop.locator('#rels li').count(),2,'QNAP filter should retain only related same-brand and cross-brand comparisons');
   assert.equal(await desktop.locator('.card a.source').count(),2,'official source links missing');
   await desktop.locator('#search').fill('not-a-model');
   assert.match(await desktop.locator('#grid').innerText(),/一致する型番はありません/);
+  assert.equal(await desktop.locator('#rels li').count(),0,'unmatched search must not show unrelated comparisons');
+  assert.match(await desktop.locator('#relsStatus').innerText(),/該当する比較候補はありません/);
   await desktop.screenshot({path:'v32-nas-desktop.png',fullPage:true});
 
   const failed=await browser.newPage({viewport:{width:1365,height:900}});
@@ -70,6 +75,7 @@ try {
   assert.equal(await mobile.locator('.card').count(),4);
   await mobile.locator('#search').fill('DS920+');
   assert.equal(await mobile.locator('.card').count(),1);
+  assert.equal(await mobile.locator('#rels li').count(),2,'mobile search should show two DS920+ linked comparisons');
   await mobile.locator('.card summary').click();
   assert.match(await mobile.locator('.card dl').innerText(),/CPU/);
   await mobile.screenshot({path:'v32-nas-mobile.png',fullPage:true});
