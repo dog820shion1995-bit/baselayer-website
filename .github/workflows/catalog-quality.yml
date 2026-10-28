@@ -8,6 +8,8 @@ on:
       - 'relationship-data.js'
       - 'app-v31.js'
       - 'search.html'
+      - 'nas-catalog-v32-preview.html'
+      - 'tools/validate_v32_preview.py'
       - 'tools/build_catalog.py'
       - 'tools/validate_v32_media.py'
       - 'tools/test_v32_media.py'
@@ -25,6 +27,8 @@ on:
       - 'relationship-data.js'
       - 'app-v31.js'
       - 'search.html'
+      - 'nas-catalog-v32-preview.html'
+      - 'tools/validate_v32_preview.py'
       - 'tools/build_catalog.py'
       - 'tools/validate_v32_media.py'
       - 'tools/test_v32_media.py'
@@ -51,6 +55,7 @@ jobs:
           python tools/validate_v32_media.py
           python -m unittest discover -s tools -p 'test_v32_*.py' -v
           python tools/validate_relationships.py
+          python tools/validate_v32_preview.py
           python tools/build_relationships.py
           python tools/catalog_quality.py
           git diff --exit-code -- product-data.js relationship-data.js
