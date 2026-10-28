@@ -112,3 +112,33 @@ Target: `main` (review only; do not merge or publish)
 - NOT VERIFIED: GitHub Actions execution, Python validator runtime, network link status beyond inspected official PDF/Commons pages, browser interaction/mobile rendering, image delivery, live deployment.
 - Post-change branch: 20 commits ahead / 37 behind main; PR #4 remains review-only and not safe to merge wholesale.
 - **Next**: confirm CI execution; reconcile old v31 UI with current storage journey without overwriting the public homepage; implement a small isolated current-architecture component with real licensed media and category fallback; browser smoke test before any main publication.
+
+## 2026-10-28 11:00 JST — v32 review continuation (run 3)
+
+### Preflight and safety
+- Reused the existing draft review PR #4: https://github.com/dog820shion1995-bit/baselayer-website/pull/4. GitHub PR changed-file listing confirmed it exists; no additional PR was opened.
+- Read the v32 branch, prior commit `4ebd5462155ca88ec50f1d34f65f5a2c77ca74e2`, and this progress file. Before this run the branch was 22 commits ahead / 37 behind `main`.
+- Current `main/index.html` is the storage/backup decision journey. The v32 UI still targets legacy `app-v31.js`; do **not** merge PR #4 wholesale. No main publication in this run.
+
+### New sourced data and corrections (review branch only)
+- Added **Synology DS923+** (one new product; 8 new-product hardware fields, **0 existing product fields supplemented**). Official Japanese datasheet: https://global.download.synology.com/download/Document/Hardware/DataSheet/DiskStation/23-year/DS923%2B/jpn/Synology_DS923%2B_Data_Sheet_jpn.pdf (2022 edition, p.5 hardware table), checked **2026-10-28 JST**. Fields: Ryzen R1600 dual-core CPU, 4 GB DDR4 ECC / max 32 GB, 4 SATA bays, 2 M.2 NVMe slots, dual 1GbE, optional 10GbE upgrade, USB/eSATA, dimensions. No claim of current sales/support.
+- Added **one** DS920+ → DS923+ `suggested_alternative` comparison with source and explicit limitations. It is **not** an official-successor designation, migration compatibility assurance, or current purchase recommendation.
+- Fixed an existing CI blocker: `tools/catalog_quality.py` had no Synology official-domain allowlist even though DS918+ and DS920+ already had sourced specs. Added only `global.download.synology.com` for Synology.
+- Synchronized generated `product-data.js` and `relationship-data.js`. No new image was added; DS918+ remains the sole licensed-image metadata record.
+
+### Review-only commits
+- `e3f7fe5544194590653b4f79c18a96ff95cd8ac1` — Synology domain validator fix.
+- `9bc2bcb2ddccb3ed123c7e4716bc48bbf2ac4e44` — DS923+ with eight sourced fields.
+- `be8e4f0bffab3da106bd876001616012ff1c8268` — generated catalog.
+- `f6b5aeb48a2d32a1cf04e616e7e4b8edeff6ac39` — suggested comparison.
+- `1b639be6a25f66614d5a2fad66f12d373ae9e092` — generated comparison data.
+
+### Checks and remaining blockers
+- PASS (connector data checked with V8): **44** products; **31** with source/date/specs; **3** relationships; **0** duplicate normalized model IDs; **0** missing comparison endpoints; all source-backed product domains on approved allowlist; valid recorded dates; generated JSON/JS exact matches; JS parse of `app-v31.js`, `product-data.js`, and `relationship-data.js`; category fallback code present.
+- Rights: **0 new** permitted real-product photos; **1 total** (DS918+ metadata). Commons source identifies author mculi and CC BY-SA 4.0, checked 2026-10-28: https://commons.wikimedia.org/wiki/File:Synology_DS918%2B.png. Remote image delivery and browser rendering still unverified.
+- NOT VERIFIED: Python validators actually executed in GitHub Actions, workflow success, browser desktop/mobile regression, deployed pages, DS918+ image delivery. GitHub commit workflow lookup and combined statuses returned no runs/statuses for the latest commit at check time; this is **not** a passing CI result.
+- After five code/data commits: branch 27 ahead / 37 behind `main`. Continue to preserve the current public storage journey. No main changes or PR merge.
+- **Next:** confirm CI or diagnose workflow non-execution; add focused media-license negative tests; adapt the reviewed image/fallback component to the current storage journey in an isolated PR change, then run real browser tests before publishing any small complete unit.
+
+### This run's saved delta
+- New products: **1**; existing product specs supplemented: **0**; evidence-linked comparison relationships: **1**; newly rights-approved real photos: **0**; main commits: **0**.
