@@ -1,6 +1,6 @@
 # BASELAYER v32 — Development status
 
-Last reviewed: 2026-10-27 (JST)
+Last reviewed: 2026-10-28 (JST)
 Branch: `feature/v32-catalog-media-office`
 Target: `main` (review only; do not merge or publish)
 
@@ -258,3 +258,33 @@ Target: `main` (review only; do not merge or publish)
 - New products **0**; existing product specification supplements **0**; new comparisons **0**; newly rights-approved real photos **0**; main commits **0**.
 - Review catalog remains **47 products**, **34** with source-backed specs, **6** suggested-alternative comparisons, **1** licensed-photo metadata entry; **23** unit tests pass on GitHub Actions.
 - Next: isolate a main-compatible NAS preview integration without changing the existing storage journey; perform real desktop/mobile browser smoke tests, remote Commons image-delivery check and fallback test, then consider only a separately verified small main commit.
+
+## 2026-10-28 16:01–16:10 JST — v32 review continuation (run 8)
+
+### Preflight and publication safety
+- Confirmed the scheduled development run was active. Read open draft PR #4 (https://github.com/dog820shion1995-bit/baselayer-website/pull/4), `feature/v32-catalog-media-office`, prior head `ecd0aab96b58ba2b387ea515c758744532348007`, previous commit, this status file, and the current `main/index.html`.
+- Before edits: review branch **53 ahead / 37 behind main**, PR `mergeable=false`. The live main remains a storage/backup decision journey; the v32 branch uses a legacy v31 catalog. No whole-PR merge and **no main publication**.
+- Existing review data unchanged: **47** products, **34** with recorded official-source specs, **6** suggested-alternative relationships, **1** exact-model CC BY-SA photo metadata record.
+
+### Browser test implementation and two real defects found
+- Added `tools/browser_v32.mjs`: Playwright desktop (1365px) and mobile (390px) smoke checks for seven NAS cards, five NAS-only comparisons, search and brand filtering, official-source links, `noindex`, license/creator/modification credit, licensed-image success with a deterministic mocked Commons image, failed-image fallback, unlicensed-model fallback, and horizontal overflow.
+- Added a `browser-v32` GitHub Actions job to `.github/workflows/catalog-quality.yml` with Chromium setup and screenshot artifact upload, while retaining the existing Python/data validation job.
+- **Real bug #1 fixed:** `nas-catalog-v32-preview.html` incorrectly treated underscore in `Synology_DS918+.png` as part of the model token, rejecting the valid DS918+ media record. Fixed exact-model filename boundary to match the offline validator.
+- **Real bug #2 fixed:** the preview assigned `loading='lazy'` to an image kept detached until `onload`; Chromium never requested it, so the real-photo slot could not fill. The isolated review preview now uses eager loading for the single approved photo and retains fallback on image failure.
+- Initial browser CI runs failed and were diagnosed using their job logs; the final code commit `5789aa0546f031f11ac4dce80a98c2fec1a9d578` **passed both GitHub Actions jobs** in run [40648142847](https://github.com/dog820shion1995-bit/baselayer-website/actions/runs/40648142847) on 2026-10-28 JST. Browser output confirms desktop/mobile catalog, mocked image success, broken-image fallback, and credit display. The existing Python/data validation job also passed (23 Python tests).
+- Screenshot artifact: https://github.com/dog820shion1995-bit/baselayer-website/actions/runs/40648142847/artifacts/12798164250 .
+- Rechecked the Commons [DS918+ photo file page](https://commons.wikimedia.org/wiki/File:Synology_DS918%2B.png) on 2026-10-28: uploader/author mculi, own work, CC BY-SA 4.0 with attribution and share-alike terms. This confirms recorded reuse metadata, **not** live delivery from the Commons redirect in a real browser.
+
+### Review branch commits this run
+- `e91b48f91e34f123bd41b0ffd83455bb1b655e6e` — browser smoke suite.
+- `0b5ebfbfbf7c76f2e795b426a4b78e716e4028d2` — robust count wait.
+- `c8c4831793892dc94d0d3303ce0e5fe86931e545` — browser CI job and screenshot artifacts.
+- `5e573accba145d1a40460e75344aab33f8e33a67` — exact-model filename boundary fix.
+- `910cb984094f3801a0b503a76421aa2a6bbbaaca`, `7327a19cf12bf22292653611610529b6954bafa6`, `fadd415ed0a4736ad27cb03f3e7443f63168c9cc` — browser failure diagnostics and corrected Commons route mock.
+- `5789aa0546f031f11ac4dce80a98c2fec1a9d578` — detached lazy-image loading fix; final green CI.
+
+### Saved delta, validation limits, and next actions
+- New products **0**; existing products' specifications supplemented **0**; comparison relationships added **0**; newly rights-approved real photos **0**. Total licensed-photo metadata remains **1**. **No main commits**.
+- PASS: 23 Python unit tests, catalog/media/relationship validators, generated-data integrity, real Chromium desktop/mobile smoke with mocked image success/failure, and screenshot artifact generation.
+- NOT VERIFIED: live Wikimedia redirect image delivery (the live URL was inaccessible to web retrieval), full current-main storage-journey regression after integration, or production Pages deployment. Do not claim production photos are published.
+- **Next:** make the isolated NAS review page self-contained with a source-synced subset bundle so it can be integrated without overwriting the current main catalog; verify live image delivery or retain fallback; run the existing main storage UI suite and the new v32 browser suite against the integration branch before any small public release. Preserve the existing PR; no force merge.
