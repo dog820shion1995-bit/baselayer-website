@@ -64,9 +64,23 @@ try{
   assert.equal(await page.evaluate(()=>typeof window.BL_STORAGE_ITEMS),'undefined','v32 leaked main catalog globals');
   assert.equal(await page.evaluate(()=>window.BASELAYER_V32_NAS_DATA?.products?.length),6);
   await page.locator('#search').fill('DS918+');
+  assert.equal(await page.locator('.card').count(),1,'staged NAS search should show one sourced model');
   assert.equal(await page.locator('#rels li').count(),1,'staged NAS search shows unrelated comparisons');
-  await page.locator('.placeholder').waitFor();
-  assert.equal(await page.locator('.media img').count(),0,'remote-image failure must fall back');
+  assert.equal(await page.evaluate(()=>window.BASELAYER_V32_NAS_DATA.products.find(p=>p.model==='DS918+')?.image?.usage),'permitted','fallback test must exercise a licensed photo, not a model without media');
+  // The placeholder is present before an image starts loading. Wait for the
+  // credit to be removed by onerror; otherwise this check can pass too early.
+  await page.waitForFunction(()=>document.querySelectorAll('#grid .card').length===1
+    && document.querySelectorAll('#grid .credit').length===0
+    && document.querySelectorAll('#grid .media img').length===0);
+  assert.match(await page.locator('#grid .placeholder').innerText(),/写真未確認/);
+  await page.locator('#search').fill('DS925+');
+  assert.equal(await page.locator('.card').count(),1);
+  assert.equal(await page.locator('.credit').count(),0,'unlicensed model must not show photo credit');
+  assert.equal(await page.locator('.media img').count(),0,'unlicensed model must not show a photo');
+  await page.locator('#search').fill('no-such-model');
+  assert.equal(await page.locator('.card').count(),0);
+  assert.equal(await page.locator('#rels li').count(),0,'no matching models must have no comparisons');
+  assert.match(await page.locator('#relsStatus').innerText(),/該当する比較候補はありません/);
   await noOverflow(page,size.name+' staged NAS preview');
   await page.screenshot({path:'v32-overlay-'+size.name+'.png',fullPage:true});
   await page.close();
