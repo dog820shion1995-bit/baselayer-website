@@ -15,15 +15,19 @@ const goto=async(page)=>{
 try {
   const desktop=await browser.newPage({viewport:{width:1365,height:900}});
   desktop.on('pageerror',e=>errors.push('desktop: '+e.message));
-  await desktop.route('https://commons.wikimedia.org/wiki/Special:Redirect/file/**',route=>
-    route.fulfill({status:200,contentType:'image/svg+xml',body:photoSvg}));
+  let imageRoutes=0;
+  await desktop.route(/commons\\.wikimedia\\.org/,route=>{
+    imageRoutes++;
+    return route.fulfill({status:200,contentType:'image/svg+xml',body:photoSvg});
+  });
   await goto(desktop);
   assert.equal(await desktop.locator('.card').count(),7,'expected seven NAS records');
   assert.equal(await desktop.locator('#rels li').count(),5,'expected five NAS-only comparison notes');
   assert.equal(await desktop.locator('meta[name="robots"]').getAttribute('content'),'noindex,nofollow');
   await desktop.locator('#search').fill('DS918+');
   assert.equal(await desktop.locator('.card').count(),1);
-  await desktop.locator('.media img').waitFor();
+  try {await desktop.locator('.media img').waitFor({timeout:6000});}
+  catch {throw new Error('licensed image did not render; routes='+imageRoutes+' card='+await desktop.locator('.card').evaluate(n=>n.outerHTML.slice(0,1200)));}
   assert(await desktop.locator('.media img').evaluate(img=>img.complete&&img.naturalWidth>0),'licensed photo path did not load');
   assert.match(await desktop.locator('.credit').innerText(),/mculi/);
   assert.match(await desktop.locator('.credit').innerText(),/CC BY-SA 4.0/);
