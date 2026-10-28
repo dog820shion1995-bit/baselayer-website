@@ -621,5 +621,24 @@
       "modifications": "表示サイズのみ変更（写真内容の改変なし）",
       "checked": "2026-10-28"
     }
+  },
+  {
+    "model": "DS920+",
+    "brand": "Synology",
+    "cat": "server",
+    "category": "4ベイNAS（旧世代モデル）",
+    "memo": "2023年1月6日更新のメーカー公式製品仕様に基づく旧世代NAS。現在の販売状況・サポート・ドライブ移行互換性は未確認。新規購入を推奨するものではありません。",
+    "specs": {
+      "CPU": "Intel Celeron J4125（4コア、2.0GHz／最大2.7GHz）",
+      "メモリー": "4GB DDR4 non-ECC（最大8GB、4GB＋4GB）",
+      "ドライブベイ": "3.5／2.5インチ SATA ×4（ドライブ別売）",
+      "SSD用スロット": "M.2 NVMe ×2（M.2 2280）",
+      "LAN": "1GbE RJ-45 ×2（リンクアグリゲーション／フェイルオーバー対応）",
+      "外部ポート": "USB 3.2 Gen 1 ×2、eSATA ×1",
+      "本体寸法": "166 × 199 × 223 mm（高さ×幅×奥行）"
+    },
+    "source": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/20-year/DS920%2B/jpn/Product_Spec_DS920%2B_jpn.pdf",
+    "checked": "2026-10-28",
+    "verified": "Synology公式日本語製品仕様（2023-01-06更新、PDF pp.2–4）と照合。現行販売・サポート・移行互換性は未検証。"
   }
 ]
