@@ -288,3 +288,33 @@ Target: `main` (review only; do not merge or publish)
 - PASS: 23 Python unit tests, catalog/media/relationship validators, generated-data integrity, real Chromium desktop/mobile smoke with mocked image success/failure, and screenshot artifact generation.
 - NOT VERIFIED: live Wikimedia redirect image delivery (the live URL was inaccessible to web retrieval), full current-main storage-journey regression after integration, or production Pages deployment. Do not claim production photos are published.
 - **Next:** make the isolated NAS review page self-contained with a source-synced subset bundle so it can be integrated without overwriting the current main catalog; verify live image delivery or retain fallback; run the existing main storage UI suite and the new v32 browser suite against the integration branch before any small public release. Preserve the existing PR; no force merge.
+
+## 2026-10-28 17:05–17:08 JST — v32 review continuation (run 9)
+
+### Preflight and blockers
+- Confirmed scheduled development task is enabled; reused the single open draft [PR #4](https://github.com/dog820shion1995-bit/baselayer-website/pull/4). Read branch head `0767365d5ba594338aea2cb951ce3a6fe62f8632`, prior commit and this progress file before editing.
+- Before changes: review branch **62 ahead / 37 behind main**, PR mergeable=false. Main still hosts a different storage/backup decision journey. No blind merge and **no main publication**.
+- Previous blockers: preview imported the entire 47-record legacy v31 catalog, including an unsourced DS220+ NAS, and the old global relationships; therefore the preview was not independently portable into the current main site. Remote Commons image delivery and main integration regression remain unverified.
+
+### Review changes saved
+- Added `tools/build_v32_nas_bundle.py`: deterministically selects only NAS with actual manufacturer-hosted source URLs, source-check dates and nonempty specifications; rejects duplicate identities, invalid source hosts, future dates, unapproved photo metadata, and orphan/unsupported comparison types. No vendor claims were invented.
+- Generated `nas-catalog-v32-data.js` in an isolated namespace `BASELAYER_V32_NAS_DATA`: **6 sourced NAS models** (Synology DS918+, DS920+, DS923+, DS925+; QNAP TS-464-8G, TS-464-4G), **5 NAS-only suggested-alternative comparisons**, and **1 existing CC BY-SA 4.0 photo metadata record**. Unsourced Synology DS220+ remains in the master 47-product catalog as pending but is excluded from the review NAS UI; this is a visibility correction, not a deletion or new product.
+- Updated `nas-catalog-v32-preview.html` to load only its own data bundle, not legacy `product-data.js` or `relationship-data.js`. Added visible official-source check date to each card. All rights gates, creator/license credit and failed-image fallback remain.
+- Extended `tools/validate_v32_preview.py` to require the isolated bundle and syntax-check it; extended desktop/mobile `tools/browser_v32.mjs` to assert six sourced cards, no DS220+, five NAS comparisons, review dates and no legacy dependency.
+- Updated `.github/workflows/catalog-quality.yml` to regenerate and diff-check the isolated bundle and to run the expanded preview/browser checks on both PR and push.
+
+### Commits
+- `35afb3ca614f74c209ee9954178c269a72b364c6` — source-gated NAS bundle generator.
+- `cb6c17715606634d3b179931d4440bbe53bfa765` — generated six-record isolated NAS bundle.
+- `06d20f45a5bbab5a9a17d42036b6c85158bd4220` — standalone preview data and visible review dates.
+- `8b046efbf306e42a3488031f44e646f31019133c` — static bundle validator.
+- `b609e05647e794e3db8155f8569893736665a370` — browser regression checks.
+- `e42b6555a76c666e48427bc209c5305dce1a4acc` — CI integration.
+
+### Actual CI verification and release boundary
+- [GitHub Actions run 40654459122](https://github.com/dog820shion1995-bit/baselayer-website/actions/runs/40654459122), head `e42b6555a76c666e48427bc209c5305dce1a4acc`, **completed success** on 2026-10-28 JST. Both jobs passed.
+- Validate job log: 23/23 Python unit tests passed; 47 master products, 34 with source-backed specs, 6 master relationships, 1 permitted photo metadata; isolated bundle generator output 6 sourced NAS and 5 comparisons; JavaScript syntax, media/relationship validation, generated bundle diff and preview gate passed.
+- Browser job log: real Chromium desktop/mobile smoke passed for search, brand filtering, six cards, five comparisons, official source links, review date, attribution, **mocked** image success and forced failure fallback.
+- Wikimedia Commons DS918+ file page was rechecked on 2026-10-28: mculi, own work, CC BY-SA 4.0. The redirect image itself remains inaccessible through the web inspection tool; actual third-party delivery is **not verified**. Do not claim all NAS photos are licensed or delivered.
+- New products **0**, existing specification supplements **0**, new comparisons **0**, newly licensed real photos **0**, main commits **0**. Master totals unchanged; review NAS visible count intentionally reduced from 7 to 6 by excluding unsourced data.
+- **Next:** run a controlled current-main integration regression for the isolated bundle and storage/backup journey; verify actual Commons image redirect response and live browser delivery or keep fallback. Only then consider a separately tested, small main publication. PR remains review-only and nonmergeable wholesale.
