@@ -38,5 +38,25 @@
     "source": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/25-year/DS925%2B/jpn/Product_Spec_DS925%2B_jpn.pdf",
     "checked": "2026-10-28",
     "note": "4ベイ・M.2 NVMe×2・ECCメモリーという共通点を持つ比較参考候補。DS923+の1GbE×2に対しDS925+は2.5GbE×2、CPUと拡張ポート／対応拡張ユニットも異なる。メーカー公式後継認定ではなく、ドライブ互換性リスト・既存ディスク移行・DSMパッケージ対応・国内在庫／価格を個別確認。無条件の置き換え推奨ではない。"
+  },
+  {
+    "from_brand": "QNAP",
+    "from_model": "TS-464-4G",
+    "to_brand": "QNAP",
+    "to_model": "TS-464-8G",
+    "relation": "suggested_alternative",
+    "source": "https://www.qnap.com/ja-jp/product/ts-464/specs/hardware",
+    "checked": "2026-10-28",
+    "note": "同一TS-464シリーズの4ベイ・2×2.5GbE・M.2×2構成を比較する参考候補。標準メモリーは4GBと8GB（8G仕様は2024年1月以降の表記）で異なる。公式後継認定やメモリー増設・データ移行の保証ではない。現在の販売状況、部材互換性、価格を個別確認。"
+  },
+  {
+    "from_brand": "Synology",
+    "from_model": "DS925+",
+    "to_brand": "QNAP",
+    "to_model": "TS-464-8G",
+    "relation": "suggested_alternative",
+    "source": "https://www.qnap.com/ja-jp/product/ts-464/specs/hardware",
+    "checked": "2026-10-28",
+    "note": "4ベイ・2×2.5GbE・M.2 NVMe×2を備える別メーカーNASの比較参考候補。QNAP TS-464-8GはIntel Celeron N5095／PCIe拡張／HDMIを備え、Synology DS925+はRyzen V1500B／ECCメモリー／専用拡張ポートを備える。OS・RAID・ドライブ移行・アプリ・バックアップ機能の互換性は保証されない。公式後継ではなく、購入推奨や現行在庫の保証でもない。Synology側仕様は各製品レコードの公式出典を参照。"
   }
 ]
