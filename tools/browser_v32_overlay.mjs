@@ -107,5 +107,5 @@ try{
  finally{await probe.close();}
  assert.equal(errors.length,0,errors.join('; '));
  console.log('PASS: current main homepage, 4-step backup wizard, current NAS catalog search/filter/comparison and isolated v32 6-NAS/5-comparison overlay on desktop/mobile.');
- console.log('LIMIT: main was checked in a staged two-file overlay, not deployed; remote Commons image delivery was intentionally blocked and remains unverified.');
+ console.log('LIMIT: this was a local current-main regression, not a production Pages check. The blocked-image fallback and separate live Commons probe are reported independently above.');
 }finally{await browser.close();}
