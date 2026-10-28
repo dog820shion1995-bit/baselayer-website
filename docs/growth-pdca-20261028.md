@@ -13,7 +13,7 @@
 | 意味ある閲覧 | 50 | 650 | 1,900 |
 | 診断開始 | 8 | 120 | 420 |
 | 診断完了 | 4 | 60 | 231 |
-| 製品・購入先への外部クリック | 1 | 18 | 80 |
+| 製品情報・型番検索への遷移（購入ではない） | 1 | 18 | 80 |
 | 実際の購入/契約（未計測・推計） | 0〜1 | 1〜3 | 5〜12 |
 
 集客の保証はなく、SEOが伸びなければこれを大幅に下回る。購入数は外部ASP・店舗の公式成果データがない限り不明。
@@ -34,7 +34,7 @@
 ## Check: 流入と転換の初期評価軸
 - Google Search Console: 自然検索の表示回数・クリック数・検索語・ランディングページ。所有権確認とサイトマップ登録が必要。
 - GA4など: 人数・エンゲージメント、診断開始率（8〜12%目標）、診断完了率（45〜55%目標）、製品の外部クリック率（診断完了の約30%を仮目標）。
-- イベント名: page_view、diagnosis_entry、diagnosis_step_1〜3、diagnosis_complete、report_print、report_copy、product_detail_view、price_page_view、external_product_click、case_to_diagnosis。
+- イベント名: page_view、diagnosis_entry、diagnosis_step_1〜3、diagnosis_complete、report_print、report_copy、product_detail_view、price_page_view、case_to_diagnosis、report_to_product、product_outbound_research、manufacturer_info_click、marketplace_search_click。
 - プライバシー: 個人名・回答内容・ファイル名をイベントで送らない。現行は外部送信しない。
 - 実際の購入/導入: ASPや販売先から公式な確定データを受領した場合にのみ実績扱いとする。
 
@@ -56,3 +56,12 @@
 - Google sitemap: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
 - Synology NAS selector: https://www.synology.com/ja-jp/support/nas_selector
 - IPA SME Security Guideline v4: https://www.ipa.go.jp/security/guide/sme/ug65p90000019cbk-att/sme_guideline_v4.0.pdf
+
+## PDCA 02（2026-10-28 18:15 JST）: ファネル計測の意味を正確にする
+
+- **問題（前回実装の再点検）**：以前の `diagnosis_entry` はサイト内のリンクをクリックした瞬間だけ記録していたため、検索結果やブックマークから直接 `start.html` に来た人を数えられない。反対に `product.html` 上のあらゆる外部リンクを `external_product_click` とみなしており、画像出典やメーカー資料まで「購入先へ進んだ」と誤読しうる。存在しない製品IDでも `product_detail_view` を数えていた。
+- **変更**：診断開始は `start.html` の実到達時に1回記録。導入判断レポートから製品詳細への遷移は `report_to_product` として分離。実在する詳細ページの表示だけ `product_detail_view` とする。
+- **外部クリックの定義**：製品詳細の「メーカー公式情報」リンクは `manufacturer_info_click`、Amazon/楽天の型番検索は `marketplace_search_click`。両者の合算 `product_outbound_research` は**購入を検討するための情報収集のクリック**であり、正規販売店への到達、注文、契約、売上を証明しない。画像出典・仕様根拠リンクはこの集計に入れない。
+- **プライバシー**：イベントは名称とページ種別のみ。型番ID、URL、フォーム回答、氏名、端末識別子は追加しない。測定IDは空、外部送信は無効。GA4設定時にはプライバシー告知と計測同意・適法性の再確認が必要。
+- **検証**：PCでのトップ→診断4段階→レポート→製品詳細→公式情報/型番検索のイベント分類、未登録製品の誤計測防止、390pxスマホ横スクロールなしをCIのPlaywrightで検査する。実トラフィック・CVRは測定基盤が未接続なので未取得。
+- **次回の優先課題**：①Search Consoleの所有者確認と実検索流入の把握（オーナー操作が必要）、②実測に基づく診断途中離脱の特定、③メーカー公式ページ・販売先検索リンクの生存確認と更新頻度の定義。

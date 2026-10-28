@@ -32,6 +32,8 @@ try {
 
  await page.locator('.problem-row').first().click();
  await page.waitForURL(/start.html\?goal=share/);
+ const entryEvents=await page.evaluate(()=>window.BL_METRIC_PREVIEW?.().map(e=>e.event)||[]);
+ assert.equal(entryEvents.filter(e=>e==='diagnosis_entry').length,1,'one entry per diagnosis landing');
  assert.match(await page.locator('#wizardTitle').innerText(),/困っていますか/);
  assert.equal(await page.locator('.visual-choice img').count(),3,'beginner scenarios must include photos');
  await page.locator('#f_mode').selectOption('advanced');
@@ -76,6 +78,10 @@ try {
  assert.match(await page.locator('#sumYear').innerText(),/価格未確認/);
  assert.match(await page.locator('#costNote').innerText(),/米ドル/);
  await page.screenshot({path:'decision-report.png',fullPage:true});
+ await page.locator('.report-product-list a[href^="product.html"]').first().evaluate(a=>{
+  a.addEventListener('click',e=>e.preventDefault(),{once:true});a.click();
+ });
+ assert((await page.evaluate(()=>window.BL_METRIC_PREVIEW?.().map(e=>e.event)||[])).includes('report_to_product'),'report-to-product CTA missing');
  await goto(page,'price-guide.html');
  assert.equal(await page.locator('#cloudPrices .catalog-item').count(),3);
  assert.equal(await page.locator('#devicePrices .catalog-item').count(),5);
@@ -88,6 +94,16 @@ try {
  await page.waitForFunction(() => {const i=document.querySelector('.product-media-panel img');return i&&i.complete;},null,{timeout:20000});
  assert(await page.locator('.product-media-panel img').evaluate(i=>i.naturalWidth>0),'BUFFALO photo failed to load');
  await page.screenshot({path:'visual-product-desktop.png',fullPage:true});
+ assert((await page.evaluate(()=>window.BL_METRIC_PREVIEW?.().map(e=>e.event)||[])).includes('product_detail_view'),'valid product detail view missing');
+ for(const purpose of ['manufacturer','marketplace-search']){
+  await page.locator('a[data-bl-outbound="'+purpose+'"]').first().evaluate(a=>{
+   a.addEventListener('click',e=>e.preventDefault(),{once:true});a.click();
+  });
+ }
+ const productEvents=await page.evaluate(()=>window.BL_METRIC_PREVIEW?.().map(e=>e.event)||[]);
+ assert(productEvents.includes('manufacturer_info_click'),'manufacturer research event missing');
+ assert(productEvents.includes('marketplace_search_click'),'marketplace research event missing');
+ assert.equal(productEvents.filter(e=>e==='product_outbound_research').length,2,'outbound research should count only labeled handoffs');
  // Manufacturer photos may be unavailable; a real browser must show a useful fallback.
  const broken=await browser.newPage({viewport:{width:390,height:844}});
  await broken.route('**/webpim/product/image/**',route=>route.abort());
@@ -99,6 +115,7 @@ try {
  await goto(page,'product.html?id=iodata-usb');
  assert.match(await page.locator('#detailBody').innerText(),/在庫限り/);
  await goto(page,'product.html?id=unknown-part');
+ assert(!(await page.evaluate(()=>window.BL_METRIC_PREVIEW?.().map(e=>e.event)||[])).includes('product_detail_view'),'unknown product should not count as valid detail');
  assert.match(await page.locator('#detailBody').innerText(),/未登録/);
  await goto(page,'compare.html');
  assert.equal(await page.locator('.catalog-item').count(),8);
