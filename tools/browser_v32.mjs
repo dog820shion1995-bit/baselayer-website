@@ -10,7 +10,7 @@ const photoSvg='<svg xmlns="http://www.w3.org/2000/svg" width="64" height="48"><
 const goto=async(page)=>{
   const response=await page.goto(base+'nas-catalog-v32-preview.html',{waitUntil:'domcontentloaded'});
   assert(response?.ok(),'review preview did not return HTTP 200');
-  await page.waitForFunction(()=>document.getElementById('count')?.textContent==='7機種');
+  await page.waitForFunction(()=>document.getElementById('count')?.textContent==='6機種');
 };
 try {
   const desktop=await browser.newPage({viewport:{width:1365,height:900}});
@@ -21,8 +21,11 @@ try {
     return route.fulfill({status:200,contentType:'image/svg+xml',body:photoSvg});
   });
   await goto(desktop);
-  assert.equal(await desktop.locator('.card').count(),7,'expected seven NAS records');
+  assert.equal(await desktop.locator('.card').count(),6,'expected six sourced NAS records');
   assert.equal(await desktop.locator('#rels li').count(),5,'expected five NAS-only comparison notes');
+  assert.equal(await desktop.locator('script[src="product-data.js"]').count(),0,'legacy global catalog dependency remains');
+  assert(!((await desktop.locator('.card .model').allTextContents()).includes('DS220+')),'unsourced NAS must not be presented');
+  assert.match(await desktop.locator('.card').first().innerText(),/公式仕様の確認日: 2026-10-28/);
   assert.equal(await desktop.locator('meta[name="robots"]').getAttribute('content'),'noindex,nofollow');
   await desktop.locator('#search').fill('DS918+');
   assert.equal(await desktop.locator('.card').count(),1);
@@ -64,7 +67,7 @@ try {
   const dims=await mobile.evaluate(()=>({scroll:document.documentElement.scrollWidth,viewport:window.innerWidth}));
   assert(dims.scroll<=dims.viewport+3,'mobile horizontal overflow: '+JSON.stringify(dims));
   await mobile.locator('#brand').selectOption('Synology');
-  assert.equal(await mobile.locator('.card').count(),5);
+  assert.equal(await mobile.locator('.card').count(),4);
   await mobile.locator('#search').fill('DS920+');
   assert.equal(await mobile.locator('.card').count(),1);
   await mobile.locator('.card summary').click();
