@@ -10,7 +10,7 @@ const photoSvg='<svg xmlns="http://www.w3.org/2000/svg" width="64" height="48"><
 const goto=async(page)=>{
   const response=await page.goto(base+'nas-catalog-v32-preview.html',{waitUntil:'domcontentloaded'});
   assert(response?.ok(),'review preview did not return HTTP 200');
-  await page.locator('#count').getByText(/7機種/).waitFor();
+  await page.waitForFunction(()=>document.getElementById('count')?.textContent==='7機種');
 };
 try {
   const desktop=await browser.newPage({viewport:{width:1365,height:900}});
