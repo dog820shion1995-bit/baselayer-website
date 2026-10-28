@@ -38,6 +38,9 @@ try {
  assert.equal(await page.locator('.visual-choice img').count(),3,'beginner scenarios must include photos');
  await page.locator('#f_mode').selectOption('advanced');
  await page.locator('[data-action="next"]').click();
+ assert.equal(await page.locator('#wizardTitle').evaluate(el=>document.activeElement===el),true,'desktop: next step must receive keyboard focus');
+ assert.equal(await page.locator('#progressList [aria-current="step"]').count(),1,'desktop: current step must be announced');
+ assert((await page.locator('#wizardContent').boundingBox()).y>=70,'desktop: question hidden behind sticky header');
  await page.locator('#f_people').selectOption('medium');
  await page.locator('#f_capacity').selectOption('small');
  await page.locator('#f_remote').selectOption('yes');
@@ -152,6 +155,20 @@ try {
  assert.equal(await mobile.locator('#lan-example .location-card').count(),2);
  assert(await mobile.locator('#lan-example').evaluate(el=>getComputedStyle(el.querySelector('.location-grid')).gridTemplateColumns.split(' ').length===1),'mobile data-location cards not stacked');
  await mobile.screenshot({path:'data-location-mobile.png',fullPage:true});
+ // A long mobile wizard must not return to the top hero after every answer.
+ await goto(mobile,'start.html?goal=backup');
+ assert.equal(await mobile.locator('input[name="goal"]:checked').inputValue(),'backup','deep-linked goal lost');
+ await mobile.locator('[data-action="next"]').click();
+ assert.match(await mobile.locator('#wizardTitle').innerText(),/どのくらいの環境/);
+ assert.equal(await mobile.locator('#wizardTitle').evaluate(el=>document.activeElement===el),true,'mobile: focus lost on next');
+ let wizardBox=await mobile.locator('#wizardContent').boundingBox();
+ assert(wizardBox.y>=64&&wizardBox.y<150,'mobile: next question is not visible below sticky header '+JSON.stringify(wizardBox));
+ assert.equal(await mobile.locator('#progressList [aria-current="step"]').count(),1);
+ await mobile.locator('[data-action="back"]').click();
+ assert.match(await mobile.locator('#wizardTitle').innerText(),/何に困っていますか/);
+ wizardBox=await mobile.locator('#wizardContent').boundingBox();
+ assert(wizardBox.y>=64&&wizardBox.y<150,'mobile: previous question not visible '+JSON.stringify(wizardBox));
+ assert.equal(await mobile.locator('input[name="goal"]:checked').inputValue(),'backup','back navigation lost chosen goal');
  await goto(mobile,'index.html');
  const menu=mobile.locator('.mobile-menu-button');
  assert.equal(await menu.isVisible(),true,'mobile text menu hidden');
