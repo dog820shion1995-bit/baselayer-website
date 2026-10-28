@@ -70,6 +70,26 @@ try{
   await page.screenshot({path:'v32-overlay-'+size.name+'.png',fullPage:true});
   await page.close();
  }
+ // Optional real network probe: record the result, but do not make a third-party
+ // outage fail the deterministic main regression or imply rights beyond CC terms.
+ const probe=await browser.newPage({viewport:{width:1365,height:900}});
+ const mediaResponses=[];
+ probe.on('response',response=>{
+  if(response.url().includes('wikimedia.org'))mediaResponses.push(response.status()+' '+response.url().slice(0,180));
+ });
+ try{
+  await open(probe,'nas-catalog-v32-preview.html');
+  await probe.locator('#search').fill('DS918+');
+  let liveLoaded=false;
+  try{
+   await probe.waitForFunction(()=>[...document.querySelectorAll('.media img')].some(img=>img.complete&&img.naturalWidth>0),null,{timeout:10000});
+   liveLoaded=true;
+  }catch{}
+  const credited=liveLoaded&&await probe.locator('.credit').count()===1;
+  console.log('LIVE_COMMONS_IMAGE_DELIVERY='+((liveLoaded&&credited)?'PASS_WITH_ATTRIBUTION':'NOT_VERIFIED_OR_UNAVAILABLE'));
+  console.log('LIVE_COMMONS_HTTP='+JSON.stringify(mediaResponses.slice(0,4)));
+ }catch(e){console.log('LIVE_COMMONS_IMAGE_DELIVERY=NOT_VERIFIED_OR_UNAVAILABLE '+e.message);}
+ finally{await probe.close();}
  assert.equal(errors.length,0,errors.join('; '));
  console.log('PASS: current main homepage, 4-step backup wizard, current NAS catalog search/filter/comparison and isolated v32 6-NAS/5-comparison overlay on desktop/mobile.');
  console.log('LIMIT: main was checked in a staged two-file overlay, not deployed; remote Commons image delivery was intentionally blocked and remains unverified.');
