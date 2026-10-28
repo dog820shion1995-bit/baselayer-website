@@ -58,6 +58,37 @@ class MediaGateTests(unittest.TestCase):
     def test_reject_future_review(self):
         self.check_rejected(lambda p: p["image"].update(checked="2099-01-01"))
 
+    def test_reject_different_photo_even_if_both_urls_match(self):
+        def change(p):
+            p["image"]["source"] = "https://commons.wikimedia.org/wiki/File:Other_NAS.png"
+            p["image"]["rightsEvidence"] = p["image"]["source"]
+            p["image"]["url"] = "https://commons.wikimedia.org/wiki/Special:Redirect/file/Other_NAS.png"
+        self.check_rejected(change)
+
+    def test_reject_rights_evidence_for_other_file(self):
+        self.check_rejected(lambda p: p["image"].update(
+            rightsEvidence="https://commons.wikimedia.org/wiki/File:Other_NAS.png"))
+
+    def test_reject_non_file_source_path(self):
+        self.check_rejected(lambda p: p["image"].update(
+            source="https://commons.wikimedia.org/wiki/Category:Synology_DS918%2B.png"))
+
+    def test_reject_duplicate_photo_across_distinct_models(self):
+        first = copy.deepcopy(self.licensed)
+        second = copy.deepcopy(first)
+        second["model"] = "DS920+"
+        second["image"]["model"] = "DS920+"
+        errors, permitted = validate([first, second])
+        self.assertTrue(any("photo file reused" in error for error in errors))
+        self.assertEqual(permitted, 1)
+
+    def test_invalid_photo_not_counted_as_permitted(self):
+        record = copy.deepcopy(self.licensed)
+        record["image"]["creator"] = ""
+        errors, permitted = validate([record])
+        self.assertTrue(errors)
+        self.assertEqual(permitted, 0)
+
     def test_reject_duplicate_model(self):
         record = copy.deepcopy(self.licensed)
         errors, _ = validate([record, copy.deepcopy(record)])
