@@ -17,6 +17,7 @@ nav.hidden=true;
 const links=[
  ["index.html","トップ"],
  ["learn.html","まず違いを知る"],
+ ["office-10-storage.html","社員10人の共有フォルダ"],
  ["start.html","環境を診断する"],
  ["price-guide.html","費用の目安"],
  ["compare.html","製品・サービスを比較する"],

@@ -3,6 +3,15 @@ on:
   pull_request:
     paths:
       - index.html
+      - office-10-storage.html
+      - nas-4tb-raid1.html
+      - backup-first-steps.html
+      - sitemap.xml
+      - robots.txt
+      - decision-cases.css
+      - metrics-events.js
+      - metrics-config.js
+      - docs/growth-pdca-20261028.md
       - start.html
       - learn.html
       - compare.html
@@ -37,6 +46,8 @@ jobs:
           node-version: '22'
       - name: Verify JavaScript syntax
         run: |
+          node --check metrics-events.js
+          node --check metrics-config.js
           node --check journey-app.js
           node --check product-editorial.js
           node --check official-prices.js
@@ -77,4 +88,5 @@ jobs:
             visual-product-desktop.png
             data-location-desktop.png
             data-location-mobile.png
+            growth-backup-desktop.png
           if-no-files-found: ignore
