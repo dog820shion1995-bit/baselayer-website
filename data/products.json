@@ -681,5 +681,49 @@
     "source": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/25-year/DS925%2B/jpn/Product_Spec_DS925%2B_jpn.pdf",
     "checked": "2026-10-28",
     "verified": "Synology公式日本語製品仕様（2026-08-06更新、pp.2–4）で9項目を照合。ドライブ互換性・移行・販売状況は別途確認。"
+  },
+  {
+    "brand": "QNAP",
+    "cat": "server",
+    "category": "4ベイNAS（TS-464シリーズ）",
+    "source": "https://www.qnap.com/ja-jp/product/ts-464/specs/hardware",
+    "checked": "2026-10-28",
+    "model": "TS-464-8G",
+    "memo": "メーカー公式のTS-464-8G仕様。8GB標準メモリーは2024年1月以降の表記。TS-464-4Gとは別SKU。対応ドライブ、メモリー増設、現在の在庫・サポート状況は要確認。写真は利用権利未確認のため表示しない。",
+    "specs": {
+      "メモリー": "8GB DDR4 SODIMM（2024年1月以降の仕様表記、最大16GB／2スロット）",
+      "CPU": "Intel Celeron N5095（4コア／4スレッド、最大バースト2.9GHz）",
+      "ドライブベイ": "3.5インチ SATA 6Gb/s ×4（2.5インチSATA SSD対応、ドライブ別売）",
+      "M.2スロット": "M.2 2280 PCIe Gen3 x1 ×2（SSD別売）",
+      "LAN": "2.5GbE RJ-45 ×2",
+      "PCIe拡張": "PCIe Gen3 x2 スロット ×1（拡張カード別売）",
+      "USB": "USB 3.2 Gen2 Type-A ×2、USB 2.0 ×2",
+      "HDMI": "HDMI 2.1 ×1（最大4096×2160、60Hz）",
+      "本体寸法": "165 × 170 × 226.5 mm（高さ×幅×奥行、脚部を除く）",
+      "本体重量": "2.26kg（正味）"
+    },
+    "verified": "2026-10-28にQNAP公式日本語ハードウェア仕様のTS-464-8G欄で10項目を照合。画像転載権利・現行販売状況は未確認。"
+  },
+  {
+    "brand": "QNAP",
+    "cat": "server",
+    "category": "4ベイNAS（TS-464シリーズ）",
+    "source": "https://www.qnap.com/ja-jp/product/ts-464/specs/hardware",
+    "checked": "2026-10-28",
+    "model": "TS-464-4G",
+    "memo": "メーカー公式のTS-464-4G仕様。4GB標準メモリーの別SKU。8G版と混同しない。対応ドライブ、メモリー増設、現在の在庫・サポート状況は要確認。写真は利用権利未確認のため表示しない。",
+    "specs": {
+      "メモリー": "4GB DDR4 SODIMM（最大16GB／2スロット）",
+      "CPU": "Intel Celeron N5095（4コア／4スレッド、最大バースト2.9GHz）",
+      "ドライブベイ": "3.5インチ SATA 6Gb/s ×4（2.5インチSATA SSD対応、ドライブ別売）",
+      "M.2スロット": "M.2 2280 PCIe Gen3 x1 ×2（SSD別売）",
+      "LAN": "2.5GbE RJ-45 ×2",
+      "PCIe拡張": "PCIe Gen3 x2 スロット ×1（拡張カード別売）",
+      "USB": "USB 3.2 Gen2 Type-A ×2、USB 2.0 ×2",
+      "HDMI": "HDMI 2.1 ×1（最大4096×2160、60Hz）",
+      "本体寸法": "165 × 170 × 226.5 mm（高さ×幅×奥行、脚部を除く）",
+      "本体重量": "2.26kg（正味）"
+    },
+    "verified": "2026-10-28にQNAP公式日本語ハードウェア仕様のTS-464-4G欄で10項目を照合。画像転載権利・現行販売状況は未確認。"
   }
 ]
