@@ -235,3 +235,26 @@ Target: `main` (review only; do not merge or publish)
 ### Saved delta this run
 - **New products +2; existing products' specification supplements +0; new-product specification fields +20; comparison relationships +2; newly rights-approved real photos +0; main commits 0.**
 - Next: obtain actual GitHub Actions run details; run the Python tests and browser smoke checks; reconcile v32 with the live storage/backup architecture in a small tested integration; verify remote licensed image loading and fallback before any main release.
+
+## 2026-10-28 14:55–15:00 JST — v32 review continuation (run 7)
+
+### Preflight, branch and publication boundary
+- Confirmed existing draft PR #4 remains open and unmerged: https://github.com/dog820shion1995-bit/baselayer-website/pull/4 .
+- Read review branch head `471815114587a4e6eebda7cf039a4e162dc3c636`, prior progress, and current branch comparison: **49 ahead / 37 behind main** before changes; PR mergeable=false.
+- The current main is a different storage/backup journey. No PR merge and **no main publication**; browser regression and architecture reconciliation remain mandatory.
+
+### CI investigation — prior unknowns resolved
+- Read GitHub Actions REST run listing, jobs and full job log, including push-triggered runs that the PR-only workflow lookup omitted.
+- Historical successful run `40635589662` (2026-10-28 14:01 JST, SHA `966b720ae6945f9010095e77ea8248a9827d5f7e`) executed **all 23 Python unittest cases successfully** (not merely configured), Python compilation, source/media/relationship checks, and generated-data diff checks. Earlier failing intermediate runs occurred between data and generated-JS commits; the later complete pair passed.
+- New CI run `40640921941` (2026-10-28 14:57 JST, SHA `939a76c5b1ac5ed2b6eb36a4692918ba38252a8c`) **completed success**: 23 unit tests, 47 catalog records, 34 sourced specs, 6 relationships, 1 licensed-media metadata record, and new preview static/Node syntax gate. https://github.com/dog820shion1995-bit/baselayer-website/actions/runs/40640921941 .
+
+### Review-only UI and validation improvements
+- `b28a7d3f4e22ef4e6292a92f058fcd2bca050254`: aligned preview's CC license allowlist with offline gate; changed URL validation to reject credentials and non-HTTPS URLs; strengthened Commons file-name model-token boundary matching; added creator/source, linked CC license and modification disclosure to image attribution; preserved image-error fallback.
+- `d41da75c84a7c95a7a857327956400bcb3c1ac6d`: added `tools/validate_v32_preview.py` for preview structure, noindex, local script assets, media-gate markers, no innerHTML, and Node inline-JS syntax checks.
+- `939a76c5b1ac5ed2b6eb36a4692918ba38252a8c`: added preview and validator paths to workflow triggers and executed new gate in CI.
+- This is static and CI verification only: **actual Commons image response, attribution in a rendered browser, keyboard/mobile interaction, and deployed Pages behavior are not yet verified**. No rights-unknown photos were published.
+
+### Saved delta and next steps
+- New products **0**; existing product specification supplements **0**; new comparisons **0**; newly rights-approved real photos **0**; main commits **0**.
+- Review catalog remains **47 products**, **34** with source-backed specs, **6** suggested-alternative comparisons, **1** licensed-photo metadata entry; **23** unit tests pass on GitHub Actions.
+- Next: isolate a main-compatible NAS preview integration without changing the existing storage journey; perform real desktop/mobile browser smoke tests, remote Commons image-delivery check and fallback test, then consider only a separately verified small main commit.
