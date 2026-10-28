@@ -142,3 +142,38 @@ Target: `main` (review only; do not merge or publish)
 
 ### This run's saved delta
 - New products: **1**; existing product specs supplemented: **0**; evidence-linked comparison relationships: **1**; newly rights-approved real photos: **0**; main commits: **0**.
+
+## 2026-10-28 11:58–12:xx JST — v32 review continuation (run 4)
+
+### Preflight / safety
+- Reused existing review PR #4: https://github.com/dog820shion1995-bit/baselayer-website/pull/4 ; no new PR.
+- Read previous run log and prior head `338146aadb3d1aacced6084d8d70c5b33c2ada3f`; main is a separate storage-decision journey, while v32 targets legacy v31. Before this run, branch was **28 ahead / 37 behind main**. Do not merge PR wholesale.
+- GitHub workflow lookup on the prior head returned no pull-request workflow runs; this is **not** proof CI passed or failed.
+
+### Verified source-backed data saved (review branch only)
+- **1 new product:** Synology **DS925+**, with **9 newly recorded hardware specifications**, **0 existing products supplemented**.
+- Source: Synology official Japanese DS925+ Product Specification, updated **2026-08-06**, https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/25-year/DS925%2B/jpn/Product_Spec_DS925%2B_jpn.pdf ; reviewed **2026-10-28 JST**, pp.2–4. Records CPU Ryzen V1500B 4C/8T 2.2GHz, 4GB ECC (max 32GB), 4 SATA bays, 2 M.2 NVMe, 2 × 2.5GbE, 2 USB 3.2 Gen 1, USB-C expansion (DX525), dimensions, weight. The official source explicitly requires drive compatibility checks; availability and migration compatibility are not claimed.
+- **1 new comparison relationship:** DS923+ → DS925+ as `suggested_alternative`, **not** `official_successor`. Warning documents 1GbE→2.5GbE differences, CPU and expansion-port changes, drive/DSM compatibility unknown, and need to check prices/stock.
+- **0 new permitted real-product photos**; DS918+ remains the only permitted exact-model image metadata record. No manufacturer photo with unclear rights was added.
+- Synced `product-data.js` and `relationship-data.js` with their source JSON files.
+
+### Media regression tests and CI
+- Added `tools/test_v32_media.py` with 10 offline cases covering valid DS918+ photo, fallback when no image, mismatched model/file, invalid license, missing creator, invalid rights source, future date, unapproved usage and duplicate model.
+- Updated `.github/workflows/catalog-quality.yml` to run the unit tests on review-branch pushes and PR changes.
+- PASS (V8/connector static inspection): **45 products**, **32** with sourced specifications, **4** relationships, **0** normalized brand/model duplicates, **0** missing relation endpoints, **0** source/date format errors; both generated JS files match JSON exactly; `app-v31.js`, `product-data.js`, `relationship-data.js` parse as JavaScript; CSS braces balanced; CI test command present.
+- **Not verified:** actual Python unit test execution, GitHub Actions success, all external links' HTTP status, Commons image delivery, desktop/mobile browser regression, Pages deployment.
+- The new DS925+ official PDF URL was accessible in web research on 2026-10-28. No main publication; PR remains review-only.
+
+### Review branch commits
+- `11840d98c65a7a0f8e628bcde1bd7cacfa219ee3` — DS925+ official-source data.
+- `2db1dcf5efcb15c65a1ff5c103d9b544fa3ea1f6` — generated catalog.
+- `041232e6aef951c5f3b4c282b92632300294c01e` — DS923+ comparison.
+- `f3d51cf36ce5b29846725fdd0237dc115192d7d1` — generated relationships.
+- `f7fd33d8e4ff06efe16a719563a2fb7f2d065f8d` — negative media tests.
+- `7001b348e727b9d6096d8ff4a268dac04fa44a3c` — workflow test integration.
+
+### Next actions
+- Confirm Python test execution and workflow status; diagnose workflow non-execution if no checks appear.
+- Reconcile the legacy v32 review branch with the current main storage journey in a controlled isolated integration; preserve both interfaces until browser regression is proven.
+- Verify licensed Commons photo delivery and fallback on desktop/mobile; do not publish image rights or UI claims without verification.
+- This run: **new products +1; existing specification supplements +0; new comparisons +1; newly licensed real photos +0; main commits 0**.
