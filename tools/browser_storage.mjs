@@ -14,6 +14,22 @@ try {
  assert.equal(await page.locator('.story-card').count(),3,'photographic use-case paths missing');
  assert.equal(await page.locator('.scene-flow').count(),1,'office access flow absent');
  await page.screenshot({path:'decision-home.png',fullPage:true});
+ assert.equal(await page.locator('.story-card a').count(),0,'story card should itself be link');
+ assert.equal(await page.locator('.story-card[href="office-10-storage.html"]').count(),1);
+ assert.equal(await page.evaluate(()=>window.BL_ANALYTICS_CONFIG?.enabled),false,'analytics should be unconfigured');
+ assert((await page.evaluate(()=>window.BL_METRIC_PREVIEW?.()||[])).some(x=>x.event==='page_view'),'in-memory page event missing');
+ await goto(page,'office-10-storage.html');
+ assert.match(await page.locator('h1').innerText(),/社員10人/);
+ assert.equal(await page.locator('a[href="start.html?goal=share"]').count()>=1,true);
+ await goto(page,'nas-4tb-raid1.html');
+ assert.match(await page.locator('h1').innerText(),/4TB/);
+ assert.match(await page.locator('.case-content').innerText(),/RAID1/);
+ await goto(page,'backup-first-steps.html');
+ assert.match(await page.locator('h1').innerText(),/バックアップ/);
+ assert.match(await page.locator('.case-content').innerText(),/RTO/);
+ await page.screenshot({path:'growth-backup-desktop.png',fullPage:true});
+ await goto(page,'index.html');
+
  await page.locator('.problem-row').first().click();
  await page.waitForURL(/start.html\?goal=share/);
  assert.match(await page.locator('#wizardTitle').innerText(),/困っていますか/);
@@ -34,6 +50,9 @@ try {
  await page.locator('#f_sensitive').selectOption('normal');
  await page.locator('[data-action="next"]').click();
  assert.match(await page.locator('#wizardTitle').innerText(),/導入判断レポート/);
+ const actionEvents=await page.evaluate(()=>window.BL_METRIC_PREVIEW?.().map(e=>e.event)||[]);
+ assert(actionEvents.includes('diagnosis_complete'),'completion event not emitted');
+
  const body=await page.locator('#wizardContent').innerText();
  assert.match(body,/新規契約は不要/);
  assert.match(body,/バックアップ/);
@@ -103,7 +122,7 @@ try {
 
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});
  mobile.on('pageerror',e=>errors.push('mobile: '+e.message));
- for(const path of ['index.html','start.html','learn.html','compare.html','price-guide.html','product.html?id=iodata-hdd']){
+ for(const path of ['index.html','start.html','learn.html','compare.html','price-guide.html','product.html?id=iodata-hdd','office-10-storage.html','nas-4tb-raid1.html','backup-first-steps.html']){
   await goto(mobile,path);
   const dim=await mobile.evaluate(()=>({scroll:document.documentElement.scrollWidth,viewport:window.innerWidth}));
   assert(dim.scroll<=dim.viewport+3,path+' horizontal overflow '+JSON.stringify(dim));
