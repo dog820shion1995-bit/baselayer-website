@@ -660,5 +660,26 @@
     "source": "https://global.download.synology.com/download/Document/Hardware/DataSheet/DiskStation/23-year/DS923%2B/jpn/Synology_DS923%2B_Data_Sheet_jpn.pdf",
     "checked": "2026-10-28",
     "verified": "Synology公式日本語DS923+データシート（DS923+-2022-JPN-REV001、p.5 技術仕様）で8項目を照合。販売・サポート・移行互換性は未検証。"
+  },
+  {
+    "model": "DS925+",
+    "brand": "Synology",
+    "cat": "server",
+    "category": "4ベイNAS（2025年発表モデル）",
+    "memo": "Synology公式製品仕様（2026年8月6日更新）に基づくハードウェア情報。互換ドライブの使用が必要。DS923+からのHDD移行・ソフトウェア互換性・現在の国内販売価格／在庫は未確認。公式後継認定・無条件の購入推奨ではありません。",
+    "specs": {
+      "CPU": "AMD Ryzen V1500B（4コア／8スレッド、2.2GHz）",
+      "メモリー": "4GB DDR4 ECC SODIMM（最大32GB、2スロット）",
+      "ドライブベイ": "3.5インチSATA HDD／2.5インチSATA SSD ×4（ドライブ別売、互換性リスト要確認）",
+      "M.2スロット": "M.2 2280 NVMe SSD ×2（ドライブ別売、互換性条件あり）",
+      "LAN": "2.5GbE RJ-45 ×2",
+      "USB": "USB 3.2 Gen 1 ×2",
+      "拡張ポート": "USB Type-C ×1（DX525拡張ユニット用、最大9ベイ）",
+      "本体寸法": "166 × 199 × 223 mm（高さ×幅×奥行）",
+      "本体重量": "2.26 kg"
+    },
+    "source": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/DiskStation/25-year/DS925%2B/jpn/Product_Spec_DS925%2B_jpn.pdf",
+    "checked": "2026-10-28",
+    "verified": "Synology公式日本語製品仕様（2026-08-06更新、pp.2–4）で9項目を照合。ドライブ互換性・移行・販売状況は別途確認。"
   }
 ]
