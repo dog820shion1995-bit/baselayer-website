@@ -46,6 +46,7 @@ jobs:
           python-version: '3.12'
       - name: Validate product source records
         run: |
+          python -m compileall -q tools
           python tools/build_catalog.py
           python tools/validate_v32_media.py
           python -m unittest discover -s tools -p 'test_v32_*.py' -v
