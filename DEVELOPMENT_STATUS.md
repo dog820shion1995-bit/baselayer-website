@@ -177,3 +177,32 @@ Target: `main` (review only; do not merge or publish)
 - Reconcile the legacy v32 review branch with the current main storage journey in a controlled isolated integration; preserve both interfaces until browser regression is proven.
 - Verify licensed Commons photo delivery and fallback on desktop/mobile; do not publish image rights or UI claims without verification.
 - This run: **new products +1; existing specification supplements +0; new comparisons +1; newly licensed real photos +0; main commits 0**.
+
+## 2026-10-28 12:59–13:xx JST — v32 review continuation (run 5)
+
+### Preflight and publication boundary
+- Reused review PR #4: https://github.com/dog820shion1995-bit/baselayer-website/pull/4 . The PR's review endpoint was accessible, but issue-search returned no PR results; do not infer mergeability from that search.
+- Inspected previous status and prior commit `e79520152e594fa5d89bfe54411fbc6813c7ec05`, branch content, workflow, and current `main`. At start: review branch 35 ahead / 37 behind main.
+- Current `main/index.html` is the storage/backup journey (not the v31 catalog); main head `31e7997b2f4c6f376a96cb66885e7f84e927454d`. **No main publication, no PR merge**; the review branch is still incompatible with a blind merge.
+
+### Saved review-branch quality improvements
+- Strengthened `tools/validate_v32_media.py`: Commons file-page and redirect path must match; rights evidence must identify the same Commons file; filename must contain the exact recorded model token; duplicate photo-file reuse is rejected; invalid media records are not counted as permitted.
+- Added five negative media regression cases (15 media cases total).
+- Reworked `tools/validate_relationships.py` to reject orphan comparison endpoints, missing/invalid/future evidence dates, missing suggested-alternative limitations, duplicate relationships, and unsubstantiated official-successor labels. Official-successor records now require same-brand manufacturer-hosted evidence and an attributable manufacturer statement; **these checks do not independently establish factual truth**.
+- Added eight offline relationship tests. Workflow now includes both v32 test suites (**23 test definitions**) and Python compilation check.
+- No new product specifications or comparison claims were introduced without fresh official evidence. No new photo was published without reuse permission.
+
+### Review commits
+- `18c0ea758d057b3fb7d52560767df6bb1d61396a` — tighten Commons media identity/rights gate.
+- `4c3a96b979d862067501633892c6579d1595afce` — add five media negative cases.
+- `7e7f7de3859ca058d4b75c61f1402bc6574f2003` — fail-closed relationship validation.
+- `febd9c3007bf5252f9acaa0ebe056c9210241ba6` — add eight relationship cases.
+- `47ff9799c40879a96c456a58d172216ca56a1067` — integrate both suites in CI.
+- `953de810b9aecc196eb87255f909383ed65a5fe8` — Python compilation step.
+
+### Validation and remaining blockers
+- PASS (connector-fetched data checked in V8): 45 catalog products, 32 with recorded official-source specifications, 4 suggested-alternative relationships, 1 licensed-photo metadata record, no duplicate normalized product IDs, no orphan relationships, no invalid/future recorded source dates, JSON/JS generated data match, DS918+ Commons filename model-token match, v32 media fallback code present, workflow configured for both suites.
+- NOT VERIFIED: Python `compileall` and 23 unittest cases actually executed, GitHub Actions passing result, external URLs' HTTP status, live image delivery, desktop/mobile browser regressions, current `main` deployment. The available workflow-run lookup is restricted to PR-triggered runs and returned no results; this does **not** prove push-triggered runs failed or never started.
+- No live images or unsupported specifications were published. The one Commons image remains a review-branch metadata entry with CC BY-SA 4.0 attribution; actual rendering still unverified.
+- This run's saved delta: **new products 0; existing specs supplemented 0; comparison relationships added 0; newly permitted real photos 0; main commits 0**.
+- **Next:** obtain GitHub Actions run details and execute the Python suites; resolve the 37-commit divergence with current storage-journey architecture in isolated changes; verify actual Commons photo delivery and fallback on desktop/mobile before considering a small safe main release.
