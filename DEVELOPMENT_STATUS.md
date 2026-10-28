@@ -383,3 +383,29 @@ Target: `main` (review only; do not merge or publish)
 1. Inspect the latest push-triggered Actions jobs and screenshot artifacts; fix any real overlay failure in this same PR.
 2. Verify actual Commons redirect image delivery separately from mocked tests; if unavailable, retain explicit fallback and do not claim a published photograph.
 3. Rebase only a separately tested two-file staging overlay onto the latest main snapshot (never blindly merge the diverged PR), check the current backup wizard and comparison flows on desktop/mobile, then consider an isolated main release only after successful verification.
+
+
+## 2026-10-28 21:01 JST onward — v32 safe isolated publication and CI parity guard
+
+### Preflight and evidence
+- Re-read open draft PR #4, branch head `2c1990587f5cf268ce9742bd40f1630ee9fe4264`, its prior commit, and this status file before any change. Review branch was 82 commits ahead / 40 behind main, with main at `3afd2cdfdcdc6ac4a524aa1f3a93dd9b5852a916`.
+- Inspected **push-triggered** GitHub Actions, not only PR-triggered commit lookup. [Run 40676047022](https://github.com/dog820shion1995-bit/baselayer-website/actions/runs/40676047022) for code commit `dbff3e085428ee35c447854cf184f7efbf17a97a` **completed success**: both `validate` and `browser-v32` jobs green, 23/23 Python tests, six sourced NAS/five relationships, desktop/mobile isolated preview and current-main storage-journey staging overlay regression passed. [Four browser screenshots](https://github.com/dog820shion1995-bit/baselayer-website/actions/runs/40676047022/artifacts/12810921060) were uploaded.
+- The CI browser log separately confirmed **real** Commons image response: `LIVE_COMMONS_IMAGE_DELIVERY=PASS_WITH_ATTRIBUTION`, with HTTP 301 redirect then HTTP 200 thumbnail. This verifies delivery in that runner at that time, not perpetual availability. The deterministic forced-image-failure fallback passed independently. Synology DS918+ Commons photo has recorded author mculi and CC BY-SA 4.0; no additional image rights claimed.
+- The CI checked out main commit `3afd2cdfdcdc6ac4a524aa1f3a93dd9b5852a916` into an isolated staging directory. Rechecked main HEAD immediately before publication: **same SHA**. Staged two-file overlay preserved the original homepage, four-step backup decision journey, search/NAS filter, two-product comparison, and desktop/mobile responsive behavior.
+
+### Small, atomic main publication
+- **Published only** `nas-catalog-v32-data.js` and `nas-catalog-v32-preview.html` in a single atomic main commit: **`1f3bff4bbe705841d26ec747186bf74defffef2a`**. Parent `3afd2cdfdcdc6ac4a524aa1f3a93dd9b5852a916`. Used existing reviewed blob SHAs and a non-forced ref update with expected old HEAD.
+- Verified main HEAD is the new commit; comparison against its parent lists **exactly those two added files**, and both main blob SHAs match the reviewed branch (`c17098d773bb7bdf5eed7c693650755b452edfaf` and `d07dd4bf5291f4122a551266221fb792c231fea8`). No existing production file was modified. This is an **unlinked, noindex/nofollow review page**, not a homepage launch or whole-PR merge.
+- **Production GitHub Pages HTTP/visual deployment has NOT been verified**: the attempted GitHub Pages URL was inaccessible from available web/container network tools. A main Git commit alone does not establish successful Pages deployment. Recheck live URL and deployment workflow before calling this public-facing.
+- New product records **0**, existing specification supplements **0**, comparison relationships **0**, newly rights-approved real photos **0**. The released isolated bundle still contains six sourced NAS, five suggested comparisons and one rights-recorded photo. Master review catalog remains 47 / 34 sourced / 6 comparisons / 1 rights-recorded photo.
+
+### Follow-up review branch work
+- `faf6bb3588fbd65a506f22ee1cc360419df8f729`: updated `.github/workflows/catalog-quality.yml` so the main overlay test now **compares the two files byte-for-byte** when already published, rather than failing merely because they exist. If only one file exists or either differs, CI fails without overwriting main. Prepublication staging remains supported.
+- `d699c5541385db3441b2169a2ba725f747658836`: corrected the overlay test's final log message, which previously said live Commons delivery was unverified even after the separate probe logged `PASS_WITH_ATTRIBUTION`. The fallback test still intentionally blocks Commons and the live probe is independent.
+- New CI outcome for these follow-up commits must be inspected; do not infer success from the previous green run. Existing PR #4 remains the only draft review PR; **do not merge it wholesale**.
+
+### Next
+1. Verify GitHub Actions run for the parity-guard commit; repair only within existing PR if red.
+2. Check actual GitHub Pages deployment and HTTP/browser behavior for the new unlinked review URL, including source attribution and image fallback. If Pages cannot be reached, report deployment unverified.
+3. Continue sourcing accurate official specs for the 13 pending master records and rights-cleared exact-model images; do not invent successors or reuse manufacturer images without permission.
+4. Keep main homepage and storage journey untouched unless separately regression-tested and explicitly scoped for a later small release.
