@@ -227,14 +227,14 @@ $("wizardContent").addEventListener("click",async event=>{
  const action=event.target.closest("[data-action]");
  if(action){
   const cmd=action.dataset.action;
-  if(cmd==="next")state.step=Math.min(4,state.step+1);
+  if(cmd==="next"){const from=state.step;state.step=Math.min(4,state.step+1);if(state.step>from){window.BL_TRACK?.("diagnosis_step_"+from);if(state.step===4)window.BL_TRACK?.("diagnosis_complete");}}
   if(cmd==="back")state.step=Math.max(1,state.step-1);
   if(cmd==="reset"){Object.assign(state,init);history.replaceState(null,"",location.pathname);}
   render();window.scrollTo({top:0,behavior:"auto"});return;
  }
  const view=event.target.closest("[data-view]");if(view){changeView(view.dataset.view);return;}
- if(event.target.closest("#printPlan")){window.print();return;}
- if(event.target.closest("#copyPlan")){
+ if(event.target.closest("#printPlan")){window.BL_TRACK?.("report_print");window.print();return;}
+ if(event.target.closest("#copyPlan")){window.BL_TRACK?.("report_copy");
   try{if(!navigator.clipboard?.writeText)throw Error("clipboard unavailable");await navigator.clipboard.writeText(reportText());$("copyFeedback").textContent="レポート内容をコピーしました。";}
   catch{$("copyFeedback").textContent="コピーできませんでした。印刷・PDF保存をご利用ください。";}
  }
