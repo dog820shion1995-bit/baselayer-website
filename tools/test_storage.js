@@ -70,5 +70,9 @@ for(const file of ['office-10-storage.html','nas-4tb-raid1.html','backup-first-s
 assert(rob.includes('Sitemap: https://dog820shion1995-bit.github.io/baselayer-website/sitemap.xml'),'robots sitemap location missing');
 assert(read('metrics-config.js').includes('enabled:false'),'remote tracking should be disabled without a measurement ID');
 assert(!read('metrics-events.js').includes('localStorage'),'event implementation must not persist inputs');
+assert(read('metrics-events.js').includes('page==="start.html"'),'direct diagnosis landings must be measured');
+assert(read('metrics-events.js').includes('document.querySelector(".detail-hero")'),'unknown products must not count as detail views');
+assert(read('product-detail.js').includes('data-bl-outbound'),'outbound research links must be explicitly classified');
+assert(read('metrics-events.js').includes('marketplace_search_click'),'marketplace search is not a confirmed purchase');
 assert(read('journey-app.js').includes('diagnosis_complete'),'diagnosis completion metric missing');
 console.log('PASS: 10 pages, 3 organic search cases, sitemap, disabled analytics and 8 source-backed products.');
